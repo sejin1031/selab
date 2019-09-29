@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter as Router, Route } from 'react-router-dom';
+import AppShell from './components/Appshell';
+import Members from './components/Members';
+import Research from './components/Research';
+import Home from './components/Home';
+import Notice from './components/Notice';
+import Publication from './components/Publications';
+import Course from './components/Courses';
+import Gallery from './components/Gallery';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <AppShell>
+          <div>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/notice" component={Notice}/>
+            <Route exact path="/members" component={Members}/>
+            <Route exact path="/research" component={Research}/>
+            <Route exact path="/publication" component={Publication}/>
+            <Route exact path="/course" component={Course}/>
+            <Route exact path="/gallery" component={Gallery}/>
+          </div>
+        </AppShell>
+      </Router>
+    );
+  }
 }
 
 export default App;
+
+
