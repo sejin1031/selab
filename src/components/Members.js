@@ -4,8 +4,11 @@ import CardContent from '@material-ui/core/CardContent';
 
 class Members extends React.Component {
     render() {
+        const cardStyle={
+            padding:"0px 0px 0px 11%",
+        }
         return (
-            <Card>
+            <Card style={cardStyle}>
                 <CardContent>
                     Members
                 </CardContent>

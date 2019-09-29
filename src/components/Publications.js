@@ -5,11 +5,9 @@ import CardContent from '@material-ui/core/CardContent';
 class Publication extends React.Component {
     render() {
         return (
-            <Card>
-                <CardContent>
-                    publications
-                </CardContent>
-            </Card>
+            <div>
+                <h1>hello</h1>
+            </div>
         );
     }
 }

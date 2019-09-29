@@ -8,6 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
+import '../style/Appshell.css';
 
 
 const styles = {
@@ -23,10 +24,10 @@ class AppShell extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            toggle: false
+            // toggle: false
         };
     }
-    handleDrawerToggle = () => this.setState({toggle: !this.state.toggle})
+   handleDrawerToggle = () => this.setState({toggle: !this.state.toggle})
     render() {
     const { classes } = this.props;
     return (
@@ -37,7 +38,10 @@ class AppShell extends React.Component {
                         <MenuIcon/>
                     </IconButton>
                 </AppBar>
-                <Drawer open={this.state.toggle}>
+                <Drawer 
+                    open={this.state.toggle}
+                    variant="permanent"
+                    anchor="left">
                     <MenuItem onClick={this.handleDrawerToggle}>
                         <Link component={RouterLink} to="/">
                             Home
