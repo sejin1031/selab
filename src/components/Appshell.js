@@ -33,6 +33,10 @@ const styles = {
     backButton: {
         marginLeft: 'auto'
     },
+    iconItem: {
+        background: 'linear-gradient(45deg, darkblue 60%, skyblue 30%)',
+
+    }
 };
 
 class AppShell extends React.Component {
@@ -56,7 +60,7 @@ class AppShell extends React.Component {
                 <Drawer 
                     open={this.state.toggle}
                     anchor="left">
-                    <MenuItem>
+                    <MenuItem className={classes.iconItem}>
                         <img src='../../logo.png' alt='logo' />
                         <IconButton className={classes.backButton} color="inherit" onClick={this.handleDrawerToggle}>
                             <ChevronLeftIcon/>
