@@ -4,15 +4,19 @@ import CardContent from '@material-ui/core/CardContent';
 
 class Members extends React.Component {
     render() {
-        const cardStyle={
-            margin:"0px 0px 0px 11%",
-        }
         return (
-            <Card style={cardStyle}>
-                <CardContent>
-                    Members
-                </CardContent>
-            </Card>
+            <div>
+                <Card>
+                    <CardContent>
+                        <h1>heelo</h1>
+                    </CardContent>
+                </Card>
+                <Card>
+                    <CardContent>
+                        <h2>heeleoe</h2>
+                    </CardContent>
+                </Card>
+            </div>
         );
     }
 }
