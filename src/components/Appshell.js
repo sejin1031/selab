@@ -7,6 +7,8 @@ import Drawer from '@material-ui/core/Drawer';
 import MenuItem from '@material-ui/core/MenuItem';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 import '../style/Appshell.css';
 
@@ -18,6 +20,9 @@ const styles = {
     menuButton: {
         marginRight: 'auto'
     },
+    backButton: {
+        marginLeft: 'auto'
+    },
 };
 
 class AppShell extends React.Component {
@@ -27,7 +32,7 @@ class AppShell extends React.Component {
             // toggle: false
         };
     }
-   handleDrawerToggle = () => this.setState({toggle: !this.state.toggle})
+    handleDrawerToggle = () => this.setState({toggle: !this.state.toggle})
     render() {
     const { classes } = this.props;
     return (
@@ -39,10 +44,11 @@ class AppShell extends React.Component {
                     </IconButton>
                 </AppBar>
                 <Drawer 
-                    variant="persistent"
-                    anchor="left"
-                    open={open}
-                    >
+                    open={this.state.toggle}
+                    anchor="left">
+                    <IconButton className={classes.backButton} color="inherit" onClick={this.handleDrawerToggle}>
+                        <ChevronLeftIcon/>
+                    </IconButton>
                     <MenuItem onClick={this.handleDrawerToggle}>
                         <Link component={RouterLink} to="/">
                             Home
