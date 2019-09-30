@@ -21,11 +21,15 @@ import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 
 import '../style/Appshell.css';
+import { yellow } from '@material-ui/core/colors';
 
 
 const styles = {
     root: {
         flexGrow: 1,
+    },
+    appBar:{
+        background: 'linear-gradient(45deg, darkblue 60%, skyblue 30%)',
     },
     menuButton: {
         marginRight: 'auto'
@@ -35,8 +39,10 @@ const styles = {
     },
     iconItem: {
         background: 'linear-gradient(45deg, darkblue 60%, skyblue 30%)',
-
-    }
+    },
+    logo: {
+        width : '30%'
+    },
 };
 
 class AppShell extends React.Component {
@@ -52,9 +58,9 @@ class AppShell extends React.Component {
     return (
         <div>
             <div className={classes.root}>
-                <AppBar position="static">
+                <AppBar className={classes.appBar} position="static">
                     <IconButton className={classes.menuButton} color="inherit" onClick={this.handleDrawerToggle}>
-                        <MenuIcon/>
+                        <MenuIcon/> 
                     </IconButton>
                 </AppBar>
                 <Drawer 
