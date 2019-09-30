@@ -20,8 +20,6 @@ import DescriptionIcon from '@material-ui/icons/Description';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 
-import '../style/Appshell.css';
-import { yellow } from '@material-ui/core/colors';
 
 
 const styles = {
