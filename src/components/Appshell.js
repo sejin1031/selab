@@ -39,9 +39,10 @@ class AppShell extends React.Component {
                     </IconButton>
                 </AppBar>
                 <Drawer 
-                    open={this.state.toggle}
-                    variant="permanent"
-                    anchor="left">
+                    variant="persistent"
+                    anchor="left"
+                    open={open}
+                    >
                     <MenuItem onClick={this.handleDrawerToggle}>
                         <Link component={RouterLink} to="/">
                             Home
