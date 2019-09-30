@@ -9,6 +9,16 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import Divider from '@material-ui/core/Divider';
+
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import HomeIcon from '@material-ui/icons/Home';
+import NotificationImportantIcon from '@material-ui/icons/NotificationImportant';
+import PeopleIcon from '@material-ui/icons/People';
+import ImportContactsIcon from '@material-ui/icons/ImportContacts';
+import DescriptionIcon from '@material-ui/icons/Description';
+import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+import CameraAltIcon from '@material-ui/icons/CameraAlt';
 
 import '../style/Appshell.css';
 
@@ -46,51 +56,76 @@ class AppShell extends React.Component {
                 <Drawer 
                     open={this.state.toggle}
                     anchor="left">
-                    <IconButton className={classes.backButton} color="inherit" onClick={this.handleDrawerToggle}>
-                        <ChevronLeftIcon/>
-                    </IconButton>
+                    <MenuItem>
+                        <img src='../../logo.png' alt='logo' />
+                        <IconButton className={classes.backButton} color="inherit" onClick={this.handleDrawerToggle}>
+                            <ChevronLeftIcon/>
+                        </IconButton>
+                    </MenuItem>
+                    <Divider />
                     <MenuItem onClick={this.handleDrawerToggle}>
+                        <ListItemIcon>
+                            <HomeIcon />
+                        </ListItemIcon>
                         <Link component={RouterLink} to="/">
                             Home
                         </Link>
                     </MenuItem>
-
+                    <Divider />
                     <MenuItem onClick={this.handleDrawerToggle}>
+                        <ListItemIcon>
+                            <NotificationImportantIcon />
+                        </ListItemIcon>
                         <Link component={RouterLink} to="/notice">
                             NOTICE
                         </Link>
                     </MenuItem>
-
+                    <Divider />
                     <MenuItem onClick={this.handleDrawerToggle}>
+                        <ListItemIcon>
+                            <PeopleIcon />
+                        </ListItemIcon>
                         <Link component={RouterLink} to="/members">
                             MEMBERS
                         </Link>
                     </MenuItem>
-
+                    <Divider />
                     <MenuItem onClick={this.handleDrawerToggle}>
+                        <ListItemIcon>
+                            <ImportContactsIcon  />
+                        </ListItemIcon>
                         <Link component={RouterLink} to="/research">
                             RESEARCH
                         </Link>
                     </MenuItem>
-
+                    <Divider />
                     <MenuItem onClick={this.handleDrawerToggle}>
+                        <ListItemIcon>
+                            <DescriptionIcon />
+                        </ListItemIcon>
                         <Link component={RouterLink} to="/publication">
                             PUBLICATION
                         </Link>
                     </MenuItem>
-
+                    <Divider />
                     <MenuItem onClick={this.handleDrawerToggle}>
+                        <ListItemIcon>
+                            <LibraryBooksIcon />
+                        </ListItemIcon>
                         <Link component={RouterLink} to="/course">
                             COURSES
                         </Link>
                     </MenuItem>
-
+                    <Divider />
                     <MenuItem onClick={this.handleDrawerToggle}>
+                        <ListItemIcon>
+                            <CameraAltIcon />
+                        </ListItemIcon>
                         <Link component={RouterLink} to="/gallery">
                             GALLERY
                         </Link>
                     </MenuItem>
-
+                    <Divider />
                 </Drawer>
             </div>
             <div id="content" style={{margin: 'auto', marginTop: '20px'}}>
