@@ -41,6 +41,10 @@ const styles = {
     logo: {
         width : '30%'
     },
+    hyulogo: {
+        
+        marginLeft:'auto'
+    },
 };
 
 class AppShell extends React.Component {
@@ -59,7 +63,10 @@ class AppShell extends React.Component {
                 <AppBar className={classes.appBar} position="static">
                     <IconButton className={classes.menuButton} color="inherit" onClick={this.handleDrawerToggle}>
                         <MenuIcon/> 
+                        <MenuItem></MenuItem>
                     </IconButton>
+                    <MenuItem className={classes.hyulogo}><img src='../../logo.png' alt='logo' />
+                    </MenuItem>
                 </AppBar>
                 <Drawer 
                     open={this.state.toggle}
