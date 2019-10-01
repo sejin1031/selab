@@ -19,9 +19,7 @@ import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import DescriptionIcon from '@material-ui/icons/Description';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
-
-import Home from './Home'
-
+import { Toolbar } from '@material-ui/core';
 
 
 const styles = {
@@ -38,15 +36,18 @@ const styles = {
         marginLeft: 'auto'
     },
     iconItem: {
-        background: 'linear-gradient(45deg, darkblue 60%, skyblue 30%)',
+        background: 'linear-gradient(45deg, white 80%, darkblue 5%)',
     },
     logo: {
         width : '30%'
     },
     hyulogo: {
-        
         marginLeft:'auto'
     },
+    toolbar: {
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      },
 };
 
 class AppShell extends React.Component {
@@ -63,21 +64,24 @@ class AppShell extends React.Component {
         <div>
             <div className={classes.root}>
                 <AppBar className={classes.appBar} position="static">
-                    <IconButton className={classes.menuButton} color="inherit" onClick={this.handleDrawerToggle}>
-                        <MenuIcon/> 
-                        <MenuItem></MenuItem>
-                    </IconButton>
-                    <MenuItem className={classes.hyulogo}>
-                        <Link component={RouterLink} to="/">
-                            <img src='/logo.png' alt='logo' />
-                        </Link>
-                    </MenuItem>
+                    <Toolbar className={classes.toolbar}>
+                        <IconButton className={classes.menuButton} color="inherit" onClick={this.handleDrawerToggle}>
+                            <MenuIcon/> 
+                            <MenuItem></MenuItem>
+                        </IconButton>
+  
+                        <MenuItem className={classes.hyulogo}>
+                            <Link component={RouterLink} to="/">
+                                <img src='/logo.png' alt='logo' />
+                            </Link>
+                        </MenuItem>
+                    </Toolbar>
                 </AppBar>
                 <Drawer 
                     open={this.state.toggle}
                     anchor="left">
                     <MenuItem className={classes.iconItem}>
-                        <img src='../../logo.png' alt='logo' />
+                        <img src='../../hyulogo.png' alt='logo' />
                         <IconButton className={classes.backButton} color="inherit" onClick={this.handleDrawerToggle}>
                             <ChevronLeftIcon/>
                         </IconButton>
