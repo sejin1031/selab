@@ -20,6 +20,8 @@ import DescriptionIcon from '@material-ui/icons/Description';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 
+import Home from './Home'
+
 
 
 const styles = {
@@ -65,7 +67,10 @@ class AppShell extends React.Component {
                         <MenuIcon/> 
                         <MenuItem></MenuItem>
                     </IconButton>
-                    <MenuItem className={classes.hyulogo}><img src='../../logo.png' alt='logo' />
+                    <MenuItem className={classes.hyulogo}>
+                        <Link component={RouterLink} to="/">
+                            <img src='/logo.png' alt='logo' />
+                        </Link>
                     </MenuItem>
                 </AppBar>
                 <Drawer 

@@ -1,0 +1,10 @@
+.homeimage{
+    width:45%;
+    height: 100px;
+    float: left;
+}
+
+.othercontent{
+    width:42%;
+    float: right;
+}

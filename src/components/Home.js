@@ -3,12 +3,13 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Viewer from 'react-viewer';
 import 'react-viewer/dist/index.css';
+import '../style/homeimage.css';
+import { Container } from '@material-ui/core';
 
 const pics = [
-    'https://cdn.pixabay.com/photo/2017/06/19/07/12/water-lily-2418339__480.jpg',
-    'https://cdn.pixabay.com/photo/2017/07/18/18/24/dove-2516641__480.jpg',
-    'https://cdn.pixabay.com/photo/2017/07/14/17/44/frog-2504507__480.jpg',
-    'https://cdn.pixabay.com/photo/2016/09/04/13/08/bread-1643951__480.jpg',
+    process.env.PUBLIC_URL + '/img/1.png',
+    process.env.PUBLIC_URL + '/img/2.png',
+    process.env.PUBLIC_URL + '/img/3.png',
   ];
   
   class Home extends React.Component {
@@ -21,6 +22,8 @@ const pics = [
         move: false,
       };
     }
+
+
   
     getNextIndex(idx) {
       if (idx >= pics.length - 1) {
@@ -58,17 +61,17 @@ const pics = [
   
       }
       return (
-        <div className="mask">
-          <div className="pic-wrapper">
-            <div className={`current pic ${move}`}>
-              {this.state.index}
-              <img src={pics[this.state.index]} alt="" />
+        <div>
+            <div className="homeimage">
+                <div className="mask">
+                <div className="pic-wrapper">
+                    <div className={`current pic ${move}`}>
+                    <img src={pics[this.state.index]} alt="" />
+                    </div>
+
+                </div>
+                </div>                
             </div>
-            <div className={`next pic ${move}`}>
-              {this.state.next}
-              <img src={pics[this.state.next]} alt="" />
-            </div>
-          </div>
         </div>
       );
     }
