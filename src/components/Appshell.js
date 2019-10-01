@@ -20,7 +20,6 @@ import DescriptionIcon from '@material-ui/icons/Description';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 import { Toolbar } from '@material-ui/core';
-import List from '@material-ui/core/TableRow';
 
 const styles = {
     root: {
