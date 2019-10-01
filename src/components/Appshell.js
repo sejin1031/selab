@@ -43,7 +43,7 @@ const styles = {
         width : '30%'
     },
     hyulogo: {
-        marginLeft:'auto'
+       // marginLeft:'auto'
     },
     toolbar: {
         alignItems: 'center',
