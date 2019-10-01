@@ -3,10 +3,12 @@ import { Link as RouterLink } from 'react-router-dom';
 import Link from '@material-ui/core/Link';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
-import Drawer from '@material-ui/core/Drawer';
+import { Toolbar } from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+
+import Drawer from '@material-ui/core/Drawer';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Divider from '@material-ui/core/Divider';
@@ -19,7 +21,6 @@ import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import DescriptionIcon from '@material-ui/icons/Description';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
-import { Toolbar } from '@material-ui/core';
 
 const styles = {
     root: {
@@ -44,6 +45,7 @@ const styles = {
     logo: {
         width : '30%'
     },
+
     toolbar: {
         alignItems: 'center',
         justifyContent: 'space-between'
@@ -109,6 +111,10 @@ class AppShell extends React.Component {
                             <ListItemIcon>
                                 <PeopleIcon />
                             </ListItemIcon>
+                        <ListItemIcon>
+                            <PeopleIcon />
+                        </ListItemIcon>
+                        <Link component={RouterLink} to="/members/intern">
                             MEMBERS
                     </MenuItem>
                     </Link>
