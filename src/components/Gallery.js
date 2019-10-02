@@ -8,6 +8,9 @@ import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 import tileData from './TileData';
 
+import "react-image-lightbox/style.css"
+import Lightbox from 'react-image-lightbox';
+
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -43,17 +46,47 @@ const useStyles = makeStyles(theme => ({
  * ];
  */
 class Gallery extends React.Component{
+    constructor(props) {
+        super(props);
+     
+        this.state = {
+          photoIndex: 0,
+          isOpen: false,
+        };
+      }
+    
     render(){
         const classes = useStyles;
+        const { photoIndex,isOpen} = this.state;
         return (
             <div className={classes.root}>
-            <GridList cellHeight={180} className={classes.gridList}>
+            <GridList cellHeight={400} className={classes.gridList}>
                 <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-                <ListSubheader component="div">All</ListSubheader>
+                <ListSubheader component="div">ASD</ListSubheader>
                 </GridListTile>
                 {tileData.map(tile => (
                 <GridListTile key={tile.img}>
-                    <img src={tile.img} alt={tile.title} />
+                    <img src={tile.img} alt={tile.title} onClick={() => this.setState({ isOpen: true })} />
+
+                                {isOpen && (
+                    <Lightbox
+                        mainSrc={process.env.PUBLIC_URL + '/img/galleryimage/2015-12-20 17.39.26.jpg'}
+                        nextSrc={tile[(photoIndex + 1) % tile.length]}
+                        prevSrc={tile[(photoIndex + tile.length - 1) % tile.length]}
+                        onCloseRequest={() => this.setState({ isOpen: false })}
+                        onMovePrevRequest={() =>
+                        this.setState({
+                            photoIndex: (photoIndex + tile.length - 1) % tile.length,
+                        })
+                        }
+                        onMoveNextRequest={() =>
+                        this.setState({
+                            photoIndex: (photoIndex + 1) % tile.length,
+                        })
+                        }
+                    />
+                    )}
+
                     <GridListTileBar
                     title={tile.title}
                     subtitle={<span>by: {tile.author}</span>}
