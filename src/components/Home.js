@@ -1,10 +1,6 @@
 import React from 'react';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Viewer from 'react-viewer';
 import 'react-viewer/dist/index.css';
 import '../style/homeimage.css';
-import { Container } from '@material-ui/core';
 
 const pics = [
     process.env.PUBLIC_URL + '/img/1.png',

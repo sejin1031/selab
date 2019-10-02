@@ -7,7 +7,7 @@ import Home from './components/Home';
 import Notice from './components/Notice';
 import Publication from './components/Publications';
 import Course from './components/Courses';
-import Gallery from './components/Gallery';
+import Gallerys from './components/Gallery';
 
 import Intern from './components/members/Intern';
 import Professor from './components/members/Professor';
@@ -24,7 +24,7 @@ class App extends React.Component {
             <Route exact path="/research" component={Research}/>
             <Route exact path="/publication" component={Publication}/>
             <Route exact path="/course" component={Course}/>
-            <Route exact path="/gallery" component={Gallery}/>
+            <Route exact path="/gallery" component={Gallerys}/>
             <Route exact path="/members/intern" component={Intern}/>
             <Route exact path="/members/professor" component={Professor}/>
 

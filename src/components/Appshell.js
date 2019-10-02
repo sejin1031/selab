@@ -22,6 +22,9 @@ import DescriptionIcon from '@material-ui/icons/Description';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 
+import { sizing } from '@material-ui/system';
+
+
 const styles = {
     root: {
         flexGrow: 1,
@@ -65,13 +68,13 @@ class AppShell extends React.Component {
     return (
         <div>
             <div className={classes.root}>
-                <AppBar className={classes.appBar} position="static">
+                <AppBar height="10%" className={classes.appBar} position="static" >
                     <Toolbar className={classes.toolbar}>
                         <IconButton className={classes.menuButton} color="inherit" onClick={this.handleDrawerToggle}>
                             <MenuIcon/> 
                         </IconButton>
                         <Typography variant="h3" marginLeft="auto">
-                            아몰랑
+                            　ㅇㅇ
                         </Typography>
                         <Link component={RouterLink} to="/">
                             <img src='/logo.png' alt='logo' />
@@ -111,13 +114,12 @@ class AppShell extends React.Component {
                             <ListItemIcon>
                                 <PeopleIcon />
                             </ListItemIcon>
-                        <ListItemIcon>
-                            <PeopleIcon />
-                        </ListItemIcon>
                         <Link component={RouterLink} to="/members/intern">
                             MEMBERS
+                        </Link>
                     </MenuItem>
                     </Link>
+                   
                     <Divider />
                     <Link component={RouterLink} to="/research">
                     <MenuItem onClick={this.handleDrawerToggle}>
