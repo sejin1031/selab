@@ -62,7 +62,7 @@ const pics = [
                 <div className="mask">
                 <div className="pic-wrapper">
                     <div className={`current pic ${move}`}>
-                    <img src={pics[this.state.index]} alt="" />
+                    <img src={pics[this.state.index]} alt="" width="100%"/>
                     </div>
 
                 </div>
