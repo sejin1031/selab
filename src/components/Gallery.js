@@ -70,18 +70,18 @@ class Gallery extends React.Component{
 
                                 {isOpen && (
                     <Lightbox
-                        mainSrc={process.env.PUBLIC_URL + '/img/galleryimage/2015-12-20 17.39.26.jpg'}
-                        nextSrc={tile[(photoIndex + 1) % tile.length]}
-                        prevSrc={tile[(photoIndex + tile.length - 1) % tile.length]}
+                        mainSrc={tileData[photoIndex].img}
+                        nextSrc={tileData[(photoIndex + 1) % tileData.length]}
+                        prevSrc={tileData[(photoIndex + tileData.length - 1) % tileData.length]}
                         onCloseRequest={() => this.setState({ isOpen: false })}
                         onMovePrevRequest={() =>
                         this.setState({
-                            photoIndex: (photoIndex + tile.length - 1) % tile.length,
+                            photoIndex: (photoIndex + tileData.length - 1) % tileData.length,
                         })
                         }
                         onMoveNextRequest={() =>
                         this.setState({
-                            photoIndex: (photoIndex + 1) % tile.length,
+                            photoIndex: (photoIndex + 1) % tileData.length,
                         })
                         }
                     />
