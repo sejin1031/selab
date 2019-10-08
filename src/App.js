@@ -16,6 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <Router>
+        
         <AppShell>
           <div>
             <Route exact path="/" component={Home}/>
@@ -27,13 +28,14 @@ class App extends React.Component {
             <Route exact path="/gallery" component={Gallerys}/>
             <Route exact path="/members/intern" component={Intern}/>
             <Route exact path="/members/professor" component={Professor}/>
-
           </div>
         </AppShell>
       </Router>
     );
   }
 }
+
+
 
 export default App;
 

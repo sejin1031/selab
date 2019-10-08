@@ -8,6 +8,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import IconButton from '@material-ui/core/IconButton';
 
+
+import styled from "styled-components";
+
 import Drawer from '@material-ui/core/Drawer';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
@@ -160,6 +163,7 @@ class AppShell extends React.Component {
                 </Drawer>
             </div>
             <div id="content" style={{margin: 'auto', marginTop: '20px'}}>
+                <Container />
                 {React.cloneElement(this.props.children)}
             </div>
         </div>
@@ -167,4 +171,14 @@ class AppShell extends React.Component {
     }
 }
     
+const Container = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(https://source.unsplash.com/random/1920x1080);
+  background-size: cover;
+`;
+
 export default withStyles(styles)(AppShell);
