@@ -1,17 +1,77 @@
 import React from 'react';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
+import BoardForm from './notice/BoardFoam';
+import BoardItem from './notice/BoardItem';
 
-
-
-
-
-
+/*
+    component files.
+*/
 class Notice extends React.Component {
+
+    state = {
+        maxNo: 3,
+        boards: [
+            {
+                brdno: 1,
+                brdwriter: 'Lee SunSin',
+                brdtitle: 'If you intend to live then you die',
+                brddate: new Date()
+            },
+            {
+                brdno: 2,
+                brdwriter: 'So SiNo',
+                brdtitle: 'Founder for two countries',
+                brddate: new Date()
+            }
+        ],
+         selectedBoard:{}
+    }
+    
+    handleSaveData = (data) => {
+        if (!data.brdno) {            // new : Insert
+            this.setState({
+                maxNo: this.state.maxNo+1,
+                boards: this.state.boards.concat({brdno: this.state.maxNo, brddate: new Date(), ...data }),
+                selectedBoard: {}
+            });
+        } else {                                                        // Update
+            this.setState({
+                boards: this.state.boards.map(row => data.brdno === row.brdno ? {...data }: row),
+                selectedBoard: {}
+            })            
+        }
+    }
+    
+    handleRemove = (brdno) => {
+        this.setState({
+            boards: this.state.boards.filter(row => row.brdno !== brdno)
+        })
+    }
+    
+    handleSelectRow = (row) => {
+        this.setState({selectedBoard:row});
+    }
+    
     render() {
+        const { boards, selectedBoard } = this.state;
+
         return (
             <div>
-                <h1>notice</h1>
+                <BoardForm selectedBoard={selectedBoard} onSaveData={this.handleSaveData}/>
+                <table border="1">
+                    <tbody>
+                    <tr align="center">
+                        <td width="50">No.</td>
+                        <td width="300">Title</td>
+                        <td width="100">Name</td>
+                        <td width="100">Date</td>
+                    </tr>
+                    {
+                        boards.map(row =>
+                            (<BoardItem key={row.brdno} row={row} onRemove={this.handleRemove} onSelectRow={this.handleSelectRow} />)
+                        )
+                    }
+                    </tbody>
+                </table>
             </div>
         );
     }
