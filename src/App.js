@@ -12,6 +12,8 @@ import Gallerys from './components/Gallery';
 import Intern from './components/members/Intern';
 import Professor from './components/members/Professor';
 
+
+
 class App extends React.Component {
   render() {
     return (
@@ -26,8 +28,7 @@ class App extends React.Component {
             <Route exact path="/publication" component={Publication}/>
             <Route exact path="/course" component={Course}/>
             <Route exact path="/gallery" component={Gallerys}/>
-            <Route exact path="/members/intern" component={Intern}/>
-            <Route exact path="/members/professor" component={Professor}/>
+            <Route exact path="/members" component={Members}/>
           </div>
         </AppShell>
       </Router>
