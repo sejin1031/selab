@@ -1,5 +1,5 @@
-.homeimage{
-    width:99%;
-    height: 100px;
-    float: left;
+.logo{
+    width: 90%;
+    position: relative;
+    float: right;
 }

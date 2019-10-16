@@ -9,8 +9,7 @@ import Publication from './components/Publications';
 import Course from './components/Courses';
 import Gallerys from './components/Gallery';
 
-import Intern from './components/members/Intern';
-import Professor from './components/members/Professor';
+import './style/app.css';
 
 
 

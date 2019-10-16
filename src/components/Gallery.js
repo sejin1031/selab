@@ -13,6 +13,8 @@ import Lightbox from 'react-image-lightbox';
 
 const useStyles = makeStyles(theme => ({
   root: {
+    width: '70%',
+    marginLeft: 200,
     float: 'left',
     display: 'flex',
     flexWrap: 'wrap',
