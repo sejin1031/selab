@@ -2,4 +2,11 @@
     width: 90%;
     position: relative;
     float: right;
+    transition: 0.5s ease;
 }
+.logo:hover{
+	transform: translateY(-20px);
+}
+
+
+
