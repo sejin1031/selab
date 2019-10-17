@@ -10,17 +10,6 @@ class Intern extends React.Component {
     render() {
         return (
             <div>
-                <Button>
-                    <Link component={RouterLink} to="/members/intern">
-                            Intern
-                    </Link>
-                </Button>
-                <Button>
-                    <Link component={RouterLink} to="/members/professor">
-                            professor
-                    </Link>
-                </Button>
-
                 <Card>
                     <CardContent>
                         <h1>hasdfasdeelo</h1>
