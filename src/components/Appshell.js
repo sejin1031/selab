@@ -63,36 +63,38 @@ class AppShell extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // toggle: false
+            window : 'home'
         };
-    }
-    handleDrawerToggle = () => this.setState({toggle: !this.state.toggle})
+    };
+    onClick = (name) => {
+        this.setState({window: name});
+    };
     render() {
     const { classes } = this.props;
     return (
         <div>
+            <h1>{this.state.window}</h1>
             <div className={classes.root}>
                 <Container style={{paddingLeft: '30px', marginTop: '120px', marginLeft: '0px'}}>
-                        <Link component={RouterLink} to="/">
-                            <div class = "icon">
-
-                            <Tooltip  placement= "right"title={<React.Fragment>
-            <Typography color="inherit">Home
-            </Typography></React.Fragment>}>
-                                <IconButton >
-                                    <HomeIcon />
-                                </IconButton>
-                            </Tooltip>
+                        <Link component={RouterLink} to="/" >
+                            <div classNmae = "icon">
+                        <Tooltip  placement= "right"title={<React.Fragment>
+                        <Typography color="inherit">Home
+                        </Typography></React.Fragment>}>
+                            <IconButton onClick={(e) => this.onClick('home',e)}>
+                                <HomeIcon />
+                            </IconButton>
+                        </Tooltip>
                             </div>
                         </Link>
                     
                         <Link component={RouterLink} to="/members">
-                            <div class = "icon">
+                            <div className = "icon">
 
                             <Tooltip placement="right" title={<React.Fragment>
             <Typography color="inherit">Memebers
             </Typography></React.Fragment>}>
-                                <IconButton>
+                                <IconButton onClick={(e) => this.onClick('Members',e)}>
                                     <PeopleIcon />
                                 </IconButton>
                             </Tooltip>
@@ -106,7 +108,7 @@ class AppShell extends React.Component {
                             <Tooltip placement="right" title={<React.Fragment>
                 <Typography color="inherit">Research
                 </Typography></React.Fragment>}>
-                                <IconButton>
+                                <IconButton onClick={(e) => this.onClick('Research',e)}>
                                     <ImportContactsIcon  />
                                 </IconButton>
                                 </Tooltip>
@@ -119,7 +121,7 @@ class AppShell extends React.Component {
                             <Tooltip placement="right" title={<React.Fragment>
                     <Typography color="inherit">publication
                     </Typography></React.Fragment>}>
-                                <IconButton>
+                                <IconButton onClick={(e) => this.onClick('Publication',e)}>
                                     <DescriptionIcon />
                                 </IconButton>
                                 </Tooltip>
@@ -132,7 +134,7 @@ class AppShell extends React.Component {
                             <Tooltip placement="right" title={<React.Fragment>
                     <Typography color="inherit">Course
                     </Typography></React.Fragment>}>
-                                <IconButton>
+                                <IconButton onClick={(e) => this.onClick('Course',e)}>
                                     <LibraryBooksIcon />
                                 </IconButton>
                                 </Tooltip>
@@ -145,7 +147,7 @@ class AppShell extends React.Component {
                         <Tooltip placement="right" title={<React.Fragment>
                     <Typography color="inherit">Gallery
                     </Typography></React.Fragment>}>
-                                <IconButton>
+                                <IconButton onClick={(e) => this.onClick('Gallery',e)}>
                                     <CameraAltIcon />
                                 </IconButton>
                                 </Tooltip>
@@ -154,7 +156,7 @@ class AppShell extends React.Component {
                         </Link>
                         </Container>
             </div>
-            <div id="content" style={{marginLeft :'10%', marginTop: '10%', float:'left'}}>
+            <div id="content" style={{marginLeft :'10%', marginTop: '5%', float:'left'}}>
                 {React.cloneElement(this.props.children)}
             </div>
         </div>
