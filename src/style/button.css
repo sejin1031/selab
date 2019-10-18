@@ -19,3 +19,7 @@
 	padding-bottom: 30px;
 	transform:scale(2,2);
 }
+.loginbutton{
+    position: relative;
+    float: right;
+}

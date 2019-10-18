@@ -18,7 +18,9 @@ import DescriptionIcon from '@material-ui/icons/Description';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 
-import "../style/button.css"
+
+import Popup from './Login';
+import "../style/button.css";
 
 
 const styles = {
@@ -58,9 +60,15 @@ class AppShell extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            window : 'home'
+            window : '　',
+            showPopup: false,
         };
     };
+    togglePopup() {
+        this.setState({
+          showPopup: !this.state.showPopup
+        });
+      }
     onClick = (name) => {
         this.setState({window: name});
     };
@@ -68,7 +76,16 @@ class AppShell extends React.Component {
     const { classes } = this.props;
     return (
         <div>
+            <div>
             <h1>{this.state.window}</h1>
+            <button className="loginbutton" onClick={this.togglePopup.bind(this)}>login</button>
+            {this.state.showPopup ? 
+            <Popup
+                text='Close Me'
+                closePopup={this.togglePopup.bind(this)}
+            /> : null
+            }
+        </div>
             <div className={classes.root}>
                 <Container style={{paddingLeft: '30px', marginTop: '100px', marginLeft: '0px'}}>
                         <Link component={RouterLink} to="/" >
@@ -79,7 +96,7 @@ class AppShell extends React.Component {
                                         Home
                                     </Typography>
                                 </React.Fragment>}>
-                                    <IconButton onClick={(e) => this.onClick('home',e)}>
+                                    <IconButton onClick={(e) => this.onClick('　',e)}>
                                         <HomeIcon />
                                     </IconButton>
                                 </Tooltip>
