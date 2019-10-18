@@ -2,18 +2,13 @@ import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import Link from '@material-ui/core/Link';
 import { withStyles } from '@material-ui/core/styles';
-import { Toolbar, Container } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+import { Container } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Tooltip from '@material-ui/core/Tooltip';
 import styled from "styled-components";
 
 
-import Drawer from '@material-ui/core/Drawer';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import Divider from '@material-ui/core/Divider';
 import HomeIcon from '@material-ui/icons/Home';
 import NotificationImportantIcon from '@material-ui/icons/NotificationImportant';
@@ -75,9 +70,9 @@ class AppShell extends React.Component {
         <div>
             <h1>{this.state.window}</h1>
             <div className={classes.root}>
-                <Container style={{paddingLeft: '30px', marginTop: '120px', marginLeft: '0px'}}>
+                <Container style={{paddingLeft: '30px', marginTop: '100px', marginLeft: '0px'}}>
                         <Link component={RouterLink} to="/" >
-                            <div classNmae = "icon">
+                            <div className = "icon">
                                 <Tooltip  placement= "right"title={
                                 <React.Fragment>
                                     <Typography color="inherit">
@@ -89,7 +84,23 @@ class AppShell extends React.Component {
                                     </IconButton>
                                 </Tooltip>
                             </div>
-                            </Link>
+                        </Link>
+                        
+                        <Link component={RouterLink} to="/notice" >
+                            <div className = "icon">
+                                <Tooltip  placement= "right"title={
+                                <React.Fragment>
+                                    <Typography color="inherit">
+                                        Notice
+                                    </Typography>
+                                </React.Fragment>}>
+                                    <IconButton onClick={(e) => this.onClick('notice',e)}>
+                                        <NotificationImportantIcon />
+                                    </IconButton>
+                                </Tooltip>
+                            </div>
+                        </Link>
+
                         <Link component={RouterLink} to="/members">
                             <div className = "icon">
                                 <Tooltip placement="right" title={
