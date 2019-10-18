@@ -1,7 +1,6 @@
 .button {
     background-color: yellow;
     border: white;
-    height: 100px;
 }
 .button:hover{
     background-color: blue;
@@ -10,4 +9,13 @@
 
 .bg{
     background-color: yellow;
+}
+.icon{
+    transition: 0.5s ease;
+    padding-bottom: 50px;
+}
+.icon:hover{
+	transform-origin: center left; 
+	padding-bottom: 30px;
+	transform:scale(2,2);
 }
