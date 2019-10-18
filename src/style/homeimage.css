@@ -1,5 +1,9 @@
 .logo{
-    width: 90%;
+    width: 80%;
     position: relative;
     float: right;
+}
+.logo:hover{
+    transform: skewX(-45deg) translateX(13.5em);
+
 }

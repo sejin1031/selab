@@ -28,6 +28,7 @@ import "../style/button.css"
 
 const styles = {
     root: {
+        position:'fixed',
         flexGrow: 1,
         float: 'left',
         marginLeft: 0,
@@ -120,7 +121,7 @@ class AppShell extends React.Component {
                         </Link>
                         </Container>
             </div>
-            <div id="content" style={{margin: 'auto', marginTop: '20px', float:'left'}}>
+            <div id="content" style={{marginLeft :'10%', marginTop: '10%', float:'left'}}>
                 {React.cloneElement(this.props.children)}
             </div>
         </div>
