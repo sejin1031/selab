@@ -7,14 +7,14 @@ import MenuIcon from '@material-ui/icons/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
-
-
+import Typography from '@material-ui/core/Typography';
+import Tooltip from '@material-ui/core/Tooltip';
 import styled from "styled-components";
+
 
 import Drawer from '@material-ui/core/Drawer';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import Divider from '@material-ui/core/Divider';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import HomeIcon from '@material-ui/icons/Home';
 import NotificationImportantIcon from '@material-ui/icons/NotificationImportant';
 import PeopleIcon from '@material-ui/icons/People';
@@ -72,52 +72,85 @@ class AppShell extends React.Component {
     return (
         <div>
             <div className={classes.root}>
-                <Container style={{padding: 0, marginTop: '120px'}}>
+                <Container style={{paddingLeft: '30px', marginTop: '120px', marginLeft: '0px'}}>
                         <Link component={RouterLink} to="/">
-                        <MenuItem onClick={this.handleDrawerToggle}>
-                                <ListItemIcon>
+                            <div class = "icon">
+
+                            <Tooltip  placement= "right"title={<React.Fragment>
+            <Typography color="inherit">Home
+            </Typography></React.Fragment>}>
+                                <IconButton >
                                     <HomeIcon />
-                                </ListItemIcon>
-                        </MenuItem>
+                                </IconButton>
+                            </Tooltip>
+                            </div>
                         </Link>
                     
                         <Link component={RouterLink} to="/members">
-                        <MenuItem onClick={this.handleDrawerToggle}>
-                                <ListItemIcon>
+                            <div class = "icon">
+
+                            <Tooltip placement="right" title={<React.Fragment>
+            <Typography color="inherit">Memebers
+            </Typography></React.Fragment>}>
+                                <IconButton>
                                     <PeopleIcon />
-                                </ListItemIcon>
-                            <Link component={RouterLink} to="/members/intern">
-                            </Link>
-                        </MenuItem>
+                                </IconButton>
+                            </Tooltip>
+                            </div>
+
                         </Link>
                     
                         <Link component={RouterLink} to="/research">
-                        <MenuItem onClick={this.handleDrawerToggle}>
-                                <ListItemIcon>
+                            <div class = "icon">
+
+                            <Tooltip placement="right" title={<React.Fragment>
+                <Typography color="inherit">Research
+                </Typography></React.Fragment>}>
+                                <IconButton>
                                     <ImportContactsIcon  />
-                                </ListItemIcon>
-                        </MenuItem>
+                                </IconButton>
+                                </Tooltip>
+                                </div>
+
                         </Link>
                         <Link component={RouterLink} to="/publication">
-                        <MenuItem onClick={this.handleDrawerToggle}>
-                                <ListItemIcon>
+                        <div class = "icon">
+
+                            <Tooltip placement="right" title={<React.Fragment>
+                    <Typography color="inherit">publication
+                    </Typography></React.Fragment>}>
+                                <IconButton>
                                     <DescriptionIcon />
-                                </ListItemIcon>
-                        </MenuItem>
+                                </IconButton>
+                                </Tooltip>
+                                </div>
+
                         </Link>
                         <Link component={RouterLink} to="/course">
-                        <MenuItem onClick={this.handleDrawerToggle}>
-                                <ListItemIcon>
+                        <div class = "icon">
+
+                            <Tooltip placement="right" title={<React.Fragment>
+                    <Typography color="inherit">Course
+                    </Typography></React.Fragment>}>
+                                <IconButton>
                                     <LibraryBooksIcon />
-                                </ListItemIcon>
-                        </MenuItem>
+                                </IconButton>
+                                </Tooltip>
+                                </div>
+
                         </Link>
                         <Link component={RouterLink} to="/gallery">
-                        <MenuItem onClick={this.handleDrawerToggle}>
-                                <ListItemIcon>
+                        <div class = "icon">
+
+                        <Tooltip placement="right" title={<React.Fragment>
+                    <Typography color="inherit">Gallery
+                    </Typography></React.Fragment>}>
+                                <IconButton>
                                     <CameraAltIcon />
-                                </ListItemIcon>
-                        </MenuItem>
+                                </IconButton>
+                                </Tooltip>
+                            </div>
+                                
                         </Link>
                         </Container>
             </div>

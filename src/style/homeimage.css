@@ -2,8 +2,11 @@
     width: 80%;
     position: relative;
     float: right;
+    transition: 0.5s ease;
 }
 .logo:hover{
-    transform: skewX(-45deg) translateX(13.5em);
-
+	transform: translateY(-20px);
 }
+
+
+
