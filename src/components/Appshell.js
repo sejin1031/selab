@@ -78,84 +78,95 @@ class AppShell extends React.Component {
                 <Container style={{paddingLeft: '30px', marginTop: '120px', marginLeft: '0px'}}>
                         <Link component={RouterLink} to="/" >
                             <div classNmae = "icon">
-                        <Tooltip  placement= "right"title={<React.Fragment>
-                        <Typography color="inherit">Home
-                        </Typography></React.Fragment>}>
-                            <IconButton onClick={(e) => this.onClick('home',e)}>
-                                <HomeIcon />
-                            </IconButton>
-                        </Tooltip>
+                                <Tooltip  placement= "right"title={
+                                <React.Fragment>
+                                    <Typography color="inherit">
+                                        Home
+                                    </Typography>
+                                </React.Fragment>}>
+                                    <IconButton onClick={(e) => this.onClick('home',e)}>
+                                        <HomeIcon />
+                                    </IconButton>
+                                </Tooltip>
                             </div>
-                        </Link>
-                    
+                            </Link>
                         <Link component={RouterLink} to="/members">
                             <div className = "icon">
-
-                            <Tooltip placement="right" title={<React.Fragment>
-            <Typography color="inherit">Memebers
-            </Typography></React.Fragment>}>
-                                <IconButton onClick={(e) => this.onClick('Members',e)}>
-                                    <PeopleIcon />
-                                </IconButton>
-                            </Tooltip>
+                                <Tooltip placement="right" title={
+                                <React.Fragment>
+                                    <Typography color="inherit">
+                                        Memebers
+                                    </Typography>
+                                </React.Fragment>}>
+                                    <IconButton onClick={(e) => this.onClick('Members',e)}>
+                                        <PeopleIcon />
+                                    </IconButton>
+                                </Tooltip>
                             </div>
-
                         </Link>
                     
                         <Link component={RouterLink} to="/research">
                             <div class = "icon">
-
-                            <Tooltip placement="right" title={<React.Fragment>
-                <Typography color="inherit">Research
-                </Typography></React.Fragment>}>
-                                <IconButton onClick={(e) => this.onClick('Research',e)}>
-                                    <ImportContactsIcon  />
-                                </IconButton>
-                                </Tooltip>
-                                </div>
-
+                            <Tooltip placement="right" title={
+                            <React.Fragment>
+                                <Typography color="inherit">
+                                    Research
+                                </Typography>
+                            </React.Fragment>}>
+                            <IconButton onClick={(e) => this.onClick('Research',e)}>
+                                <ImportContactsIcon  />
+                            </IconButton>
+                            </Tooltip>
+                            </div>
                         </Link>
+
                         <Link component={RouterLink} to="/publication">
-                        <div class = "icon">
-
-                            <Tooltip placement="right" title={<React.Fragment>
-                    <Typography color="inherit">publication
-                    </Typography></React.Fragment>}>
-                                <IconButton onClick={(e) => this.onClick('Publication',e)}>
-                                    <DescriptionIcon />
-                                </IconButton>
-                                </Tooltip>
-                                </div>
-
+                            <div class = "icon">
+                                <Tooltip placement="right" title={
+                                <React.Fragment>
+                                    <Typography color="inherit">
+                                        publication
+                                    </Typography>
+                                </React.Fragment>}>
+                            <IconButton onClick={(e) => this.onClick('Publication',e)}>
+                                <DescriptionIcon />
+                            </IconButton>
+                            </Tooltip>
+                            </div>
                         </Link>
-                        <Link component={RouterLink} to="/course">
-                        <div class = "icon">
 
-                            <Tooltip placement="right" title={<React.Fragment>
-                    <Typography color="inherit">Course
-                    </Typography></React.Fragment>}>
-                                <IconButton onClick={(e) => this.onClick('Course',e)}>
-                                    <LibraryBooksIcon />
-                                </IconButton>
+                        <Link component={RouterLink} to="/course">  
+                            <div class = "icon">
+                                <Tooltip placement="right" title={
+                                    <React.Fragment>
+                                        <Typography color="inherit">
+                                            Course
+                                        </Typography>
+                                    </React.Fragment>}>
+                                    <IconButton onClick={(e) => this.onClick('Course',e)}>
+                                            <LibraryBooksIcon />
+                                    </IconButton>
                                 </Tooltip>
-                                </div>
+                            </div>
 
                         </Link>
                         <Link component={RouterLink} to="/gallery">
-                        <div class = "icon">
+                            <div class = "icon">
 
-                        <Tooltip placement="right" title={<React.Fragment>
-                    <Typography color="inherit">Gallery
-                    </Typography></React.Fragment>}>
+                            <Tooltip placement="right" title={
+                            <React.Fragment>
+                                <Typography color="inherit">
+                                    Gallery
+                                </Typography>
+                            </React.Fragment>}>
                                 <IconButton onClick={(e) => this.onClick('Gallery',e)}>
                                     <CameraAltIcon />
                                 </IconButton>
-                                </Tooltip>
-                            </div>
-                                
+                            </Tooltip>
+                            </div>       
                         </Link>
-                        </Container>
-            </div>
+                    </Container>
+                </div>
             <div id="content" style={{marginLeft :'10%', marginTop: '5%', float:'left'}}>
                 {React.cloneElement(this.props.children)}
             </div>
