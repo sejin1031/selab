@@ -195,9 +195,6 @@ class AppShell extends React.Component {
                         </Link>
                     </Container>
                 </div>
-            <div id="content" style={{marginLeft :'10%', marginTop: '5%', float:'left'}}>
-                {React.cloneElement(this.props.children)}
-            </div>
         </div>
         );
     }
