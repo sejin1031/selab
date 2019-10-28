@@ -9,7 +9,6 @@ import Tooltip from '@material-ui/core/Tooltip';
 import styled from "styled-components";
 
 
-import Divider from '@material-ui/core/Divider';
 import HomeIcon from '@material-ui/icons/Home';
 import NotificationImportantIcon from '@material-ui/icons/NotificationImportant';
 import PeopleIcon from '@material-ui/icons/People';
@@ -53,7 +52,7 @@ class AppShell extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            window : '　',
+            window : 'd',
             showPopup: false,
         };
     };
@@ -78,7 +77,8 @@ class AppShell extends React.Component {
                 closePopup={this.togglePopup.bind(this)}
             /> : null
             }
-        </div>
+            </div>
+            
             <div className={classes.root}>
                 <Container style={{paddingLeft: '30px', marginTop: '50px', marginLeft: '0px'}}>
                         <Link component={RouterLink} to="/" >
