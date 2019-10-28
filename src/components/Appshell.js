@@ -30,13 +30,6 @@ const styles = {
         float: 'left',
         marginLeft: 0,
     },
-    appBar:{
-        background: 'linear-gradient(45deg, darkblue 60%, skyblue 30%)',
-        position : 'relative',
-    },
-    // menuButton: {
-    //     marginRight: 'auto'
-    // },
     backButton: {
         marginLeft: 'auto'
     },
@@ -87,7 +80,7 @@ class AppShell extends React.Component {
             }
         </div>
             <div className={classes.root}>
-                <Container style={{paddingLeft: '30px', marginTop: '100px', marginLeft: '0px'}}>
+                <Container style={{paddingLeft: '30px', marginTop: '50px', marginLeft: '0px'}}>
                         <Link component={RouterLink} to="/" >
                             <div className = "icon">
                                 <Tooltip  placement= "right"title={

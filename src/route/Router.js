@@ -9,8 +9,23 @@ import Notice from '../components/notice/Notice';
 import Publication from '../components/publications/Publications';
 import Course from '../components/courses/Courses';
 import Gallerys from '../components/gallery/Gallery';
+import styled from 'styled-components'
+
+import '../style/app.css'
+
+const SubContent = styled.div`
+    margin-left : 130px;
+    margin-top : 3vh;
+    margin-bottom: 3vh;
+    padding : 50px
+    height : 75vh;
+    overflow : scroll;
+    background-color : rgba(255,255,255,0.2);
+    border-radius : 100px;
+    `;
 
 class Router extends Component {
+   
   render() {
     return (
       <BrowserRouter basename="/">
@@ -18,6 +33,7 @@ class Router extends Component {
           <Link to="/">
               <AppShell/>
           </Link>
+          <SubContent>
           <Switch>
             <Route
               exact
@@ -69,6 +85,7 @@ class Router extends Component {
               )}
               />
           </Switch>
+          </SubContent>
         </>
       </BrowserRouter>
     );
