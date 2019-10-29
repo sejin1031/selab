@@ -25,6 +25,7 @@ const SubContent = styled.div`
     overflow : scroll;
     background-color : rgba(255,255,255,0.2);
     border-radius : 100px;
+    box-shadow: 5px 5px 5px 5px black;
     `;
 
 class Router extends Component {

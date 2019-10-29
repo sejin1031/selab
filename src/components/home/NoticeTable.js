@@ -9,7 +9,8 @@ import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
   root: {
-    borderRadius: '50px',
+    backgroundColor : 'rgba(255,255,255,0.2)',
+    borderRadius: '10px',
     width: '95%',
     overflowX: 'auto',
   },
@@ -18,13 +19,13 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(title, writer, date) {
-  return { title, writer, date };
+function createData(title, writer, date,link) {
+  return { title, writer, date,link };
 }
 
 const rows = [
-  createData('연구원 모집', 'scott', '29_Aug'),
-  createData('Welcome SELAB', 'scott', '7_Mar'),
+  createData('연구원 모집', 'scott', '29_Aug','Notice'),
+  createData('Welcome SELAB', 'scott', '7_Mar','Notice'),
 ];
 
 export default function SimpleTable() {
@@ -35,6 +36,7 @@ export default function SimpleTable() {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
+            <TableCell/>
             <TableCell>Title</TableCell>
             <TableCell>writer</TableCell>
             <TableCell>date</TableCell>
@@ -44,9 +46,12 @@ export default function SimpleTable() {
         <TableBody>
           {rows.map(row => (
             <TableRow key={row.name}>
-              <TableCell align="right">{row.title}</TableCell>
-              <TableCell align="right">{row.writer}</TableCell>
-              <TableCell align="right">{row.row}</TableCell>
+              <TableCell component="th" scope="row">
+                {row.name}
+              </TableCell>
+              <TableCell align="left">{row.title}</TableCell>
+              <TableCell align="left">{row.writer}</TableCell>
+              <TableCell align="left">{row.date}</TableCell>
             </TableRow>
           ))}
         </TableBody>

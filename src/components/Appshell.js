@@ -69,7 +69,7 @@ class AppShell extends React.Component {
     return (
         <div>
             <div>
-            <h1>{this.state.window}</h1>
+            <div><h1>{this.state.window}</h1></div>
             <button className="loginbutton" onClick={this.togglePopup.bind(this)}>login</button>
             {this.state.showPopup ? 
             <Popup
