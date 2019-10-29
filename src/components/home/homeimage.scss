@@ -9,4 +9,23 @@
             transform-style: flat;
         }
     }
+    .content{
+        padding-top:10%;
+        column-count: 2;
+        clear: right;
+        .course{
+            height: 20vh;
+            background-color : rgba(255,255,255,0.2);
+            border-radius : 50px;
+            .button{
+                background-color: yellow;
+            }
+        }
+        .notice{
+            height: 20vh;
+            background-color : rgba(255,255,255,0.2);
+            border-radius : 50px;
+        }
+    }
+    
 }

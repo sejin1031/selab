@@ -1,6 +1,4 @@
 import React from 'react';
-import Cse326 from './CSE326/Cse326';
-import Slides from './CSE326/slides';
 import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
 
 class Course extends React.Component {
@@ -10,11 +8,11 @@ class Course extends React.Component {
                 <div>
                 <h2>Course</h2>
                 <Link to="/course/cse326">
-                    asdfsa
-                    <Cse326/>
+                    CSE326
                 </Link>
+                <br/>
                 <Link to="/course/slide">
-                    <Slides/>
+                    Slides
                 </Link>
                 </div>
             </div>
