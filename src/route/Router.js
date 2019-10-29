@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import AppShell from '../components/Appshell';
 import Members from '../components/members/Members';
 import Research from '../components/research/Research';
-import Home from '../components/Home';
+import Home from '../components/home/Home';
 import Notice from '../components/notice/Notice';
 import Publication from '../components/publications/Publications';
 import Course from '../components/courses/Courses';

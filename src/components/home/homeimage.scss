@@ -1,0 +1,12 @@
+.main{
+    .logo{
+        width: 80%;
+        position: relative;
+        float: right;
+        transition: 0.5s ease;
+        &:hover{
+            transform: translateY(-20px);
+            transform-style: flat;
+        }
+    }
+}
