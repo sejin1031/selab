@@ -34,9 +34,8 @@ class Router extends Component {
     return (
       <BrowserRouter basename="/">
         <>
-          <Link to="/">
-              <AppShell/>
-          </Link>
+        <AppShell/>
+
           <SubContent>
           <Switch>
             <Route exact path="/" component={() => (<Home/>)}/>
