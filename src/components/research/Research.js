@@ -12,6 +12,11 @@ class Research extends React.Component {
       super(props);
       this.state = {
         mode:'state1',
+        sub1:{title:"Web & Web security"},
+        sub2:{title:"Formal Engineering Methods"},
+        sub3:{title:"Requirement Engineering"},
+        sub4:{title:"Real-Time Software Engineering"},
+        sub5:{title:"Semi-structured Data"},
         content1:[
           {id:1, desc: 'Semantic web'},
           {id:2, desc: 'Effective Access Control for Web Data'},
@@ -47,55 +52,67 @@ class Research extends React.Component {
     }
     render() {
         var _data = null;
+        var _subject = null;
         if(this.state.mode === 'state1'){
           _data = this.state.content1;
+          _subject = this.state.sub1.title;
         }
         else if(this.state.mode === 'state2'){
           _data = this.state.content2;
+          _subject = this.state.sub2.title;
         }
         else if(this.state.mode === 'state3'){
           _data = this.state.content3;
+          _subject = this.state.sub3.title;
         }
         else if(this.state.mode === 'state4'){
           _data = this.state.content4;
+          _subject = this.state.sub4.title;
         }
         else if(this.state.mode === 'state5'){
           _data = this.state.content5;
+          _subject = this.state.sub5.title;
         }
         return (
-          <div>
-          <a  className = 'img1' href="/" onClick={function(e){
-            e.preventDefault();
-            this.setState({
-              mode:'state1'
-            });
-          }.bind(this)}><img src = {logo1} /></a>
-          <a className = 'img2' href="/" onClick={function(e){
-            e.preventDefault();
-            this.setState({
-              mode:'state2'
-            });
-          }.bind(this)}><img src = {logo2} /></a>
-          <a className = 'img3' href="/" onClick={function(e){
-            e.preventDefault();
-            this.setState({
-              mode:'state3'
-            });
-          }.bind(this)}><img src = {logo3} /></a>
-          <a className = 'img4' href="/" onClick={function(e){
-            e.preventDefault();
-            this.setState({
-              mode:'state4'
-            });
-          }.bind(this)}><img src = {logo4} /></a>
-          <a className = 'img5' href="/" onClick={function(e){
-            e.preventDefault();
-            this.setState({
-              mode:'state5'
-            });
-          }.bind(this)}><img src = {logo5} /></a>
+          <div className = "container">
+            <div className = 'menu'>
+              <input className = 'toggle' id = 'menu' type = 'checkbox'/>
 
-          <Content data = {_data}></Content>
+              <label className = 'style' for = 'menu'>
+                <i className = "fa fa-bars" aria-hidden="true">research</i>
+              </label>
+              <Content subject= {_subject} data = {_data}></Content>
+              <a id = "a" className = 'tab' href="/" onClick={function(e){
+                e.preventDefault();
+                this.setState({
+                  mode:'state1'
+                });
+              }.bind(this)}><img src = {logo1} /></a>
+              <a className = 'tab' href="/" onClick={function(e){
+                e.preventDefault();
+                this.setState({
+                  mode:'state2'
+                });
+              }.bind(this)}><img src = {logo2} /></a>
+              <a className = 'tab' href="/" onClick={function(e){
+                e.preventDefault();
+                this.setState({
+                  mode:'state3'
+                });
+              }.bind(this)}><img src = {logo3} /></a>
+              <a id = "e" className = 'tab' href="/" onClick={function(e){
+                e.preventDefault();
+                this.setState({
+                  mode:'state4'
+                });
+              }.bind(this)}><img src = {logo4} /></a>
+              <a  className = 'tab' href="/" onClick={function(e){
+                e.preventDefault();
+                this.setState({
+                  mode:'state5'
+                });
+              }.bind(this)}><img src = {logo5} /></a>
+            </div>
           </div>
 
         );
