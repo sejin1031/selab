@@ -1,6 +1,6 @@
 import React from 'react';
-import BoardForm from './notice/BoardFoam';
-import BoardItem from './notice/BoardItem';
+import BoardForm from './BoardFoam';
+import BoardItem from './BoardItem';
 
 /*
     component files.

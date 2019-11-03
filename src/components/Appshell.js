@@ -2,19 +2,13 @@ import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import Link from '@material-ui/core/Link';
 import { withStyles } from '@material-ui/core/styles';
-import { Toolbar, Container } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+import { Container } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
-import Button from '@material-ui/core/Button';
-
-
+import Typography from '@material-ui/core/Typography';
+import Tooltip from '@material-ui/core/Tooltip';
 import styled from "styled-components";
 
-import Drawer from '@material-ui/core/Drawer';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import Divider from '@material-ui/core/Divider';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
+
 import HomeIcon from '@material-ui/icons/Home';
 import NotificationImportantIcon from '@material-ui/icons/NotificationImportant';
 import PeopleIcon from '@material-ui/icons/People';
@@ -23,22 +17,18 @@ import DescriptionIcon from '@material-ui/icons/Description';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 
-import "../style/button.css"
+
+import Popup from './Login';
+import "../style/button.css";
 
 
 const styles = {
     root: {
+        position:'fixed',
         flexGrow: 1,
         float: 'left',
         marginLeft: 0,
     },
-    appBar:{
-        background: 'linear-gradient(45deg, darkblue 60%, skyblue 30%)',
-        position : 'relative',
-    },
-    // menuButton: {
-    //     marginRight: 'auto'
-    // },
     backButton: {
         marginLeft: 'auto'
     },
@@ -62,67 +52,142 @@ class AppShell extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // toggle: false
+            window : 'd',
+            showPopup: false,
         };
-    }
-    handleDrawerToggle = () => this.setState({toggle: !this.state.toggle})
+    };
+    togglePopup() {
+        this.setState({
+          showPopup: !this.state.showPopup
+        });
+      }
+    onClick = (name) => {
+        this.setState({window: name});
+    };
     render() {
     const { classes } = this.props;
     return (
         <div>
+            <div>
+            <div><h1>{this.state.window}</h1></div>
+            <button className="loginbutton" onClick={this.togglePopup.bind(this)}>login</button>
+            {this.state.showPopup ? 
+            <Popup
+                text='Close Me'
+                closePopup={this.togglePopup.bind(this)}
+            /> : null
+            }
+            </div>
+            
             <div className={classes.root}>
-                <Container style={{padding: 0, marginTop: '120px'}}>
-                        <Link component={RouterLink} to="/">
-                        <MenuItem onClick={this.handleDrawerToggle}>
-                                <ListItemIcon>
-                                    <HomeIcon />
-                                </ListItemIcon>
-                        </MenuItem>
+                <Container style={{paddingLeft: '30px', marginTop: '50px', marginLeft: '0px'}}>
+                        <Link component={RouterLink} to="/" >
+                            <div className = "icon">
+                                <Tooltip  placement= "right"title={
+                                <React.Fragment>
+                                    <Typography color="inherit">
+                                        Home
+                                    </Typography>
+                                </React.Fragment>}>
+                                    <IconButton onClick={(e) => this.onClick('　',e)}>
+                                        <HomeIcon />
+                                    </IconButton>
+                                </Tooltip>
+                            </div>
                         </Link>
-                    
+                        
+                        <Link component={RouterLink} to="/notice" >
+                            <div className = "icon">
+                                <Tooltip  placement= "right"title={
+                                <React.Fragment>
+                                    <Typography color="inherit">
+                                        Notice
+                                    </Typography>
+                                </React.Fragment>}>
+                                    <IconButton onClick={(e) => this.onClick('notice',e)}>
+                                        <NotificationImportantIcon />
+                                    </IconButton>
+                                </Tooltip>
+                            </div>
+                        </Link>
+
                         <Link component={RouterLink} to="/members">
-                        <MenuItem onClick={this.handleDrawerToggle}>
-                                <ListItemIcon>
-                                    <PeopleIcon />
-                                </ListItemIcon>
-                            <Link component={RouterLink} to="/members/intern">
-                            </Link>
-                        </MenuItem>
+                            <div className = "icon">
+                                <Tooltip placement="right" title={
+                                <React.Fragment>
+                                    <Typography color="inherit">
+                                        Memebers
+                                    </Typography>
+                                </React.Fragment>}>
+                                    <IconButton onClick={(e) => this.onClick('Members',e)}>
+                                        <PeopleIcon />
+                                    </IconButton>
+                                </Tooltip>
+                            </div>
                         </Link>
                     
                         <Link component={RouterLink} to="/research">
-                        <MenuItem onClick={this.handleDrawerToggle}>
-                                <ListItemIcon>
-                                    <ImportContactsIcon  />
-                                </ListItemIcon>
-                        </MenuItem>
+                            <div class = "icon">
+                            <Tooltip placement="right" title={
+                            <React.Fragment>
+                                <Typography color="inherit">
+                                    Research
+                                </Typography>
+                            </React.Fragment>}>
+                            <IconButton onClick={(e) => this.onClick('Research',e)}>
+                                <ImportContactsIcon  />
+                            </IconButton>
+                            </Tooltip>
+                            </div>
                         </Link>
+
                         <Link component={RouterLink} to="/publication">
-                        <MenuItem onClick={this.handleDrawerToggle}>
-                                <ListItemIcon>
-                                    <DescriptionIcon />
-                                </ListItemIcon>
-                        </MenuItem>
+                            <div class = "icon">
+                                <Tooltip placement="right" title={
+                                <React.Fragment>
+                                    <Typography color="inherit">
+                                        publication
+                                    </Typography>
+                                </React.Fragment>}>
+                            <IconButton onClick={(e) => this.onClick('Publication',e)}>
+                                <DescriptionIcon />
+                            </IconButton>
+                            </Tooltip>
+                            </div>
                         </Link>
-                        <Link component={RouterLink} to="/course">
-                        <MenuItem onClick={this.handleDrawerToggle}>
-                                <ListItemIcon>
-                                    <LibraryBooksIcon />
-                                </ListItemIcon>
-                        </MenuItem>
+
+                        <Link component={RouterLink} to="/course">  
+                            <div class = "icon">
+                                <Tooltip placement="right" title={
+                                    <React.Fragment>
+                                        <Typography color="inherit">
+                                            Course
+                                        </Typography>
+                                    </React.Fragment>}>
+                                    <IconButton onClick={(e) => this.onClick('Course',e)}>
+                                            <LibraryBooksIcon />
+                                    </IconButton>
+                                </Tooltip>
+                            </div>
+
                         </Link>
                         <Link component={RouterLink} to="/gallery">
-                        <MenuItem onClick={this.handleDrawerToggle}>
-                                <ListItemIcon>
+                            <div class = "icon">
+
+                            <Tooltip placement="right" title={
+                            <React.Fragment>
+                                <Typography color="inherit">
+                                    Gallery
+                                </Typography>
+                            </React.Fragment>}>
+                                <IconButton onClick={(e) => this.onClick('Gallery',e)}>
                                     <CameraAltIcon />
-                                </ListItemIcon>
-                        </MenuItem>
+                                </IconButton>
+                            </Tooltip>
+                            </div>       
                         </Link>
-                        </Container>
-            </div>
-            <div id="content" style={{margin: 'auto', marginTop: '20px', float:'left'}}>
-                {React.cloneElement(this.props.children)}
-            </div>
+                    </Container>
+                </div>
         </div>
         );
     }

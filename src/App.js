@@ -19,7 +19,7 @@ class App extends React.Component {
       <Router>
         
         <AppShell>
-          <div>
+          <div style={{float:'left', height:'900px'}} className="">
             <Route exact path="/" component={Home}/>
             <Route exact path="/notice" component={Notice}/>
             <Route exact path="/members" component={Members}/>
