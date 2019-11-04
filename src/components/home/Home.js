@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
+import ReactDom from 'react-dom';
 
 import 'react-viewer/dist/index.css';
 import './homeimage.scss';
+
 
 class Home extends React.Component {
   constructor(props) {
@@ -13,7 +15,7 @@ class Home extends React.Component {
     this.handlePWChange = this.handlePWChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  
   handleIDChange(event) {
     this.setState({id: event.target.value});
   }
@@ -27,9 +29,11 @@ class Home extends React.Component {
 
     render() {
       
+      
       return (
         <div className="home">
           <img src={require("./selab_logo2.png")} alt="logo" />
+          
           <div className="login">
             <form onSubmit={this.handleSubmit}>
             <label>
