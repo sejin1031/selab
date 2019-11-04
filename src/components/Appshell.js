@@ -5,16 +5,6 @@ import { withStyles } from '@material-ui/core/styles';
 import { Container } from '@material-ui/core';
 import styled from "styled-components";
 
-
-import HomeIcon from '@material-ui/icons/Home';
-import NotificationImportantIcon from '@material-ui/icons/NotificationImportant';
-import PeopleIcon from '@material-ui/icons/People';
-import ImportContactsIcon from '@material-ui/icons/ImportContacts';
-import DescriptionIcon from '@material-ui/icons/Description';
-import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
-import CameraAltIcon from '@material-ui/icons/CameraAlt';
-
-
 import "./AppShell.scss"
 
 const styles = {
@@ -49,26 +39,40 @@ class AppShell extends React.Component {
             <div className={classes.root}>
                 <Container style={{paddingLeft: '5px', marginTop: '50px', marginLeft: '0px'}}>
                         <Link component={RouterLink} to="/" style={{textDecoration:'none',color:'white'}}>
-                            <div className="menuItem">HOME</div>
+                            <div className="menuItem">
+                                <div className="bigMenuItem">HOME</div>
+                            </div>
                         </Link>
                         
                         <Link component={RouterLink} to="/notice" style={{textDecoration:'none',color:'white'}}>
-                            <div className="menuItem">NOTICE</div>
+                            <div className="menuItem">
+                                <div className="bigMenuItem">NOTICE</div>
+                            </div>
                         </Link>
                         <Link component={RouterLink} to="/members" style={{textDecoration:'none',color:'white'}}>
-                            <div className="menuItem">MEMBER</div>
+                            <div className="menuItem">
+                                <div className="bigMenuItem">MEMBER</div>
+                            </div>                        
                         </Link>
                         <Link component={RouterLink} to="/research" style={{textDecoration:'none',color:'white'}}>
-                            <div className="menuItem">RESEARCH</div>
+                            <div className="menuItem">
+                                <div className="bigMenuItem">RESEARCH</div>
+                            </div>                        
                         </Link>
                         <Link component={RouterLink} to="/publication" style={{textDecoration:'none',color:'white'}}>
-                            <div className="menuItem">PUBLICATION</div>
+                            <div className="menuItem">
+                                <div className="bigMenuItem">PUBLICATION</div>
+                            </div>                        
                         </Link>
                         <Link component={RouterLink} to="/course" style={{textDecoration:'none',color:'white'}} >
-                            <div className="menuItem">COURSE</div>
+                            <div className="menuItem">
+                                <div className="bigMenuItem">COURSE</div>
+                            </div>                        
                         </Link>
                         <Link component={RouterLink} to="/gallery" style={{textDecoration:'none',color:'white'}}>
-                            <div className="menuItem">GALLERY</div>
+                            <div className="menuItem">
+                                <div className="bigMenuItem">GALLERY</div>
+                            </div>                        
                         </Link>
                     </Container>
                 </div>

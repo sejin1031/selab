@@ -6,13 +6,24 @@
 }
 .menuItem{
     text-decoration: none;
-    font-size: 10pt;
-    margin-bottom: 30px;
-    margin-left: 0;
-    writing-mode: tb-rl; 
-    &:hover{
-        background-color: rgba($color: #ffffff, $alpha: 0.1);
+    .bigMenuItem{
+        font-weight: bold;
+        font-size: 10pt;
+        margin-bottom: 30px;
+        margin-left: 0;
+        writing-mode: tb-rl; 
+    }
+    &:hover .bigMenuItem{
+        background-color: rgba($color: #ffffff, $alpha: 0.3);
+        width: 40vh;
         font-size: 50pt;
         writing-mode: horizontal-tb;
+
+        transition: .5s ease;
+    }
+    &:hover .smallMenuItem{
+        width: 0;
     }
 }
+
+
