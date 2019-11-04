@@ -3,7 +3,6 @@ import { Link as RouterLink } from 'react-router-dom';
 import Link from '@material-ui/core/Link';
 import { withStyles } from '@material-ui/core/styles';
 import { Container } from '@material-ui/core';
-import styled from "styled-components";
 
 import "./AppShell.scss"
 

@@ -12,15 +12,17 @@
         font-size: 15pt;
         margin-bottom: 20px;
         margin-left: 0;
-        writing-mode: tb-rl; 
+        writing-mode: tb-rl;
+        transition: .3s ease;
     }
     &:hover .bigMenuItem{
         background-color: rgba($color: #ffffff, $alpha: 0.3);
+        border-radius: 5px;
         width: 100%;
         font-size: 50pt;
         writing-mode: horizontal-tb;
 
-        transition: .5s ease;
+        transition: .8s ease;
     }
 }
 
