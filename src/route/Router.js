@@ -23,9 +23,6 @@ const SubContent = styled.div`
     padding : 50px
     height : 75vh;
     overflow : scroll;
-    background-color : rgba(255,255,255,0.2);
-    border-radius : 100px;
-    box-shadow: 5px 5px 5px 5px black;
     `;
 
 class Router extends Component {
@@ -35,7 +32,6 @@ class Router extends Component {
       <BrowserRouter basename="/">
         <>
         <AppShell/>
-
           <SubContent>
           <Switch>
             <Route exact path="/" component={() => (<Home/>)}/>
