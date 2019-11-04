@@ -18,11 +18,11 @@ import '../style/app.css'
 
 const SubContent = styled.div`
     margin-left : 130px;
-    margin-top : 3vh;
+    margin-top : 5vh;
     margin-bottom: 3vh;
     padding : 50px
     height : 75vh;
-    overflow : scroll;
+    overflow : auto;
     `;
 
 class Router extends Component {
