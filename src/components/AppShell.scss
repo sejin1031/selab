@@ -10,4 +10,9 @@
     margin-bottom: 30px;
     margin-left: 0;
     writing-mode: tb-rl; 
+    &:hover{
+        background-color: rgba($color: #ffffff, $alpha: 0.1);
+        font-size: 50pt;
+        writing-mode: horizontal-tb;
+    }
 }
