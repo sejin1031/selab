@@ -1,10 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700);
 
 .home{
-    img{
-        margin-top: 5%;
-        width:64%;
-    }
+        img{
+            margin-top: 5%;
+            width:40vw;
+        }
+        img:hover{
+            filter: brightness(1.5);
+        }
     .login{
         width: 34%;
         height: 50vh;

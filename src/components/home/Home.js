@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import ReactDom from 'react-dom';
+import Game from 'react-dinosaur-game';
 
 import 'react-viewer/dist/index.css';
 import './homeimage.scss';
@@ -32,8 +33,7 @@ class Home extends React.Component {
       
       return (
         <div className="home">
-          <img src={require("./selab_logo2.png")} alt="logo" />
-          
+            <img src={require("./selab_logo2.png")} alt="logo" />
           <div className="login">
             <form onSubmit={this.handleSubmit}>
             <label>
@@ -50,6 +50,7 @@ class Home extends React.Component {
             </form>
           
          </div>
+
         </div>
         
         
