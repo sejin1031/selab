@@ -1,0 +1,224 @@
+img{
+  width: 120px;
+}
+.tab1{
+  position: absolute;
+  left: 30%;
+  transform: scale(1);
+  transition: all 0.3s;
+  opacity: 1;
+}
+.tab1:hover{
+  transform: scale(0);
+  opacity: 0;
+}
+.tab2{
+  left: 35%;
+  top: 72%;
+  position: absolute;
+  transform: scale(1);
+  transition: all 0.3s;
+  opacity: 1;
+}
+.tab2:hover{
+  transform: scale(0);
+  opacity: 0;
+}
+.tab3{
+  left: 46%;
+  top:10%;
+  position: absolute;
+  transform: scale(1);
+  transition: all 0.3s;
+  opacity: 1;
+}
+.tab3:hover{
+  transform: scale(0);
+  opacity: 0;
+}
+.tab4{
+  right: 30%;
+  top:40%;
+  position: absolute;
+  transform: scale(1);
+  transition: all 0.3s;
+  opacity: 1;
+}
+.tab4:hover{
+  transform: scale(0);
+  opacity: 0;
+}
+.tab5{
+  right: 37%;
+  top: 68%;
+  position: absolute;
+  transform: scale(1);
+  transition: all 0.3s;
+  opacity: 1;
+}
+.tab5:hover{
+  transform: scale(0);
+  opacity: 0;
+}
+
+
+.plot1{
+  position: absolute;
+  left: 42%;
+  top: 40%;
+}
+.tab1 ~ .plot1{
+  transform: scale(0);
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+.tab1:hover ~ .plot1{
+  transform: scale(1);
+  opacity: 1;
+}
+
+
+.plot2{
+  position: absolute;
+  left: 38%;
+  top: 38%;
+}
+.tab2 ~ .plot2{
+  transform: scale(0);
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+.tab2:hover ~ .plot2{
+  transform: scale(1);
+  opacity: 1;
+}
+
+
+
+.plot3{
+  position: absolute;
+  left: 39%;
+  top: 35%;
+}
+.tab3 ~ .plot3{
+  transform: scale(0);
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+.tab3:hover ~ .plot3{
+  transform: scale(1);
+  opacity: 1;
+}
+
+.plot4{
+  position: absolute;
+  left: 38%;
+  top: 37%;
+}
+.tab4 ~ .plot4{
+  transform: scale(0);
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+.tab4:hover ~ .plot4{
+  transform: scale(1);
+  opacity: 1;
+}
+
+.plot5{
+  position: absolute;
+  left: 41%;
+  top: 35%;
+}
+.tab5 ~ .plot5{
+  transform: scale(0);
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+.tab5:hover ~ .plot5{
+  transform: scale(1);
+  opacity: 1;
+}
+
+.tab1 ~ .style{
+  transform: scale(2);
+  transition: all 0.3s;
+  opacity: 1;
+}
+.tab1:hover ~ .style{
+  transform: scale(0);
+  opacity: 0;
+}
+
+
+.tab2 ~ .style{
+  transform: scale(2);
+  transition: all 0.3s;
+  opacity: 1;
+}
+.tab2:hover ~ .style{
+  transform: scale(0);
+  opacity: 0;
+}
+
+.tab3 ~ .style{
+  transform: scale(2);
+  transition: all 0.3s;
+  opacity: 1;
+}
+.tab3:hover ~ .style{
+  transform: scale(0);
+  opacity: 0;
+}
+
+.tab4 ~ .style{
+  transform: scale(2);
+  transition: all 0.3s;
+  opacity: 1;
+}
+.tab4:hover ~ .style{
+  transform: scale(0);
+  opacity: 0;
+}
+.tab5 ~ .style{
+  transform: scale(2);
+  transition: all 0.3s;
+  opacity: 1;
+}
+.tab5:hover ~ .style{
+  transform: scale(0);
+  opacity: 0;
+}
+.style {
+    margin-top: 15%;
+    margin-left: 40%;
+    width: 300px;
+    height: 124px;
+    border-radius: 50%;
+    transform: scale(2);
+    z-index: 5;
+    display: block;
+    max-width: 200px;
+    margin-bottom: 0;
+    color: #fff;
+    font-size: 15px;
+    padding-top: 75px;
+    text-align: center;
+    -webkit-transition: all .8s;
+    -moz-transition: all .8s;
+    -o-transition: all .8s;
+    -ms-transition: all .8s;
+    transition: all .8s;
+}
+.style:hover{
+  -webkit-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
+  -moz-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
+  -ms-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
+  -o-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
+  box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
+}
