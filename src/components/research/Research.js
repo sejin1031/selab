@@ -79,7 +79,7 @@ class Research extends React.Component {
               <input className = 'toggle' id = 'menu' type = 'checkbox'/>
 
               <label className = 'style' for = 'menu'>
-                <i className = "fa fa-bars" aria-hidden="true">research</i>
+                <h4 className = "research" aria-hidden="true">research</h4>
               </label>
               <Content subject= {_subject} data = {_data}></Content>
               <a id = "a" className = 'tab' href="/" onClick={function(e){
