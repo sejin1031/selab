@@ -1,0 +1,27 @@
+.root{
+    position:'fixed';
+    float: 'left';
+    margin-left: 0;
+    
+}
+.menuItem{
+    text-decoration: none;
+    padding-right: 15px;
+    .bigMenuItem{
+        font-weight: bold;
+        font-size: 15pt;
+        margin-bottom: 20px;
+        margin-left: 0;
+        writing-mode: tb-rl; 
+    }
+    &:hover .bigMenuItem{
+        background-color: rgba($color: #ffffff, $alpha: 0.3);
+        width: 100%;
+        font-size: 50pt;
+        writing-mode: horizontal-tb;
+
+        transition: .5s ease;
+    }
+}
+
+

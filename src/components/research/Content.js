@@ -11,7 +11,7 @@ class Content extends React.Component {
           i = i + 1;
         }
         return (
-          <div id = "des" className = "tab">
+          <div id = "des" className = "ab">
             <h1>{this.props.subject}</h1>
             <br/>
             <ul>
