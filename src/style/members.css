@@ -39,7 +39,9 @@ ul{
 .display{
 	white-space: nowrap;
 }
-img{
+.me{
+	width: 110px;
+	height: 150px;
 	float: right;
 	margin-bottom: auto; 
 	overflow: hidden;
