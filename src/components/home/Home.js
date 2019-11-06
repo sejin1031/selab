@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import ReactDom from 'react-dom';
+import axios from 'axios';
 
 
 import 'react-viewer/dist/index.css';
@@ -10,13 +11,22 @@ import './homeimage.scss';
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {id: '',pw:''};
+    this.state = {id: '',pw:'', u_id:0, u_pw:0};
 
     this.handleIDChange = this.handleIDChange.bind(this);
     this.handlePWChange = this.handlePWChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   
+  componentDidMount() {
+    this._dbTest();
+  }
+  
+  _dbTest = async() => {
+    const res = await axios.get('/api/test');
+    this.setState(res.data);
+  }
+
   handleIDChange(event) {
     this.setState({id: event.target.value});
   }
@@ -38,12 +48,12 @@ class Home extends React.Component {
           <div className="login">
             <form onSubmit={this.handleSubmit}>
             <label>
-              <span className="loginFont">ID</span><br/>
+              <span className="loginFont">{`Hello${this.state.u_id}`}ID</span><br/>
               <input type="text" value={this.state.id} onChange={this.handleIDChange} />
             </label>
             <br/>
             <label>
-              <span className="loginFont">Password</span><br/>
+              <span className="loginFont">{this.state.u_pw}Password</span><br/>
               <input type="password" value={this.state.pw} onChange={this.handlePWChange} />
             </label>
             <br/>
