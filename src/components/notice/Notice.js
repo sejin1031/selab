@@ -8,18 +8,27 @@ import BoardItem from './BoardItem';
 class Notice extends React.Component {
 
     state = {
-        maxNo: 3,
+        maxNo: 4,
         boards: [
             {
                 brdno: 1,
-                brdwriter: 'Lee SunSin',
-                brdtitle: 'If you intend to live then you die',
+                brdwriter: 'Scott lee',
+                brdtitle: '공지사항',
+                brdcontent: '오늘 수업 없음',
                 brddate: new Date()
             },
             {
                 brdno: 2,
-                brdwriter: 'So SiNo',
-                brdtitle: 'Founder for two countries',
+                brdwriter: 'hyun soo',
+                brdtitle: '게시판',
+                brdcontent: '이거만들라면 db랑 서버랑 연동시켜야함',
+                brddate: new Date()
+            },
+            {
+                brdno: 3,
+                brdwriter: 'umsejin',
+                brdtitle: 'web app master',
+                brdcontent: '그는 금요일에 안해온 놈들의 뚝배기를 깨버릴것이다',
                 brddate: new Date()
             }
         ],
@@ -43,6 +52,7 @@ class Notice extends React.Component {
     
     handleRemove = (brdno) => {
         this.setState({
+            maxNo: this.state.maxNo-1,
             boards: this.state.boards.filter(row => row.brdno !== brdno)
         })
     }
@@ -56,6 +66,7 @@ class Notice extends React.Component {
 
         return (
             <div>
+                <h1>이거 나중에 아예 바꿀거 같음!!!</h1>
                 <BoardForm selectedBoard={selectedBoard} onSaveData={this.handleSaveData}/>
                 <table border="1">
                     <tbody>
@@ -63,6 +74,7 @@ class Notice extends React.Component {
                         <td width="50">No.</td>
                         <td width="300">Title</td>
                         <td width="100">Name</td>
+                        <td width="300">Content</td>
                         <td width="100">Date</td>
                     </tr>
                     {
