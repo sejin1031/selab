@@ -16,6 +16,7 @@ export default class MemberRouter extends Component {
       }
     render() {
         return (
+            <BrowserRouter>
             <>
             <MemberMenu/>
               <Switch>
@@ -27,6 +28,7 @@ export default class MemberRouter extends Component {
                 <Route path={this.state.route + "/professor"} component={Professor} />
               </Switch>
             </>
+            </BrowserRouter>
         )
     }
 }

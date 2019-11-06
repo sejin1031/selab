@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 
 import AppShell from '../components/Appshell';
-import Members from '../components/members/Members';
 import Research from '../components/research/Research';
 import Home from '../components/home/Home';
 import MemberRouter from './MemberRouter';

@@ -9,6 +9,12 @@ export default class MemberMenu extends Component {
                 <Link to="/members/intern">
                     intern
                 </Link>
+                <Link to="/members/">
+                    members
+                </Link>
+                <Link to="/members/professor">
+                    prof
+                </Link>
             </div>
         )
     }
