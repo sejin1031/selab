@@ -9,7 +9,7 @@ import './homeimage.scss';
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {id: '',pw:'', u_id:0, u_pw:0};
+    this.state = {id: '',pw:''};
 
     this.handleIDChange = this.handleIDChange.bind(this);
     this.handlePWChange = this.handlePWChange.bind(this);
@@ -28,8 +28,6 @@ class Home extends React.Component {
   }
 
     render() {
-      
-      
       return (
         <div className="home">
           <img src={require("./selab_logo2.png")} alt="logo" />
