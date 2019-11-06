@@ -59,6 +59,7 @@ class PhD extends Component{
 
 
     render() {
+        var name = null;
         var position = null;
         var address = null;
         var web = null;
@@ -68,6 +69,7 @@ class PhD extends Component{
         var i=0;
         while(i<this.state.information.length){
           if(this.props.name===this.state.information[i].name){
+            name = this.state.information[i].name;
             position=this.state.information[i].position;
             address=this.state.information[i].address;
             web=this.state.information[i].web;
@@ -83,6 +85,7 @@ class PhD extends Component{
             <div className='popup_inner'>
               <h1>{position} </h1>
             <ul>
+              <li><p>Name: {name}</p></li>
               <li><p>Address: {address}</p></li>
               <li><p>Website: <a href={web}>{web}</a></p></li>
               <li><p>Position: {position2}</p></li>

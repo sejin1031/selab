@@ -11,7 +11,7 @@ const styles = {
         position:'fixed',
         flexGrow: 1,
         float: 'left',
-        marginLeft: 10,
+        marginLeft: 0,
     },
 
 };

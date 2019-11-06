@@ -1,12 +1,30 @@
+/*
+const express = require('express');
+const path = require('path');
+const os = require("os");
+
+const app = express();
+const PORT = process.env.PORT || 4000;
+
+app.use(express.static(path.join(__dirname, '..', 'public/')));
+
+// if you need api routes add them here
+app.get("/api/getUsername", function(req, res, next){
+    res.send({ username: os.userInfo().username });
+});
+
+app.listen(PORT, () => {
+    console.log(`Check out the app at http://localhost:${PORT}`);
+});
+*/
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-
-app.get('/', (req, res) => {
-    res.send(`Response Complate`);
-});
+app.get('/api/host', (req, res) => {
+    res.send({ host: 'selab' });
+})
 
 app.listen(PORT, () => {
     console.log(`Server On : http://localhost:${PORT}/`);
-});
+})

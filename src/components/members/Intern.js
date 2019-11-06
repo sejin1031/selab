@@ -10,11 +10,7 @@ class Intern extends React.Component {
     render() {
         return (
             <div>
-                <Card>
-                    <CardContent>
-                        <h1>hasdfasdeelo</h1>
-                    </CardContent>
-                </Card>
+                <h1>Intern</h1>
             </div>
         );
     }

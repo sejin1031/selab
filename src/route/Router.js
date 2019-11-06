@@ -5,6 +5,7 @@ import AppShell from '../components/Appshell';
 import Members from '../components/members/Members';
 import Research from '../components/research/Research';
 import Home from '../components/home/Home';
+import MemberRouter from './MemberRouter';
 import Notice from '../components/notice/Notice';
 import Publication from '../components/publications/Publications';
 import Course from '../components/courses/Courses';
@@ -35,17 +36,17 @@ class Router extends Component {
 
           <SubContent>
           <Switch>
-            <Route exact path="/" component={() => (<Home/>)}/>
-            <Route exact path="/notice" component={() => ( <Notice/> )}/>
-            <Route exact path="/members" component={() => ( <Members/> )} />
-            <Route exact path="/research" component={() => ( <Research/> )}/>
-            <Route exact path="/publication" component={() => ( <Publication/>)}/>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/notice" component={Notice}/>
+            <Route exact path="/members" component={MemberRouter} />
+            <Route exact path="/research" component={Research}/>
+            <Route exact path="/publication" component={Publication}/>
 
-            <Route exact path="/course/cse326" component={() => ( <Cse326/> )}/>
-            <Route exact path="/course/slide" component={() => ( <Slides/> )}/>
-            <Route exact path="/course" component={() => ( <Course/> )}/>
+            <Route exact path="/course/cse326" component={Cse326}/>
+            <Route exact path="/course/slide" component={Slides}/>
+            <Route exact path="/course" component={Course}/>
 
-            <Route exact path="/gallery" component={() => ( <Gallerys/> )}/>
+            <Route exact path="/gallery" component={Gallerys}/>
           </Switch>
           </SubContent>
         </>
