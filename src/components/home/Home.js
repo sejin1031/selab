@@ -15,7 +15,7 @@ class Home extends React.Component {
     this.handlePWChange = this.handlePWChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  
+
   handleIDChange(event) {
     this.setState({id: event.target.value});
   }
@@ -28,8 +28,6 @@ class Home extends React.Component {
   }
 
     render() {
-      
-      
       return (
         <div className="home">
           <img src={require("./selab_logo2.png")} alt="logo" />

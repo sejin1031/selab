@@ -17,11 +17,13 @@ class Professor extends React.Component{
 
 
     render() {
+        var name = null;
         var position = null;
         var address = null;
         var web = null;
         var position2 = null;
         var career = null;
+        name = this.state.name;
         position=this.state.human1.position;
         address=this.state.human1.address;
         web=this.state.human1.web;
@@ -33,10 +35,11 @@ class Professor extends React.Component{
             <div className='popup_inner'>
               <h1>{position} </h1>
               <ul>
-              <li><p>Address: {address}</p></li>
-              <li><p>Website: <a href={web}>{web}</a></p></li>
-              <li><p>Position: {position2}</p></li>
-              <li><p>Career:</p>
+                <li><p>Name: {name}  </p></li>
+                <li><p>Address: {address}</p></li>
+                <li><p>Website: <a href={web}>{web}</a></p></li>
+                <li><p>Position: {position2}</p></li>
+                <li><p>Career:</p>
                 <ul>{careerlist}</ul>
               </li>
             </ul>

@@ -1,10 +1,19 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 4000;
+const db = require('./config/db');
 
 
-app.get('/', (req, res) => {
-    res.send(`Response Complate`);
+app.get('/api/test', (req, res) => {
+    db.query("select * from testtable where 1", (err, data) => {
+        if(!err) {
+            res.send(data[0]);
+            console.log(data[0]);
+        } else {
+            console.log(err);
+            res.send(err);
+        }
+    });
 });
 
 app.listen(PORT, () => {

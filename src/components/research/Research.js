@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Content from './Content';
-import "./research.css";
+import "./research1.css";
 import logo1 from './logo1.png'
 import logo2 from './logo2.png'
 import logo3 from './logo3.png'
@@ -8,112 +8,63 @@ import logo4 from './logo4.png'
 import logo5 from './logo5.png'
 
 class Research extends React.Component {
-    constructor(props){
-      super(props);
-      this.state = {
-        mode:'state1',
-        sub1:{title:"Web & Web security"},
-        sub2:{title:"Formal Engineering Methods"},
-        sub3:{title:"Requirement Engineering"},
-        sub4:{title:"Real-Time Software Engineering"},
-        sub5:{title:"Semi-structured Data"},
-        content1:[
-          {id:1, desc: 'Semantic web'},
-          {id:2, desc: 'Effective Access Control for Web Data'},
-          {id:3, desc: 'Vulnerability Analysis and Detection for HTML5'},
-          {id:4, desc: 'JavaScript and Hybrid Application'}
-        ],
-        content2:[
-          {id:1, desc: 'Formal Specification, Validation, and Verification'},
-          {id:2, desc: 'Model checking, Theorem Proving'},
-          {id:3, desc: 'Ontology Reasoning, Constraint Solving'}
-        ],
-        content3:[
-          {id:1, desc: 'Requirement Analysis, Validation and Conflict Detection'},
-          {id:2, desc: 'Non-Functional Requirements Analysis and Prediction'},
-          {id:3, desc: 'Product Line and Software Product Line'},
-          {id:4, desc: 'Requirement Modeling with Extended Mind Map'}
-        ],
-        content4:[
-          {id:1, desc: 'Real-Time Software and Process Modeling'},
-          {id:2, desc: 'Real-Time Software Specification and Verification'},
-          {id:3, desc: 'Real-Time Software Integration and Migration Control'}
-        ],
-        content5:[
-          {id:1, desc: 'XML and XML DB, Visualization of XML-Schema'},
-          {id:2, desc: 'Ontology and RDF Store'},
-          {id:3, desc: 'Semistructured Data Integration and Migration'},
-          {id:4, desc: 'Optimization of X-Query'},
-          {id:5, desc: 'Consistency Verification for Semistructured Data Manipulation'},
-          {id:6, desc: 'Domain Specific Extension to XML & Data Translation from RDBMS to XML DBMS'}
-        ]
-
-      }
-    }
     render() {
-        var _data = null;
-        var _subject = null;
-        if(this.state.mode === 'state1'){
-          _data = this.state.content1;
-          _subject = this.state.sub1.title;
-        }
-        else if(this.state.mode === 'state2'){
-          _data = this.state.content2;
-          _subject = this.state.sub2.title;
-        }
-        else if(this.state.mode === 'state3'){
-          _data = this.state.content3;
-          _subject = this.state.sub3.title;
-        }
-        else if(this.state.mode === 'state4'){
-          _data = this.state.content4;
-          _subject = this.state.sub4.title;
-        }
-        else if(this.state.mode === 'state5'){
-          _data = this.state.content5;
-          _subject = this.state.sub5.title;
-        }
         return (
-          <div className = "container">
-            <div className = 'menu'>
-              <input className = 'toggle' id = 'menu' type = 'checkbox'/>
-
-              <label className = 'style' for = 'menu'>
-                <h4 className = "research" aria-hidden="true">research</h4>
+          <div>
+              <img className = 'tab1' src = {logo1}/>
+              <img className = 'tab2' src = {logo2}/>
+              <img className = 'tab3' src = {logo3}/>
+              <img className = 'tab4' src = {logo4}/>
+              <img className = 'tab5' src = {logo5}/>
+              <div className = 'plot1'>
+                <h1>Web & Web security</h1>
+                <ul>
+                  <li>Semantic web</li>
+                  <li>Effective Access Control for Web Data</li>
+                  <li>Vulnerability Analysis and Detection for HTML5</li>
+                  <li>JavaScript and Hybrid Application</li>
+                </ul>
+              </div>
+              <div className = 'plot2'>
+                <h1>Formal Engineering Methods</h1>
+                <ul>
+                  <li>Formal Specification, Validation, and Verification</li>
+                  <li>Model checking, Theorem Proving</li>
+                  <li>Ontology Reasoning, Constraint Solving</li>
+                </ul>
+              </div>
+              <div className = 'plot3'>
+                <h1>Requirement Engineering</h1>
+                <ul>
+                  <li>Requirement Analysis, Validation and Conflict Detection</li>
+                  <li>Non-Functional Requirements Analysis and Prediction</li>
+                  <li>Product Line and Software Product Line</li>
+                  <li>Requirement Modeling with Extended Mind Map</li>
+                </ul>
+              </div>
+              <div className = 'plot4'>
+                <h1>Real-Time Software Engineering</h1>
+                <ul>
+                  <li>Real-Time Software and Process Modeling</li>
+                  <li>Real-Time Software Specification and Verification</li>
+                  <li>Real-Time Software Integration and Migration Control</li>
+                </ul>
+              </div>
+              <div className = 'plot5'>
+                <h1>Semi-structured Data</h1>
+                <ul>
+                  <li>XML and XML DB, Visualization of XML-Schema</li>
+                  <li>Ontology and RDF Store</li>
+                  <li>Semistructured Data Integration and Migration</li>
+                  <li>Optimization of X-Query</li>
+                  <li>Consistency Verification for Semistructured Data Manipulation</li>
+                  <li>Domain Specific Extension to XML & Data Translation from<br/>RDBMS to XML DBMS</li>
+                </ul>
+              </div>
+              <label className = 'style'>
+                <h3 className = "research" aria-hidden="true">research</h3>
               </label>
-              <Content subject= {_subject} data = {_data}></Content>
-              <a id = "a" className = 'tab' href="/" onClick={function(e){
-                e.preventDefault();
-                this.setState({
-                  mode:'state1'
-                });
-              }.bind(this)}><img src = {logo1} /></a>
-              <a className = 'tab' href="/" onClick={function(e){
-                e.preventDefault();
-                this.setState({
-                  mode:'state2'
-                });
-              }.bind(this)}><img src = {logo2} /></a>
-              <a className = 'tab' href="/" onClick={function(e){
-                e.preventDefault();
-                this.setState({
-                  mode:'state3'
-                });
-              }.bind(this)}><img src = {logo3} /></a>
-              <a id = "e" className = 'tab' href="/" onClick={function(e){
-                e.preventDefault();
-                this.setState({
-                  mode:'state4'
-                });
-              }.bind(this)}><img src = {logo4} /></a>
-              <a  className = 'tab' href="/" onClick={function(e){
-                e.preventDefault();
-                this.setState({
-                  mode:'state5'
-                });
-              }.bind(this)}><img src = {logo5} /></a>
             </div>
-          </div>
 
         );
     }
