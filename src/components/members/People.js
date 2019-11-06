@@ -174,7 +174,7 @@ class People extends React.Component{
                 <div className='popup'>
                   <CancelIcon className="closebt" onClick={this.props.closePopup}>close me</CancelIcon>
                   <div className="in">
-                    <img src={photo} alt='No photo'/>
+                    <img className="me" src={photo} alt='No photo'/>
                     <h1>{position} </h1>
                     <ul>
                       <li className="display"><p>Name: {name}  </p></li>
@@ -196,7 +196,7 @@ class People extends React.Component{
                 <div className='popup'>
                   <CancelIcon className="closebt" onClick={this.props.closePopup}>close me</CancelIcon>
                   <div className="in">
-                  <img src={photo} alt='No photo'/>
+                  <img className="me" src={photo} alt='No photo'/>
                     <h1>{position} </h1>
                     <ul>
                     <li className="display"><p>Name: {name}</p></li>
@@ -218,7 +218,7 @@ class People extends React.Component{
                 <div className='popup'>
                   <CancelIcon className="closebt" onClick={this.props.closePopup}>close me</CancelIcon>
                   <div className="in">
-                  <img src={photo} alt='No photo'/>
+                  <img className="me" src={photo} alt='No photo'/>
                   <h1>{position} </h1>
                   <ul>
                     <li className="display"><p >Name: {name} </p></li>
