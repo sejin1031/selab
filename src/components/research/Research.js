@@ -11,11 +11,11 @@ class Research extends React.Component {
     render() {
         return (
           <div>
-              <img className = 'tab1' src = {logo1}/>
-              <img className = 'tab2' src = {logo2}/>
-              <img className = 'tab3' src = {logo3}/>
-              <img className = 'tab4' src = {logo4}/>
-              <img className = 'tab5' src = {logo5}/>
+              <img className = 'tab1' src = {logo1} alt = "logo1"/>
+              <img className = 'tab2' src = {logo2} alt = "logo2"/>
+              <img className = 'tab3' src = {logo3} alt = "logo3"/>
+              <img className = 'tab4' src = {logo4} alt = "logo4"/>
+              <img className = 'tab5' src = {logo5} alt = "logo5"/>
               <div className = 'plot1'>
                 <h1>Web & Web security</h1>
                 <ul>

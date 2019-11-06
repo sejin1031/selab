@@ -3,8 +3,8 @@ img{
 }
 .tab1{
   position: absolute;
-  left: 25%;
-  top:30%;
+  left: 26vw;
+  top:30vh;
   transform: scale(1);
   transition: all 0.3s;
   opacity: 1;
@@ -14,8 +14,8 @@ img{
   opacity: 0;
 }
 .tab2{
-  left: 30%;
-  top: 70%;
+  left: 30vw;
+  top: 70vh;
   position: absolute;
   transform: scale(1);
   transition: all 0.3s;
@@ -26,8 +26,8 @@ img{
   opacity: 0;
 }
 .tab3{
-  left: 43%;
-  top:5%;
+  left: 43vw;
+  top:5vh;
   position: absolute;
   transform: scale(1);
   transition: all 0.3s;
@@ -38,8 +38,8 @@ img{
   opacity: 0;
 }
 .tab4{
-  left:60%;
-  top:35%;
+  left:59vw;
+  top:33vh;
   position: absolute;
   transform: scale(1);
   transition: all 0.3s;
@@ -50,8 +50,8 @@ img{
   opacity: 0;
 }
 .tab5{
-  left: 55%;
-  top: 66%;
+  left: 55vw;
+  top: 66vh;
   position: absolute;
   transform: scale(1);
   transition: all 0.3s;
@@ -66,8 +66,8 @@ img{
 .plot1{
   font-size: 0.9vw;
   position: absolute;
-  left: 37%;
-  top: 32%;
+  left: 37vw;
+  top: 32vh;
 }
 .tab1 ~ .plot1{
   transform: scale(0);
@@ -84,8 +84,8 @@ img{
 .plot2{
   font-size: 0.9vw;
   position: absolute;
-  left: 34%;
-  top: 35%;
+  left: 34vw;
+  top: 35vh;
 }
 .tab2 ~ .plot2{
   transform: scale(0);
@@ -103,8 +103,8 @@ img{
 .plot3{
   font-size: 0.9vw;
   position: absolute;
-  left: 35%;
-  top: 32%;
+  left: 35vw;
+  top: 32vh;
 }
 .tab3 ~ .plot3{
   transform: scale(0);
@@ -120,8 +120,8 @@ img{
 .plot4{
   font-size: 0.9vw;
   position: absolute;
-  left: 34%;
-  top: 35%;
+  left: 34vw;
+  top: 35vh;
 }
 .tab4 ~ .plot4{
   transform: scale(0);
@@ -137,8 +137,8 @@ img{
 .plot5{
   font-size: 0.9vw;
   position: absolute;
-  left: 36%;
-  top: 32%;
+  left: 36vw;
+  top: 32vh;
 }
 .tab5 ~ .plot5{
   transform: scale(0);
@@ -202,8 +202,8 @@ img{
 }
 .style {
     position: absolute;
-    left: 41%;
-    top: 35%;
+    left: 41vw;
+    top: 35vh;
     width: 11vw;
     height: 13vh;
     border-radius: 50%;
@@ -213,7 +213,7 @@ img{
     margin-bottom: 0;
     color: #fff;
     font-size: 0.7vw;
-    padding-top: 75px;
+    padding-top: 4vw;
     text-align: center;
     -webkit-transition: all .8s;
     -moz-transition: all .8s;
