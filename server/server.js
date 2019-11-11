@@ -22,6 +22,7 @@ app.get('/api/test', (req, res) => {
 
 app.post('/add/data', (req, res) => {
     console.log(req.body)
+    res.send({isLoggedin : true})
 });
 
 app.listen(PORT, () => {
