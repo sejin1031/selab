@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import AppShell from '../components/Appshell';
 import Research from '../components/research/Research';
 import Home from '../components/home/Home';
-import MemberRouter from './MemberRouter';
+import MemberMenu from '../components/members/MemberMenu';
 import Notice from '../components/notice/Notice';
 import Publication from '../components/publications/Publications';
 import Course from '../components/courses/Courses';
@@ -37,7 +37,7 @@ class Router extends Component {
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route exact path="/notice" component={Notice}/>
-            <Route exact path="/members" component={MemberRouter} />
+            <Route exact path="/members" component={MemberMenu} />
             <Route exact path="/research" component={Research}/>
             <Route exact path="/publication" component={Publication}/>
 
