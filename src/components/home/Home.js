@@ -23,13 +23,17 @@ class Home extends React.Component {
     this.setState({pw: event.target.value});
   }
   loginSubmit= async() => {
-    await axios('add/data',{
+    var flag = await axios('add/data',{
       method : 'POST',
       data : {'id' : this.state.id,
               'pw':this.state.pw
             },
-      headers = new Headers()
+      
+            headers : new Headers()
     })
+    if(flag.data.isLoggedin == true){
+      this.setState({isLoggedin : true});
+    }
   }
 
     render() {
