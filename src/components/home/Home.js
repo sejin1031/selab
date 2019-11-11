@@ -4,6 +4,7 @@ import ReactDom from 'react-dom';
 
 import 'react-viewer/dist/index.css';
 import './homeimage.scss';
+import axios from 'axios';
 
 
 class Home extends React.Component {
@@ -13,7 +14,7 @@ class Home extends React.Component {
 
     this.handleIDChange = this.handleIDChange.bind(this);
     this.handlePWChange = this.handlePWChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.loginSubmit = this.loginSubmit.bind(this);
   }
 
   handleIDChange(event) {
@@ -22,31 +23,35 @@ class Home extends React.Component {
   handlePWChange(event) {
     this.setState({pw: event.target.value});
   }
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.id + this.state.pw);
-    event.preventDefault();
+  loginSubmit= async() => {
+    const res = await axios.get('/api/host');
+    this.setState({isLoggedin : res.data.isLoggedin});
   }
 
     render() {
       return (
         <div className="home">
             <img src={require("./selab_logo2.png")} alt="logo" />
-          <div className="login">
-            <form onSubmit={this.handleSubmit}>
+          {!this.props.isLoggedin && <div className="login">
+            <form onSubmit={this.loginSubmit}>
             <label>
               <span className="loginFont">ID</span><br/>
-              <input type="text" value={this.state.id} onChange={this.handleIDChange} />
-            </label>
+              <input type="text" name="id" value={this.state.id} onChange={this.handleIDChange} />
+            </label> 
             <br/>
             <label>
               <span className="loginFont">Password</span><br/>
-              <input type="password" value={this.state.pw} onChange={this.handlePWChange} />
+              <input type="password" name="pw" value={this.state.pw} onChange={this.handlePWChange} />
             </label>
             <br/>
               <input type="submit" value="Login" />
             </form>
           
-         </div>
+         </div>}
+
+         {this.props.isLoggedin &&
+         <div>로그인됨.</div>}
+          
 
         </div>
         
