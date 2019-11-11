@@ -26,6 +26,26 @@ const SubContent = styled.div`
     `;
 
 class Router extends Component {
+   constructor(props){
+     super(props);
+     this.loginStateHandler = this.loginStateHandler.bind(this);
+     this.idHandler = this.idHandler.bind(this);
+     this.authHandler = this.authHandler.bind(this);
+     this.state = {
+       isLoggedin : false,
+       id : '',
+       auth : false,
+     }
+   }
+   loginStateHandler(){
+     this.setState({isLoggedin : !this.state.isLoggedin})
+   };
+   idHandler(e){
+     this.setState({id:e})
+   };
+   authHandler(){
+     this.setState({auth : !this.state.auth})
+   }
    
   render() {
     return (
@@ -35,7 +55,11 @@ class Router extends Component {
 
           <SubContent>
           <Switch>
-            <Route exact path="/" component={Home}/>
+            <Route exact path="/" component={() => <Home isLoggedin={this.state.isLoggedin}
+            loginHandler={this.loginStateHandler}
+            idHandler = {this.idHandler}
+            authHandler = {this.authHandler}
+            /> }/>
             <Route exact path="/notice" component={Notice}/>
             <Route exact path="/members" component={MemberMenu} />
             <Route exact path="/research" component={Research}/>
