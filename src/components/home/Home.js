@@ -6,7 +6,6 @@ import 'react-viewer/dist/index.css';
 import './homeimage.scss';
 import axios from 'axios';
 
-
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -24,8 +23,13 @@ class Home extends React.Component {
     this.setState({pw: event.target.value});
   }
   loginSubmit= async() => {
-    const res = await axios.get('/api/host');
-    this.setState({isLoggedin : res.data.isLoggedin});
+    await axios('add/data',{
+      method : 'POST',
+      data : {'id' : this.state.id,
+              'pw':this.state.pw
+            },
+      headers = new Headers()
+    })
   }
 
     render() {
