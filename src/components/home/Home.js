@@ -33,6 +33,10 @@ class Home extends React.Component {
     })
     if(flag.data.isLoggedin == true){
       this.setState({isLoggedin : true});
+      alert("login success")
+    }
+    else {
+      alert("login fail")
     }
   }
 
