@@ -1,6 +1,7 @@
 import React from 'react';
 import BoardForm from './BoardFoam';
 import BoardItem from './BoardItem';
+import WritePopup from './WritePopup';
 
 /*
     component files.
@@ -8,6 +9,7 @@ import BoardItem from './BoardItem';
 class Notice extends React.Component {
 
     state = {
+        writePopup : false,
         maxNo: 4,
         boards: [
             {
@@ -84,6 +86,8 @@ class Notice extends React.Component {
                     }
                     </tbody>
                 </table>
+                <div onClick={()=>this.setState({writePopup : true})}>글쓰기</div>
+                {this.state.writePopup && <WritePopup/>}
             </div>
         );
     }

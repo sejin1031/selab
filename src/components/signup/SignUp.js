@@ -35,10 +35,6 @@ export default class SignUp extends Component {
           
                 headers : new Headers()
         })
-        if(flag.data.isLoggedin == true){
-          this.setState({isLoggedin : true});
-          this.props.idHandler(this.state.id);
-        }
       }
 
     render() {
