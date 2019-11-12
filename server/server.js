@@ -36,8 +36,7 @@ app.post('/add/data', (req, res) => {
     Usersinfo.create({
         user_id : req.body.id,
         user_pw : req.body.pw,
-        name : "test",
-        grade : "test"
+        name : req.body.name
     })
     res.send({isLoggedin : true})
 });
