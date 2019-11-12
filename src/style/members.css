@@ -14,19 +14,24 @@
 .popup{
 	margin-bottom: auto; 
 	background: white;
-	float:right;
-	margin-right: 0;
+/*	margin-left: 800px;
+	margin-right: 30px;*/
 	overflow: hidden;
 	border: 5px solid #3571B5;
+	position: absolute;
+	float:right;
 }
+
 .in{
 	float:left;
 	min-width: 400px;
 	overflow: hidden;
 }
-.people{
-
+.people_popup{
+	float:right;
+	margin-right: 800px;
 }
+
 
 .closebt{
 	float: right;
@@ -39,10 +44,20 @@ ul{
 .display{
 	white-space: nowrap;
 }
-.me{
+.popinme{
 	width: 110px;
 	height: 150px;
 	float: right;
 	margin-bottom: auto; 
 	overflow: hidden;
+}
+.popoutme{
+	vertical-align: middle;
+	margin-left:30px; 
+	transition-duration: 0.5s;
+}
+.popoutme:hover{
+	transition-duration: 0.5s;
+	margin-left:100px; 
+	vertical-align: middle;
 }

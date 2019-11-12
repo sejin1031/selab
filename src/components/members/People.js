@@ -67,7 +67,7 @@ class People extends React.Component{
           address: 'mumairkhan@hanyang.ac.kr',
           web: 'https://goo.gl/GdYteF',
           position2: 'Ph.D. Scholar from Pakistan on HEC scholarship',
-          photo: require('./photo/Gichan Lee.jpg'),
+          photo: require('./photo/Muhammad Umair Khan.jpg'),
           research_interests: 'Software Engineering\nConcurrent Programming\nInternet of Thing'
         },
         {
@@ -142,6 +142,69 @@ class People extends React.Component{
           photo: require('./photo/no.png'),
           research_interests: 'Smell Detection\nRefactoring\nGame QA'
         },
+        {
+          name: 'Dahae Sung',
+          position: 'Intern',
+          address: 'sdh4513136@hanmail.net',
+          web: ' ',
+          position2: ':)',
+          photo: require('./photo/Dahae Sung.jpg'),
+          research_interests: ' '
+        },
+        {
+          name: 'Yongtaek Oh',
+          position: 'Intern',
+          address: 'ka123ak1@gmail.com',
+          web: ' ',
+          position2: ' ',
+          photo: require('./photo/no.png'),
+          research_interests: 'IoT'
+        },
+        {
+          name: 'Namju Park',
+          position: 'Intern',
+          address: 'qkrska66@hanyang.ac.kr',
+          web: ' ',
+          position2: ' ',
+          photo: require('./photo/no.png'),
+          research_interests: ' '
+        },
+        {
+          name: 'Jaejin Kim',
+          position: 'Alumni',
+          address: 'jaejinkim@hanyang.ac.kr',
+          web: 'https://www.facebook.com/musalhk',
+          position2: '2012 - 1st M.E. in SELAB.\n2014 - Software Engineer in Cloud Lab. B2B / \nSamsung Electronics Mobile Communications Business ',
+          photo: require('./photo/no.png'),
+          research_interests: '- Access Control in Ubiquitous\n- Software Engineering\n- IoT Technology (Internet of Things)\n- Health & Medical Technology\n- Cloud Computing '
+        },
+        {
+          name: 'Jiang Hua',
+          position: 'Alumni',
+          address: 'jh19880208@163.com',
+          web: ' ',
+          position2: '0.0',
+          photo: require('./photo/Jiang Hua.jpg'),
+          research_interests: 'Requirement Engineering'
+        },
+        {
+          name: 'Jaeho Choi',
+          position: 'Alumni',
+          address: 'jaeho34@hanyang.ac.kr',
+          web: 'http://www.facebook.com/rogue9071',
+          position2: 'Hi, guys!! I am a crazy boy in this area :-)',
+          photo: require('./photo/Jaeho Choi.JPG'),
+          research_interests: 'Software Engineering\nA field of Access Control(XACML tools)\nWeb Application & Security\nCloud Computing Evironment\nSocial Network Service'
+        },
+        {
+          name: 'Geunhwan Park',
+          position: 'Alumni',
+          address: '0101d8cf@gmail.com',
+          web: 'http://selab.hanyang.ac.kr/~pgh',
+          position2: 'Hi',
+          photo: require('./photo/Geunhwan Park.jpg'),
+          research_interests: ' '
+        },
         ]
       }
     }
@@ -174,7 +237,7 @@ class People extends React.Component{
                 <div className='popup'>
                   <CancelIcon className="closebt" onClick={this.props.closePopup}>close me</CancelIcon>
                   <div className="in">
-                    <img className="me" src={photo} alt='No photo'/>
+                    <img className="popinme" src={photo} alt='No photo'/>
                     <h1>{position} </h1>
                     <ul>
                       <li className="display"><p>Name: {name}  </p></li>
@@ -196,7 +259,7 @@ class People extends React.Component{
                 <div className='popup'>
                   <CancelIcon className="closebt" onClick={this.props.closePopup}>close me</CancelIcon>
                   <div className="in">
-                  <img className="me" src={photo} alt='No photo'/>
+                  <img className="popinme" src={photo} alt='No photo'/>
                     <h1>{position} </h1>
                     <ul>
                     <li className="display"><p>Name: {name}</p></li>
@@ -218,7 +281,7 @@ class People extends React.Component{
                 <div className='popup'>
                   <CancelIcon className="closebt" onClick={this.props.closePopup}>close me</CancelIcon>
                   <div className="in">
-                  <img className="me" src={photo} alt='No photo'/>
+                  <img className="popinme" src={photo} alt='No photo'/>
                   <h1>{position} </h1>
                   <ul>
                     <li className="display"><p >Name: {name} </p></li>
