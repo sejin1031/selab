@@ -11,6 +11,7 @@ import Course from '../components/courses/Courses';
 import Gallerys from '../components/gallery/Gallery';
 import Cse326 from '../components/courses/CSE326/Cse326';
 import Slides from '../components/courses/CSE326/slides';
+import Footer from '../components/footer/Footer';
 
 import styled from 'styled-components';
 
@@ -72,6 +73,7 @@ class Router extends Component {
             <Route exact path="/gallery" component={Gallerys}/>
           </Switch>
           </SubContent>
+          <Footer/>
         </>
       </BrowserRouter>
     );
