@@ -31,15 +31,18 @@ class Home extends React.Component {
   loginSubmit= async() => {
     var flag = await axios('add/data',{
       method : 'POST',
-      data : {'id' : this.state.id,
-              'pw':this.state.pw
+      data : {id : this.state.id,
+              pw : this.state.pw
             },
       
             headers : new Headers()
     })
     if(flag.data.isLoggedin == true){
       this.setState({isLoggedin : true});
-      this.props.idHandler(this.state.id);
+      alert("login success")
+    }
+    else {
+      alert("login fail")
     }
   }
 
