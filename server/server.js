@@ -12,10 +12,20 @@ app.use(bodyParser.json())
 
 const {
     Usersinfo,
+    Noticeinfo,
     Sequelize: { Op }
   } = require('./models');
 sequelize.query('SET NAMES utf8;');
 
+app.get('/notice', (req, res) => {
+    Noticeinfo.findOne({
+        where : {id : 1}
+    }).then (result => {
+        console.log("notice is ")
+        console.log(result.id)
+        console.log("END")
+    })
+})
 
 app.post('/login/signin', (req, res) => {
     console.log(req.body)
@@ -26,8 +36,6 @@ app.post('/login/signin', (req, res) => {
         checkUser(req, res, result)
     })
 });
-
-
 
 app.post('/login/signup', (req, res) => {
     console.log(req.body)

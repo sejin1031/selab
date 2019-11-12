@@ -34,6 +34,7 @@ let sequelize = new Sequelize(
         console.log('Unable to connect to the database: ', err);
     });
     db.Usersinfo = require('./usersinfo')(sequelize, Sequelize);
+    db.Noticeinfo = require('./noticeinfo')(sequelize, Sequelize);
 
 db.secret = '(9*)5$&!3%^0%^@@2$1!#5@2!4';
 module.exports = db;
