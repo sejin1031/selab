@@ -26,7 +26,7 @@ export default class SignUp extends Component {
         this.setState({name: event.target.value});
     }
     singUpSubmit= async() => {
-        var flag = await axios('login/signup',{
+        var flag = await axios('/login/signup',{
           method : 'POST',
           data : {id : this.state.id,
                   pw :this.state.pw,

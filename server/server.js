@@ -17,49 +17,27 @@ const {
 sequelize.query('SET NAMES utf8;');
 
 
-app.get('/api/test', (req, res) => {
-    db.query("select * from usersinfo where 1", (err, data) => {
-        if(!err) {
-            res.send(data);
-            console.log(data);
-        } else {
-            console.log(err);
-            res.send(err);
-        }
-    });
-});
-
-app.post('/add/data', (req, res) => {
+app.post('/login/signin', (req, res) => {
     console.log(req.body)
-    console.log(req.body)
-
-    Usersinfo.create({
-        user_id : req.body.id,
-        user_pw : req.body.pw,
-        name : "test",
-        grade : "test"
+    let exist = false
+    Usersinfo.findOne({
+        where : {user_id : req.body.id}
+    }).then (result => {
+        checkUser(req, res, result)
     })
-    res.send({isLoggedin : true})
 });
+
+
 
 app.post('/login/signup', (req, res) => {
     console.log(req.body)
-
-
-    if(true) 
-    {
-        Usersinfo.create({
-        user_id : req.body.id,
-        user_pw : req.body.pw,
-        name : req.body.name,
-        grade : "D"
-        })
-        res.send({isLoggedin : true})
-    }
-    else {
-
-        res.send({isLoggedin : false})
-    }
+    let exist = false
+    Usersinfo.findOne({
+        where : {user_id : req.body.id}
+    }).then (result => {
+        console.log(result)
+        create_userinfo(req, res,(result != null))
+    })
 });
 
 
@@ -68,3 +46,44 @@ const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
     console.log(`Server On : http://localhost:${PORT}/`);
 });
+
+
+function create_userinfo(req, res, exist) {
+    console.log(exist)
+    if (exist == false) {
+        Usersinfo.create({
+            user_id : req.body.id,
+            user_pw : req.body.pw,
+            name : req.body.name,
+            grade : "D"
+            })
+        res.send({isLoggedin : true})
+        console.log("create user success")
+    }
+    else
+    {
+        res.send({isLoggedin : false})
+        console.log("create user fail")
+    }
+}
+
+function checkUser(req, res, result) {
+    if (result!=null) {
+        if (req.body.pw == result.user_pw){
+            res.send({
+                id : result.user_id,
+                grade : result.grade,
+                isLoggedin : true
+            })
+            console.log("login success")
+        }
+        else {
+            res.send({isLoggedin : false})
+            console.log("login fail")
+        }
+    } else {
+        res.send({isLoggedin : false})
+        console.log("login fail")
+    }
+
+}
