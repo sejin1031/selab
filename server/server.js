@@ -33,25 +33,33 @@ app.post('/add/data', (req, res) => {
     console.log(req.body)
     console.log(req.body)
 
-      Usersinfo.create({
-          user_id : req.body.id,
-          user_pw : req.body.pw,
-          name : "test",
-          grade : "test"
-      })
-      res.send({isLoggedin : true})
+    Usersinfo.create({
+        user_id : req.body.id,
+        user_pw : req.body.pw,
+        name : "test",
+        grade : "test"
+    })
+    res.send({isLoggedin : true})
 });
 
 app.post('/login/signup', (req, res) => {
     console.log(req.body)
 
-      Usersinfo.create({
-          user_id : req.body.id,
-          user_pw : req.body.pw,
-          name : "test",
-          grade : "test"
-      })
-      res.send({isLoggedin : true})
+
+    if(true) 
+    {
+        Usersinfo.create({
+        user_id : req.body.id,
+        user_pw : req.body.pw,
+        name : req.body.name,
+        grade : "D"
+        })
+        res.send({isLoggedin : true})
+    }
+    else {
+
+        res.send({isLoggedin : false})
+    }
 });
 
 
