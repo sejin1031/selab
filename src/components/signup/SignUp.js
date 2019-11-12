@@ -42,6 +42,7 @@ export default class SignUp extends Component {
             <React.Fragment>
                 <div className="Modal-overlay" />
                 <div className="Modal">
+                <button className="closebutton" onClick={this.props.handlesignupPopup}> X </button>
                     <p className="title">SignUp</p>
                     <div className="content">
                     <form onSubmit={this.singUpSubmit}>
@@ -54,16 +55,18 @@ export default class SignUp extends Component {
                         <span className="loginFont">Password</span><br/>
                         <input type="password" name="pw" value={this.state.pw} onChange={this.handlePWChange} />
                         </label>
+                        <br/>
                         <label>
+                            <span className="loginFont">name</span><br/>
                             <input type = "text" name="name" value={this.state.name} onChange={this.handleNameChange}/>
                         </label>
                         <br/>
-                        <input type="submit" value="SignUp" />
+                        <div className="button-wrap">
+                         <input type="submit" value="SignUp" />
+                        </div>
                     </form>
                     </div>
-                    <div className="button-wrap">
-                    <button onClick={this.props.handlesignupPopup}> Confirm </button>
-                    </div>
+
                 </div>
             </React.Fragment>
         )

@@ -63,8 +63,9 @@ class Home extends React.Component {
             </label>
             <br/>
               <input type="submit" value="Login" />
+              <div className = "signup" onClick={()=>this.setState({signupPopup:!this.state.signupPopup})}>signup</div>
+
             </form>
-            <div onClick={()=>this.setState({signupPopup:!this.state.signupPopup})}>signup</div>
          </div>}
           {this.state.signupPopup &&<SignUp handlesignupPopup={this.handleSignupPopup}/>}
          {this.props.isLoggedin &&
