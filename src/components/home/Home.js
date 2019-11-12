@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import ReactDom from 'react-dom';
+import SignUp from '../signup/SignUp';
 
 import 'react-viewer/dist/index.css';
 import './homeimage.scss';
@@ -9,11 +10,16 @@ import axios from 'axios';
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {id: '',pw:''};
+    this.state = {id: '',pw:'',signupPopup:false,};
 
     this.handleIDChange = this.handleIDChange.bind(this);
     this.handlePWChange = this.handlePWChange.bind(this);
     this.loginSubmit = this.loginSubmit.bind(this);
+    this.handleSignupPopup = this.handleSignupPopup.bind(this);
+  }
+
+  handleSignupPopup(){
+    this.setState({signupPopup:false})
   }
 
   handleIDChange(event) {
@@ -33,6 +39,7 @@ class Home extends React.Component {
     })
     if(flag.data.isLoggedin == true){
       this.setState({isLoggedin : true});
+      this.props.idHandler(this.state.id);
     }
   }
 
@@ -54,9 +61,9 @@ class Home extends React.Component {
             <br/>
               <input type="submit" value="Login" />
             </form>
-          
+            <div onClick={()=>this.setState({signupPopup:!this.state.signupPopup})}>signup</div>
          </div>}
-
+          {this.state.signupPopup &&<SignUp handlesignupPopup={this.handleSignupPopup}/>}
          {this.props.isLoggedin &&
          <div>로그인됨.</div>}
           

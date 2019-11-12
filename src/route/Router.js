@@ -52,7 +52,7 @@ class Router extends Component {
       <BrowserRouter basename="/">
         <>
         <AppShell/>
-
+          {this.state.isLoggedin && <div>{this.state.id}</div>}
           <SubContent>
           <Switch>
             <Route exact path="/" component={() => <Home isLoggedin={this.state.isLoggedin}
