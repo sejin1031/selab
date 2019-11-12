@@ -64,11 +64,11 @@ img{
 
 
 .plot1{
-  padding : 10px;
-  border-radius: 30px;
+  padding : 1vw;
+  border-radius:25%;
   font-size: 0.9vw;
   position: absolute;
-  left: 39vw;
+  left: 38vw;
   top: 19vw;
   -webkit-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
   -moz-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
@@ -89,8 +89,8 @@ img{
 
 
 .plot2{
-  padding : 10px;
-  border-radius: 30px;
+  padding : 1vw;
+  border-radius:25%;
   font-size: 0.9vw;
   position: absolute;
   left: 36vw;
@@ -115,8 +115,8 @@ img{
 
 
 .plot3{
-  padding : 10px;
-  border-radius: 30px;
+  padding : 1vw;
+  border-radius:25%;
   font-size: 0.9vw;
   position: absolute;
   left: 37vw;
@@ -139,8 +139,8 @@ img{
 }
 
 .plot4{
-  padding : 10px;
-  border-radius: 30px;
+  padding : 1vw;
+  border-radius:25%;
   font-size: 0.9vw;
   position: absolute;
   left: 35vw;
@@ -163,8 +163,8 @@ img{
 }
 
 .plot5{
-  padding : 10px;
-  border-radius: 30px;
+  padding : 1vw;
+  border-radius:25%;
   font-size: 0.9vw;
   position: absolute;
   left: 36vw;
