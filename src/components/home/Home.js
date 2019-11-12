@@ -29,7 +29,7 @@ class Home extends React.Component {
     this.setState({pw: event.target.value});
   }
   loginSubmit= async() => {
-    var flag = await axios('add/data',{
+    var flag = await axios('/login/signin',{
       method : 'POST',
       data : {id : this.state.id,
               pw : this.state.pw
