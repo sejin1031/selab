@@ -14,6 +14,7 @@ export default class SignUp extends Component {
         }
        this.handleIDChange = this.handleIDChange.bind(this);
        this.handlePWChange = this.handlePWChange.bind(this); 
+       this.handleNameChange = this.handleNameChange.bind(this);
     }
     handleIDChange(event) {
         this.setState({id: event.target.value});
@@ -47,7 +48,7 @@ export default class SignUp extends Component {
                 <div className="Modal">
                     <p className="title">SignUp</p>
                     <div className="content">
-                    <form onSubmit={this.loginSubmit}>
+                    <form onSubmit={this.singUpSubmit}>
                         <label>
                         <span className="loginFont">ID</span><br/>
                         <input type="text" name="id" value={this.state.id} onChange={this.handleIDChange} />
