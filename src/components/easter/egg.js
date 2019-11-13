@@ -1,15 +1,28 @@
 import React from 'react';
-import '../../style/easter.css'; 
-const egg = ({ onClose }) => {
+import Menu from './Menu';
+import './easter.css'; 
+
+export default class Egg extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      menu : false,
+      weather : false,
+      
+    }
+  }
+
+  render(){
   return (
     <div className="MyModal">
       <div className="content">
-        <h3>이것은 모달</h3>
-        <p>궁시렁 궁시렁 내용입니다.</p>
-        <button onClick={onClose}>닫기</button>
+        <div className="button" onClick={()=>this.setState({menu : !this.state.menu})}>Menu</div>
+        {
+          this.state.menu && <Menu/>
+        }
+        <button onClick={this.props.onClose}>닫기</button>
       </div>
     </div>
   );
-};
-
-export default egg;
+  }
+}

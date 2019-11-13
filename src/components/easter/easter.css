@@ -1,7 +1,8 @@
 .easter{
 	float:left;
 	margin-bottom:  100px;
-	position: fixed;
+  position: fixed;
+  vertical-align: top;
 }
 
 .MyModal {

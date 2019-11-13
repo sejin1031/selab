@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Link from 'react-router-dom';
 import Egg from './egg';
-import '../../style/easter.css';
+import './easter.css';
 
 
 export default class Footer extends Component {
