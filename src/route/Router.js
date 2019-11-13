@@ -12,10 +12,11 @@ import Gallerys from '../components/gallery/Gallery';
 import Cse326 from '../components/courses/CSE326/Cse326';
 import Slides from '../components/courses/CSE326/slides';
 import Footer from '../components/footer/Footer';
+import Easter from '../components/easter/easter';
 
 import styled from 'styled-components';
 
-import '../style/app.css'
+import '../style/app.css';
 
 const SubContent = styled.div`
     margin-left : 130px;
@@ -52,6 +53,7 @@ class Router extends Component {
     return (
       <BrowserRouter basename="/">
         <>
+        <Easter/>
         <AppShell/>
           {this.state.isLoggedin && <div>{this.state.id}</div>}
           <SubContent>
@@ -71,6 +73,8 @@ class Router extends Component {
             <Route exact path="/course" component={Course}/>
 
             <Route exact path="/gallery" component={Gallerys}/>
+
+            
           </Switch>
           </SubContent>
           <Footer/>

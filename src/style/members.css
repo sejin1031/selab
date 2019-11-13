@@ -20,6 +20,10 @@
 	border: 5px solid #3571B5;
 	position: absolute;
 	float:right;
+
+	animation-name: pop;
+  	animation-duration: .3s;
+
 }
 
 .in{
@@ -60,4 +64,10 @@ ul{
 	transition-duration: 0.5s;
 	margin-left:100px; 
 	vertical-align: middle;
+}
+
+
+@keyframes pop {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
