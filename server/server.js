@@ -17,6 +17,7 @@ const {
   } = require('./models');
 sequelize.query('SET NAMES utf8;');
 
+
 app.get('/notice', (req, res) => {
     Noticeinfo.findOne({
         where : {id : 1}
