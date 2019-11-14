@@ -1,0 +1,34 @@
+.easter{
+	float:left;
+	margin-bottom:  100px;
+  position: fixed;
+  vertical-align: top;
+}
+
+.MyModal {
+  background: rgba(255, 255, 255, 0.25);
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation-name: modalFade;
+  animation-duration: .6s;
+}
+
+.MyModal .content {
+  background: white;
+  padding: 1rem;
+  width: 400px;
+  height: auto;
+}
+
+@keyframes modalFade {
+  from {transform: scale(0.1);opacity: 0;}
+  to {transform: scale(1.0);opacity: 1;}
+}
+
