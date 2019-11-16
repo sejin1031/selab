@@ -28,24 +28,40 @@
             font-size: 30px;
             border-radius: 5px;
         }
-        input[type="submit"] {
-            float: right;
-            margin-left: 68%;
-            font-size: 40px;
-            padding: 5px;
-            background-color: greenyellow;
-            border-radius: 15px;
-            color: white;
-        }
-        .signup{
+        .buttons{
+            margin-top: 30px;
             float: left;
-            width: 30%;
-            cursor: pointer;
-            font-size: 40px;
-            padding: 5px;
-            background-color: greenyellow;
-            border-radius: 15px;
-            color: white;
+            display: grid;
+            clear: both;
+            column-gap: 30px;
+            .loginButton {
+                width: 100%;
+                grid-column: 1/4;
+                cursor: pointer;
+                float: right;
+                margin-left: 10px;
+                font-size: 40px;
+                padding: 5px;
+                background-color: greenyellow;
+                border-radius: 15px;
+                color: white;
+                &:hover{
+                    background-color: cadetblue;
+                }
+            }
+            .signup{
+                grid-column: 5/10;
+                width: 100%;
+                cursor: pointer;
+                font-size: 40px;
+                padding: 5px;
+                background-color: greenyellow;
+                border-radius: 15px;
+                color: white;
+                &:hover{
+                    background-color: cadetblue;
+                }
+            }
         }
     }
 }

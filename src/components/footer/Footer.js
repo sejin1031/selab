@@ -12,7 +12,7 @@ export default class Footer extends Component {
             bonobono: require('../easter/bonobono.png'),
             modal: false,
             left:Math.round(Math.random()*100),
-            bottom:Math.round(Math.random()*100),
+            bottom:Math.round(Math.random()*1000),
             easter:false,
         };
     }

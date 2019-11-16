@@ -51,7 +51,6 @@ class Home extends React.Component {
         <div className="home">
             <img src={require("./selab_logo2.png")} alt="logo" />
           {!this.props.isLoggedin && <div className="login">
-            <form onSubmit={this.loginSubmit}>
             <label>
               <span className="loginFont">ID</span><br/>
               <input type="text" name="id" value={this.state.id} onChange={this.handleIDChange} />
@@ -62,10 +61,10 @@ class Home extends React.Component {
               <input type="password" name="pw" value={this.state.pw} onChange={this.handlePWChange} />
             </label>
             <br/>
-              <input type="submit" value="Login" />
+            <div className="buttons">
+              <div onClick={this.loginSubmit} className="loginButton">Login</div>
               <div className = "signup" onClick={()=>this.setState({signupPopup:!this.state.signupPopup})}>signup</div>
-
-            </form>
+            </div>
          </div>}
           {this.state.signupPopup &&<SignUp handlesignupPopup={this.handleSignupPopup}/>}
          {this.props.isLoggedin &&
