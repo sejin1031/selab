@@ -33,7 +33,6 @@ export default class Egg extends React.Component{
           this.state.menu && <Menu/>
         }
         <button onClick={this.props.onClose}>닫기</button>
-        <Modal backdrop='static'/>
       </div>
     </div>
   );

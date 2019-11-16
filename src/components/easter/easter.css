@@ -17,6 +17,7 @@
   animation-duration: .6s;
 }
 .MyModal .content {
+  color: black;
   background: white;
   padding: 1rem;
   width: 400px;
