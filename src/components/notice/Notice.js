@@ -2,14 +2,17 @@ import React from 'react';
 import BoardForm from './BoardFoam';
 import BoardItem from './BoardItem';
 import WritePopup from './WritePopup';
+import './noticestyle.css'
 
 /*
     component files.
 */
-class Notice extends React.Component {
 
-    state = {
-        writePopup : false,
+class Notice extends React.Component {
+    constructor() {
+      super();
+      this.state = {
+        showPopup: false,
         maxNo: 4,
         boards: [
             {
@@ -35,62 +38,45 @@ class Notice extends React.Component {
             }
         ],
          selectedBoard:{}
+      };
     }
-    
-    handleSaveData = (data) => {
-        if (!data.brdno) {            // new : Insert
-            this.setState({
-                maxNo: this.state.maxNo+1,
-                boards: this.state.boards.concat({brdno: this.state.maxNo, brddate: new Date(), ...data }),
-                selectedBoard: {}
-            });
-        } else {                                                        // Update
-            this.setState({
-                boards: this.state.boards.map(row => data.brdno === row.brdno ? {...data }: row),
-                selectedBoard: {}
-            })            
-        }
+    togglePopup() {
+      this.setState({
+        showPopup: !this.state.showPopup
+      });
     }
-    
-    handleRemove = (brdno) => {
-        this.setState({
-            maxNo: this.state.maxNo-1,
-            boards: this.state.boards.filter(row => row.brdno !== brdno)
-        })
-    }
-    
-    handleSelectRow = (row) => {
-        this.setState({selectedBoard:row});
-    }
-    
-    render() {
-        const { boards, selectedBoard } = this.state;
+   
 
-        return (
-            <div>
-                <h1>이거 나중에 아예 바꿀거 같음!!!</h1>
-                <BoardForm selectedBoard={selectedBoard} onSaveData={this.handleSaveData}/>
-                <table border="1">
-                    <tbody>
-                    <tr align="center">
-                        <td width="50">No.</td>
-                        <td width="300">Title</td>
-                        <td width="100">Name</td>
-                        <td width="300">Content</td>
-                        <td width="100">Date</td>
-                    </tr>
-                    {
-                        boards.map(row =>
-                            (<BoardItem key={row.brdno} row={row} onRemove={this.handleRemove} onSelectRow={this.handleSelectRow} />)
-                        )
-                    }
-                    </tbody>
-                </table>
-                <div onClick={()=>this.setState({writePopup : true})}>글쓰기</div>
-                {this.state.writePopup && <WritePopup/>}
-            </div>
-        );
+  render() {
+  	const { boards, selectedBoard } = this.state;
+    return (
+      <div className='app'>
+        <h1 id ="h1">Notice</h1>
+          <table border="1">
+            <tbody>
+              <tr align="center">
+                  <td width="50">No.</td>
+                  <td width="300">Title</td>
+                  <td width="100">Name</td>
+                  <td width="300">Content</td>
+                  <td width="100">Date</td>
+              </tr>
+              {
+                  boards.map(row =>
+                      (<BoardItem key={row.brdno} row={row} onRemove={this.handleRemove} onSelectRow={this.handleSelectRow} />)
+                  )
+              }
+            </tbody>
+          </table>
+        
+        <button onClick={this.togglePopup.bind(this)}>글쓰기</button>
+        {this.state.showPopup ? 
+            <WritePopup text='Close Me' closePopup={this.togglePopup.bind(this)}/>
+            : null
+        }
+      </div>
+      );
     }
-}
+  };
 
 export default Notice;
