@@ -64,5 +64,29 @@
             }
         }
     }
+    .logined{
+        overflow: hidden;
+        width: 34%;
+        height: 40vh;
+        background-color: white;
+        float: right;
+        border-radius:5px;
+        padding: 1%;
+        .logoutButton {
+            width: 9vw;
+            grid-column: 1/4;
+            cursor: pointer;
+            float: right;
+            margin-left: 10px;
+            font-size: 40px;
+            padding: 5px;
+            background-color: greenyellow;
+            border-radius: 15px;
+            color: white;
+            &:hover{
+                background-color: cadetblue;
+            }
+        }
+    }
 }
 

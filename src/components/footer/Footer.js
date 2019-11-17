@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Link from 'react-router-dom';
 import Egg from '../easter/egg';
+import Contact from '../contact/Contact';
 
 import './Footer.scss';
 import '../easter/easter.css'
@@ -14,7 +15,9 @@ export default class Footer extends Component {
             left:Math.round(Math.random()*100),
             bottom:Math.round(Math.random()*1000),
             easter:false,
+            contactPopup:false,
         };
+        this.contactPopupHandler =this.contactPopupHandler.bind(this);
     }
     handleOpenModal() {
 	    this.setState({
@@ -34,11 +37,11 @@ export default class Footer extends Component {
             left:Math.round(Math.random()*1700),
             bottom:Math.round(Math.random()*900+1000),
             easter: !this.state.easter,
-        });
-
-
-        
+        }); 
     }
+    contactPopupHandler(){
+        this.setState({contactPopup:false})
+    };
     render() {
         const style = {
             left: this.state.left ,
@@ -46,10 +49,10 @@ export default class Footer extends Component {
             position:"relative",
         }
         return (
-            <div className="footer" onClick={this.easter_egg.bind(this)}>
+            <div className="footer">
                  <div className="bonodiv" >
                 {this.state.easter ?
-                    <img className="bonobono" src={this.state.bonobono}
+                    <img alt="bonobono" className="bonobono" src={this.state.bonobono}
                         style={style}
                         onMouseOver={function(){
                             this.setState({
@@ -68,7 +71,15 @@ export default class Footer extends Component {
 			        <Egg onClose={this.handleCloseModal.bind(this)} />
 		        )}
                 </div> 
-                Made for CSE326 Class's Team Project
+                <div className="footerCenter" onClick={this.easter_egg.bind(this)}>
+                    Made for CSE326 Class's Team Project
+                    </div>
+                <div className="contact" 
+                    onClick={()=>this.setState({contactPopup:!this.state.contactPopup})}>
+                    CONTACT
+                </div>
+                {this.state.contactPopup && 
+                <Contact popupHandler={this.contactPopupHandler}/>}
             </div>
         )
     }

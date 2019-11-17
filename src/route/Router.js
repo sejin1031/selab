@@ -29,39 +29,39 @@ const SubContent = styled.div`
 class Router extends Component {
    constructor(props){
      super(props);
-     this.loginStateHandler = this.loginStateHandler.bind(this);
-     this.idHandler = this.idHandler.bind(this);
-     this.authHandler = this.authHandler.bind(this);
+     
      this.state = {
-       isLoggedin : false,
-       id : '',
-       auth : false,
+       isLoggedin : true,
+       id : 'scott',
+       auth : true,
      }
+     this.loginHandler = this.loginHandler.bind(this);
+     this.logoutHandler = this.logoutHandler.bind(this);
    }
-   loginStateHandler(){
-     this.setState({isLoggedin : !this.state.isLoggedin})
+   loginHandler(id,auth){
+     this.setState({isLoggedin : true,id:id,auth:auth})
    };
-   idHandler(e){
-     this.setState({id:e})
-   };
-   authHandler(){
-     this.setState({auth : !this.state.auth})
+   logoutHandler(){
+    this.setState({isLoggedin : false,id:'',auth:false})
    }
+
    
   render() {
     return (
       <BrowserRouter basename="/">
         <>
         <AppShell/>
-          {this.state.isLoggedin && <div>{this.state.id}</div>}
+      
           <SubContent>
           <Switch>
-            <Route exact path="/" component={() => <Home isLoggedin={this.state.isLoggedin}
+            <Route exact path="/" component={() => <Home 
+            isLoggedin={this.state.isLoggedin}
             loginHandler={this.loginStateHandler}
-            idHandler = {this.idHandler}
-            authHandler = {this.authHandler}
+            logoutHandler={this.logoutHandler}
+            id = {this.state.id}
             /> }/>
-            <Route exact path="/notice" component={Notice}/>
+            <Route exact path="/notice" component={()=> <Notice
+            auth={this.state.auth}/>}/>
             <Route exact path="/members" component={MemberMenu} />
             <Route exact path="/research" component={Research}/>
             <Route exact path="/publication" component={Publication}/>

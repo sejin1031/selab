@@ -38,7 +38,7 @@ class Home extends React.Component {
             headers : new Headers()
     })
     if(flag.data.isLoggedin == true){
-      this.setState({isLoggedin : true});
+      this.props.loginHandler(this.state.id,flag.data.auth)
       alert("login success")
     }
     else {
@@ -66,9 +66,14 @@ class Home extends React.Component {
               <div className = "signup" onClick={()=>this.setState({signupPopup:!this.state.signupPopup})}>signup</div>
             </div>
          </div>}
+
           {this.state.signupPopup &&<SignUp handlesignupPopup={this.handleSignupPopup}/>}
          {this.props.isLoggedin &&
-         <div>로그인됨.</div>}
+         <div className="logined">
+           <div onClick={this.props.logoutHandler}
+           className="logoutButton">logout</div>
+              <p>welcome {this.props.id}</p>
+          </div>}
           
 
         </div>

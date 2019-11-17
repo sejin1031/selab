@@ -69,7 +69,7 @@ class Notice extends React.Component {
             </tbody>
           </table>
         
-        <button onClick={this.togglePopup.bind(this)}>글쓰기</button>
+        {this.props.auth && <button onClick={this.togglePopup.bind(this)}>글쓰기</button>}
         {this.state.showPopup ? 
             <WritePopup text='Close Me' closePopup={this.togglePopup.bind(this)}/>
             : null
