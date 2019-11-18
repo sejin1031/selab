@@ -28,11 +28,13 @@ export default class Egg extends React.Component{
   return (
     <div className="MyModal">
       <div className="content">
-        <div className="button" onClick={()=>this.setState({menu : !this.state.menu})}>Menu</div>
+        <div> <div>점심 뭐먹을까??</div><button className="button" onClick={()=>this.setState({menu : !this.state.menu})} > 클릭</button></div>
         {
           this.state.menu && <Menu/>
         }
-        <button onClick={this.props.onClose}>닫기</button>
+        <div>
+          <button className="closebtn" onClick={this.props.onClose}>닫기</button>
+        </div>
       </div>
     </div>
   );
