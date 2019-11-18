@@ -24,7 +24,7 @@
     }
     .contactContent{
         border-radius: 10px;
-       color: white;
+       color: black;
         background: black;
         padding: 1rem;
         width: 90%;
@@ -45,14 +45,14 @@
             .describe{
                 grid-column: 6/8;
                 span{
-                    color: white;
+                    color: black;
                     font-size: 30pt;
                     font-weight: bold;
                     padding: 5px;
                 }
                 ul{
                     li{
-                        color: white;
+                        color: black;
 
                         padding: 30px;
                         font-size: 15pt;
@@ -63,6 +63,8 @@
         
     }
   }
+
+
 
   @keyframes modalFade {
     from {transform: scale(0.8);opacity: 0.5;}

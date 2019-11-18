@@ -86,7 +86,7 @@ export default class Menu extends Component {
             		보노보노가 추천한 메뉴 :{this.state.information[ran].name}
         		</div>
         		<div>
-        			<iframe classNmae="food" src={this.state.information[ran].link}
+        			<iframe className="food" src={this.state.information[ran].link}
         			scrolling="yes" />
         		</div>
             </div>
