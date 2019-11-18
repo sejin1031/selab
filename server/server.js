@@ -28,6 +28,21 @@ app.get('/notice', (req, res) => {
     })
 })
 
+app.post('/notice/save', (req, res) => {
+    Noticeinfo.create({
+        title : req.body.title,
+        writer : req.body.writer,
+        content :req.body.content
+    })
+    .then( result => {
+        res.send(result)
+    })
+    .catch( err => {
+        console.log(err)
+        throw err;
+    })
+
+})
 app.post('/login/signin', (req, res) => {
     console.log(req.body)
     let exist = false

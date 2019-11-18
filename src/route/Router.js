@@ -61,7 +61,7 @@ class Router extends Component {
             id = {this.state.id}
             /> }/>
             <Route exact path="/notice" component={()=> <Notice
-            auth={this.state.auth}/>}/>
+            auth={this.state.auth} id={this.state.id}/>}/>
             <Route exact path="/members" component={MemberMenu} />
             <Route exact path="/research" component={Research}/>
             <Route exact path="/publication" component={Publication}/>

@@ -4,6 +4,7 @@ import BoardItem from './BoardItem';
 import WritePopup from './WritePopup';
 import './noticestyle.css'
 
+import axios from 'axios';
 /*
     component files.
 */
@@ -11,6 +12,7 @@ import './noticestyle.css'
 class Notice extends React.Component {
     constructor() {
       super();
+      
       this.state = {
         showPopup: false,
         maxNo: 4,
@@ -39,7 +41,15 @@ class Notice extends React.Component {
         ],
          selectedBoard:{}
       };
+
     }
+    noticeLoad = async() => {
+      var flag = await axios('/notice',{
+          method : 'get',
+          headers : new Headers()
+      })
+    }
+
     togglePopup() {
       this.setState({
         showPopup: !this.state.showPopup
@@ -51,6 +61,7 @@ class Notice extends React.Component {
   	const { boards, selectedBoard } = this.state;
     return (
       <div className='app'>
+      <div>id={this.props.id}</div>
         <h1 id ="h1">Notice</h1>
           <table border="1">
             <tbody>
