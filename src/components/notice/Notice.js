@@ -62,16 +62,20 @@ class Notice extends React.Component {
     return (
       <div className='app'>
       <div>id={this.props.id}</div>
+        <img src= {require("./notice.png")} id = 'nimg'/>
         <h1 id ="h1">Notice</h1>
-          <table border="1">
-            <tbody>
+        
+          <table className='table'>
+            <thead>
               <tr align="center">
-                  <td width="50">No.</td>
-                  <td width="300">Title</td>
-                  <td width="100">Name</td>
-                  <td width="300">Content</td>
-                  <td width="100">Date</td>
+                  <th width="50">No.</th>
+                  <th width="300">Title</th>
+                  <th width="100">Name</th>
+                  <th width="300">Content</th>
+                  <th width="150">Date</th>
               </tr>
+            </thead>
+            <tbody>
               {
                   boards.map(row =>
                       (<BoardItem key={row.brdno} row={row} onRemove={this.handleRemove} onSelectRow={this.handleSelectRow} />)
@@ -79,7 +83,7 @@ class Notice extends React.Component {
               }
             </tbody>
           </table>
-        
+        <br/>
         {this.props.auth && <button onClick={this.togglePopup.bind(this)}>글쓰기</button>}
         {this.state.showPopup ? 
             <WritePopup text='Close Me' closePopup={this.togglePopup.bind(this)}/>
