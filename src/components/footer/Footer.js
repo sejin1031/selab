@@ -16,6 +16,7 @@ export default class Footer extends Component {
             bottom:Math.round(Math.random()*1000),
             easter:false,
             contactPopup:false,
+            text: "Made for CSE326 Class's Team Project",
         };
         this.contactPopupHandler =this.contactPopupHandler.bind(this);
     }
@@ -38,6 +39,7 @@ export default class Footer extends Component {
             bottom:Math.round(Math.random()*900+1000),
             easter: !this.state.easter,
         }); 
+
     }
     contactPopupHandler(){
         this.setState({contactPopup:false})
@@ -47,6 +49,12 @@ export default class Footer extends Component {
             left: this.state.left ,
             bottom: this.state.bottom,
             position:"relative",
+        }
+        if(this.state.easter==true){
+            this.state.text = "I'm the Easter egg, you find me!!";
+        }
+        else{
+            this.state.text = "Made for CSE326 Class's Team Project";
         }
         return (
             <div className="footer">
@@ -72,7 +80,7 @@ export default class Footer extends Component {
 		        )}
                 </div> 
                 <div className="footerCenter" onClick={this.easter_egg.bind(this)}>
-                    Made for CSE326 Class's Team Project
+                    {this.state.text}
                     </div>
                 <div className="contact" 
                     onClick={()=>this.setState({contactPopup:!this.state.contactPopup})}>
