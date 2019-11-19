@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 
-
 import axios from 'axios';
+
+
+var moment = require('moment');
+
 class BoardForm extends Component {
     state={}
 
@@ -46,12 +49,12 @@ class BoardForm extends Component {
             method : 'POST',
             data : {title : this.brdtitle.value,
                     writer : this.brdwriter.value,
-                    content : this.brdcontent.value
+                    content : this.brdcontent.value,
+                    date : moment(new Date()).format("YYYY.MM.DD")
                 },
           
                 headers : new Headers()
         })
-        
         alert("save")
         
     }

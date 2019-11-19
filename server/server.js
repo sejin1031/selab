@@ -19,11 +19,10 @@ sequelize.query('SET NAMES utf8;');
 
 
 app.get('/notice', (req, res) => {
-    Noticeinfo.findOne({
-        where : {id : 1}
-    }).then (result => {
+    Noticeinfo.findAll().then (result => {
+        res.send(result)
         console.log("notice is ")
-        console.log(result.id)
+        console.log(result)
         console.log("END")
     })
 })
@@ -32,7 +31,8 @@ app.post('/notice/save', (req, res) => {
     Noticeinfo.create({
         title : req.body.title,
         writer : req.body.writer,
-        content :req.body.content
+        content :req.body.content,
+        date : req.body.date
     })
     .then( result => {
         res.send(result)
@@ -41,7 +41,7 @@ app.post('/notice/save', (req, res) => {
         console.log(err)
         throw err;
     })
-
+    console.log(req.body.date);
 })
 app.post('/login/signin', (req, res) => {
     console.log(req.body)
