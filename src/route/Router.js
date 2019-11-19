@@ -56,7 +56,7 @@ class Router extends Component {
           <Switch>
             <Route exact path="/" component={() => <Home 
             isLoggedin={this.state.isLoggedin}
-            loginHandler={this.loginStateHandler}
+            loginHandler={this.loginHandler}
             logoutHandler={this.logoutHandler}
             id = {this.state.id}
             /> }/>
