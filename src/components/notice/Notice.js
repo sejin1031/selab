@@ -16,6 +16,7 @@ class Notice extends React.Component {
       this.state = {
         showPopup: false,
         maxNo: 4,
+        test : [],
         boards: [
             {
                 brdno: 1,
@@ -41,12 +42,15 @@ class Notice extends React.Component {
         ],
          selectedBoard:{}
       };
-
+      this.noticeLoad();
     }
     noticeLoad = async() => {
       var flag = await axios('/notice',{
           method : 'get',
           headers : new Headers()
+      })
+      this.setState({
+        test : flag.data
       })
     }
 
@@ -58,7 +62,7 @@ class Notice extends React.Component {
    
 
   render() {
-  	const { boards, selectedBoard } = this.state;
+    const { boards, selectedBoard } = this.state;
     return (
       <div className='app'>
       <div>id={this.props.id}</div>
@@ -81,6 +85,13 @@ class Notice extends React.Component {
                       (<BoardItem key={row.brdno} row={row} onRemove={this.handleRemove} onSelectRow={this.handleSelectRow} />)
                   )
               }
+              {this.state.test.map(data => <tr>
+                <td>{data.id}</td>
+                <td>{data.title}</td>
+                <td>{data.writer}</td>
+                <td>{data.content}</td>
+                <td>{data.date}</td>
+              </tr>)}
             </tbody>
           </table>
         <br/>

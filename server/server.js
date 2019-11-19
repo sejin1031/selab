@@ -19,11 +19,10 @@ sequelize.query('SET NAMES utf8;');
 
 
 app.get('/notice', (req, res) => {
-    Noticeinfo.findOne({
-        where : {id : 1}
-    }).then (result => {
+    Noticeinfo.findAll().then (result => {
+        res.send(result)
         console.log("notice is ")
-        console.log(result.id)
+        console.log(result)
         console.log("END")
     })
 })
