@@ -72,6 +72,9 @@
         float: right;
         border-radius:5px;
         padding: 1%;
+        p{
+            font-size: 12pt;
+        }
         .logoutButton {
             width: 9vw;
             grid-column: 1/4;
@@ -85,6 +88,16 @@
             color: white;
             &:hover{
                 background-color: cadetblue;
+            }
+        }
+        .Mail{
+            float: left;
+            cursor: pointer;
+            img{
+                width: 30px;
+            }
+            &:hover{
+                filter: drop-shadow(3);
             }
         }
         .messages{
@@ -103,12 +116,13 @@
             }
             .name{
                 color: white;
-                background-color: gray;
+                background-color: rgb(150, 199, 76);
                 margin-right: 10px;
                 font-size: 13pt;
             }
             .time{
                 float: right;
+                font-weight: bold;
             }
             .message{
                 border-radius: 5px;

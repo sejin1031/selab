@@ -1,0 +1,45 @@
+.MyModal {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.25);
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .closebutton{
+        cursor: pointer;
+        text-align: center;
+        height: 30px;
+        width: 30px;
+        margin: 10px;
+        float: right;
+        background-color: red;
+        color: white;;
+        border-radius: 40px;
+      }
+    .messageContent{
+        overflow: scroll;
+        width: 60vw;
+        height: 60vh;
+        background-color: white;
+    }
+    .list{
+        overflow: scroll;
+        width: 20vw;
+        height: 500px;
+        margin: 30px;
+        font-size: 30pt;
+        .title{
+            position: fixed;
+            padding-bottom: 30px;
+        }
+        .users{
+            margin-bottom: 20px;
+            font-size: 20pt;
+            border-bottom: 3px gray solid;
+        }
+    }
+}
