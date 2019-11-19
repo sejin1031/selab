@@ -44,7 +44,8 @@ class Notice extends React.Component {
     return (
       <div className='app'>
 <div>test code id={this.props.id}</div>
-        <img src= {require("./notice.png")} id = 'nimg'/>
+        <img className="bell" src= {require("./notice.png")} id = 'nimg'/>
+
         <h1 id ="h1">Notice</h1>
         
           <table className='table'>
