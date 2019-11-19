@@ -40,7 +40,7 @@ app.post('/notice/save', (req, res) => {
         console.log(err)
         throw err;
     })
-
+    console.log((String)(new Date()));
 })
 app.post('/login/signin', (req, res) => {
     console.log(req.body)

@@ -46,12 +46,12 @@ class BoardForm extends Component {
             method : 'POST',
             data : {title : this.brdtitle.value,
                     writer : this.brdwriter.value,
-                    content : this.brdcontent.value
+                    content : this.brdcontent.value,
                 },
           
                 headers : new Headers()
         })
-        
+        console.log(new Date());
         alert("save")
         
     }
