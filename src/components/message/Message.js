@@ -22,12 +22,22 @@ export default class Message extends Component {
                         <div className="closebutton" onClick={this.props.handleMessagePopup}>x</div>
                     <div className="list">
                         <div className="title">RECEIVED LIST</div>
+                        <div className="names">
                         {this.state.userList.map((name,index)=>
-                        <div key={index} className="users"
+                        <div key={index} className={name==this.state.selectedId? "selectedusers":"users"}
                         onClick={()=>this.setState({selectedId:name})}>{name}</div>)}
+                        </div>
                     </div>
-                    <div className="messageContent">
-                        
+                    <div className="chat">
+                        <div className="chatcontent">
+                            <div className="receiveContent">receive</div>
+                            <br/>
+                            <div className="sendContent">sended</div>
+                            </div>
+                        <div className="send">
+                            <input type="text"></input>
+                            <div className="sendButton">send</div>
+                        </div>
                     </div>
                 </div>
             </div>

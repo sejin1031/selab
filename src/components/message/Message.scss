@@ -21,25 +21,87 @@
         border-radius: 40px;
       }
     .messageContent{
-        overflow: scroll;
+        display: grid;
+        overflow: hidden;
         width: 60vw;
-        height: 60vh;
+        height: 500px;
         background-color: white;
+        .chat{
+            background-color: cadetblue;
+            overflow: scroll;
+            height: 420px;
+            margin: 10px;
+            grid-column: 3/9;
+            display: grid;
+            .chatcontent{
+                grid-row: 1/23;
+                .receiveContent{
+                    padding: 5px;
+                    border-radius: 5px;
+                    margin-left: 5px;
+                    text-align: left;
+                    background-color: yellow;
+                    width: 60%;
+                    float: left;
+                    margin-top: 20px;
+                }
+                .sendContent{
+                    padding: 5px;
+                    border-radius: 5px;
+                    margin-right: 5px;
+                    text-align: right;
+                    margin-top: 20px;
+                    float: right;
+                    background-color: white;
+                    width: 60%;
+                }
+            }
+            .send{
+                grid-row: 23/24;
+                input[type="text"]{
+                    margin-left: 15px;
+                    width: 400px;
+                    top: 0;
+                }
+                .sendButton{
+                    background-color: chartreuse;
+                    margin-right: 30px;
+                    font-size: 20pt;
+                    float: right;
+                }
+            }
+            
+        }
     }
     .list{
+        grid-column: 1/3;
         overflow: scroll;
-        width: 20vw;
         height: 500px;
         margin: 30px;
-        font-size: 30pt;
+        font-size: 20pt;
+        padding-bottom: 30px;
         .title{
             position: fixed;
+            padding-right:30px;
             padding-bottom: 30px;
+            background-color:white;
+        }
+        .names{
+            margin-top:80px;
         }
         .users{
+            cursor:pointer;
             margin-bottom: 20px;
             font-size: 20pt;
             border-bottom: 3px gray solid;
         }
+        .selectedusers{
+            cursor:pointer;
+            margin-bottom: 20px;
+            font-size: 20pt;
+            border-bottom: 3px gray solid;
+            background-color:yellow;
+        }
     }
+    
 }
