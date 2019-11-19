@@ -58,6 +58,7 @@ class Notice extends React.Component {
       this.setState({
         showPopup: !this.state.showPopup
       });
+      this.noticeLoad();
     }
    
 

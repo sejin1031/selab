@@ -31,7 +31,8 @@ app.post('/notice/save', (req, res) => {
     Noticeinfo.create({
         title : req.body.title,
         writer : req.body.writer,
-        content :req.body.content
+        content :req.body.content,
+        date : req.body.date
     })
     .then( result => {
         res.send(result)
@@ -40,7 +41,7 @@ app.post('/notice/save', (req, res) => {
         console.log(err)
         throw err;
     })
-    console.log((String)(new Date()));
+    console.log(req.body.date);
 })
 app.post('/login/signin', (req, res) => {
     console.log(req.body)
