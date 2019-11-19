@@ -7,6 +7,18 @@ import 'react-viewer/dist/index.css';
 import './homeimage.scss';
 import axios from 'axios';
 
+var messages = [
+  {name:'scott',
+  content:'you are fail',
+  time:'18:20'},
+  {name:'junyoung',
+  content:'HYCube is nice',
+  time:'23:20'},
+  {name:'jongmin',
+  content:'chegg is evil',
+  time:'18:20'}
+]
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -45,7 +57,7 @@ class Home extends React.Component {
       alert("login fail")
     }
   }
-
+  
     render() {
       return (
         <div className="home">
@@ -73,6 +85,16 @@ class Home extends React.Component {
            <div onClick={this.props.logoutHandler}
            className="logoutButton">logout</div>
               <p>welcome {this.props.id}</p>
+              <div className="messages">
+                <div className="recent">Recent Messages</div>
+                {messages.map((index,name,time,content)=>
+                <div key={index}>
+                    <span className="name">{index.name}</span>
+                    
+                   <div className="message">
+                   {index.content} <span className="time">{index.time}</span></div>
+                </div>)}
+              </div>
           </div>}
           
 
