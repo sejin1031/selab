@@ -20,6 +20,9 @@
         font-weight: bold;
         float: right;
         padding-bottom: 5px;
+        &:hover{
+            background-color: green;
+        }
 
     }
 }

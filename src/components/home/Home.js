@@ -49,7 +49,7 @@ class Home extends React.Component {
     render() {
       return (
         <div className="home">
-            <img src={require("./selab_logo2.png")} alt="logo" />
+            <img src={require("./selab_logo.png")} alt="logo" />
           {!this.props.isLoggedin && <div className="login">
             <label>
               <span className="loginFont">ID</span><br/>
