@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+import axios from 'axios';
+
+
+var moment = require('moment');
 
 class BoardForm extends Component {
     state={}
@@ -14,8 +18,9 @@ class BoardForm extends Component {
         }
         
         this.brdtitle.value = selectedBoard.brdtitle;
-        this.brdwriter.value = selectedBoard.brdwriter; 
-        this.brdcontent.value = selectedBoard.brdcontent;       
+        this.brdwriter.value = selectedBoard.brdwriter;
+        this.brdcontent.value = selectedBoard.brdcontent;    
+        this.noticeSave = this.noticeSave.bind(this);    
         return true;
     }
     handlechange = (e) => {
@@ -38,6 +43,21 @@ class BoardForm extends Component {
         }        
         this.props.onSaveData(data);
     }
+
+    noticeSave= async() => {
+        var flag = await axios('/notice/save',{
+            method : 'POST',
+            data : {title : this.brdtitle.value,
+                    writer : this.brdwriter.value,
+                    content : this.brdcontent.value,
+                    date : moment(new Date()).format("YYYY.MM.DD")
+                },
+          
+                headers : new Headers()
+        })
+        alert("save")
+        
+    }
     
     render() {
         return (
@@ -46,7 +66,7 @@ class BoardForm extends Component {
                     <input placeholder="Title" ref={node => this.brdtitle = node} /><br />
                     <input placeholder="Name" ref={node => this.brdwriter = node} /><br />
                     <input placeholder="Content" ref={node => this.brdcontent = node}/><br />
-                    <button type="submit">Save</button>
+                    <button onClick = {this.noticeSave}>Save</button>
                 </div>
             </form>
         );

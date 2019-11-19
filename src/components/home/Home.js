@@ -38,7 +38,7 @@ class Home extends React.Component {
             headers : new Headers()
     })
     if(flag.data.isLoggedin == true){
-      this.setState({isLoggedin : true});
+      this.props.loginHandler(this.state.id,flag.data.auth)
       alert("login success")
     }
     else {
@@ -49,9 +49,8 @@ class Home extends React.Component {
     render() {
       return (
         <div className="home">
-            <img src={require("./selab_logo2.png")} alt="logo" />
+            <img src={require("./selab_logo.png")} alt="logo" />
           {!this.props.isLoggedin && <div className="login">
-            <form onSubmit={this.loginSubmit}>
             <label>
               <span className="loginFont">ID</span><br/>
               <input type="text" name="id" value={this.state.id} onChange={this.handleIDChange} />
@@ -62,14 +61,19 @@ class Home extends React.Component {
               <input type="password" name="pw" value={this.state.pw} onChange={this.handlePWChange} />
             </label>
             <br/>
-              <input type="submit" value="Login" />
+            <div className="buttons">
+              <div onClick={this.loginSubmit} className="loginButton">Login</div>
               <div className = "signup" onClick={()=>this.setState({signupPopup:!this.state.signupPopup})}>signup</div>
-
-            </form>
+            </div>
          </div>}
+
           {this.state.signupPopup &&<SignUp handlesignupPopup={this.handleSignupPopup}/>}
          {this.props.isLoggedin &&
-         <div>로그인됨.</div>}
+         <div className="logined">
+           <div onClick={this.props.logoutHandler}
+           className="logoutButton">logout</div>
+              <p>welcome {this.props.id}</p>
+          </div>}
           
 
         </div>

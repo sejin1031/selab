@@ -1,0 +1,41 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+#nimg{
+    float:right;
+}
+
+#h1{
+    font-family: "Nanum Gothic", sans-serif;
+    text-align: center;
+    color : aliceblue;
+}
+
+
+.table {
+    font-family: "Nanum Gothic", sans-serif;
+    border-collapse: collapse;
+    text-align: center;
+    line-height: 1.5;
+    color: #D1DDDB;
+    background-color: #353C42;
+
+}
+.table thead th {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #85B8CB;
+    border-bottom: 3px solid #1D6A96;
+}
+.table tbody th {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #f3f6f7;
+}
+.table td {
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}

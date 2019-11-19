@@ -1,0 +1,72 @@
+
+.MyModal {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.25);
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    .closeButton{
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        color: white;
+        float: right;
+        background-color: red;
+        &:hover{
+            background-color: #d85757;
+        }
+    }
+    .contactContent{
+        border-radius: 10px;
+       color: black;
+        background: black;
+        padding: 1rem;
+        width: 90%;
+        height: 90%;
+        animation-name: modalFade;
+        animation-duration: .1ms;
+        .content{
+            display: grid;
+            .map{
+                grid-column: 1/5;
+                img{
+                    width: 800px;
+                    &:hover{
+                        width: 1000px;
+                    }
+                }
+            }
+            .describe{
+                grid-column: 6/8;
+                span{
+                    color: black;
+                    font-size: 30pt;
+                    font-weight: bold;
+                    padding: 5px;
+                }
+                ul{
+                    li{
+                        color: black;
+
+                        padding: 30px;
+                        font-size: 15pt;
+                    }
+                }
+            }
+        }
+        
+    }
+  }
+
+
+
+  @keyframes modalFade {
+    from {transform: scale(0.8);opacity: 0.5;}
+    to {transform: scale(1.0);opacity: 1;}
+  }

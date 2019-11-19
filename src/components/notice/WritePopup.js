@@ -1,20 +1,55 @@
 import React, { Component } from 'react'
+import BoardForm from './BoardFoam';
+import BoardItem from './BoardItem';
 
-export default class WritePopup extends Component {
+
+class WritePopup extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            maxNo: 4,
+            boards: [],
+           selectedBoard:{}
+        };
+      }
+    handleSaveData = (data) => {
+        if (!data.brdno) {            // new : Insert
+            this.setState({
+                maxNo: this.state.maxNo+1,
+                boards: this.state.boards.concat({brdno: this.state.maxNo, brddate: new Date(), ...data }),
+                selectedBoard: {}
+            });
+        } else {                                                        // Update
+            this.setState({
+                boards: this.state.boards.map(row => data.brdno === row.brdno ? {...data }: row),
+                selectedBoard: {}
+            })            
+        }
+      }
+    
+      handleRemove = (brdno) => {
+        this.setState({
+            maxNo: this.state.maxNo-1,
+            boards: this.state.boards.filter(row => row.brdno !== brdno)
+        })
+      }
+    
+      handleSelectRow = (row) => {
+        this.setState({selectedBoard:row});
+      }
+    
     render() {
+        const { boards, selectedBoard } = this.state;
         return (
-            <React.Fragment>
-                <div className="Modal-overlay" />
-                <div className="Modal">
-                    <p className="title">Write</p>
-                    <div className="content">
-                        This is competition
-                    </div>
-                    <div className="button-wrap">
-                    <button onClick={this.props.handlesignupPopup}> Confirm </button>
-                    </div>
-                </div>
-            </React.Fragment>
-        )
+        <div className='popup'>
+            <div className='popup_inner'>
+                <h1>WRITE</h1>
+                <BoardForm selectedBoard={selectedBoard} onSaveData={this.handleSaveData}/>
+                <button onClick={this.props.closePopup}>close me</button>
+            </div>
+        </div>
+        );
     }
 }
+
+export default WritePopup;
