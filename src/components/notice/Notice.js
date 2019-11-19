@@ -66,7 +66,7 @@ class Notice extends React.Component {
     const { boards, selectedBoard } = this.state;
     return (
       <div className='app'>
-      <div>id={this.props.id}</div>
+<div>test code id={this.props.id}</div>
         <img src= {require("./notice.png")} id = 'nimg'/>
         <h1 id ="h1">Notice</h1>
         
