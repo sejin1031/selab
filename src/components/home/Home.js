@@ -94,7 +94,7 @@ class Home extends React.Component {
                 <img src={require('./mail_icon.png')} alt="mail"/>
                 </div>
 
-              {this.state.messagePopup && <Message handleMessagePopup={this.handleMessagePopup}/>}
+              {this.state.messagePopup && <Message handleMessagePopup={this.handleMessagePopup} id={this.props.id}/>}
 
               <div className="messages">
                 <div className="recent">Recent Messages</div>
