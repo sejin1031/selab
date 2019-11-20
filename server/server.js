@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const router_login = require('./router/serv_rout_login')
 const router_notice = require('./router/serv_rout_notice')
+const router_message = require('./router/serv_rout_message')
 
 const sequelize = require('./models').sequelize;
 const bodyParser = require('body-parser')
@@ -23,6 +24,7 @@ sequelize.query('SET NAMES utf8;');
 
 app.use('/login', router_login);
 app.use('/notice', router_notice);
+app.use('/message', router_message);
 
 /*
 app.get('/notice', (req, res) => {

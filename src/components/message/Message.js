@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import './Message.scss';
+import axios from 'axios';
 
 export default class Message extends Component {
     constructor(props){
@@ -15,14 +16,38 @@ export default class Message extends Component {
         
     }
 
-    componentDidMount(){
+    componentDidMount(){/*
+        this.messageTest();
+        /*
         fetch('/chatlist&id='+this.props.id)
         .then(res => res.json(res))
         .then(res => this.setState({chatList:res,userList:[...new Set(res.map(res => res.receiver || res.sender))]}))
+        */
     }
     handleTextChange(event) {
         this.setState({text: event.target.value});
     }
+
+    messageTest= async() => {
+        var flag = await axios('/message',{
+          method : 'POST',
+          data : {id : "test",
+                },
+                headers : new Headers()
+        })
+        alert("message")
+      }
+
+      messageTest2= async() => {
+        var flag = await axios('/message/user',{
+          method : 'POST',
+          data : {id : "test",
+                },
+                headers : new Headers()
+        })
+        alert("message")
+      }
+
     render() {
         return (
             <div>
@@ -56,7 +81,7 @@ export default class Message extends Component {
                             </div>
                         <div className="send">
                             <input type="text" value={this.state.text} onChange={this.handleTextChange}></input>
-                            <div className="sendButton">send</div>
+                            <div className="sendButton" onClick={this.messageTest2}>send</div>
                         </div>
                     </div>
                 </div>
