@@ -72,6 +72,9 @@
         float: right;
         border-radius:5px;
         padding: 1%;
+        p{
+            font-size: 12pt;
+        }
         .logoutButton {
             width: 9vw;
             grid-column: 1/4;
@@ -85,6 +88,49 @@
             color: white;
             &:hover{
                 background-color: cadetblue;
+            }
+        }
+        .Mail{
+            float: left;
+            cursor: pointer;
+            img{
+                width: 30px;
+            }
+            &:hover{
+                filter: drop-shadow(3);
+            }
+        }
+        .messages{
+            border-radius: 10px;
+            height: 220px;
+            margin-top: 50px;
+            background-color: #5486d8;
+            padding: 10px;
+            .recent{
+                border-radius: 5px;
+                padding: 5px;
+                background-color: gray;
+                text-align: center;
+                color: white;
+                margin-bottom: 20px;
+            }
+            .name{
+                color: white;
+                background-color: rgb(150, 199, 76);
+                margin-right: 10px;
+                font-size: 13pt;
+            }
+            .time{
+                float: right;
+                font-weight: bold;
+            }
+            .message{
+                border-radius: 5px;
+                width: 5px;
+                padding: 3px;
+                margin-top: 5px;
+                background-color: white;
+                width: 100%;
             }
         }
     }

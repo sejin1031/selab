@@ -2,20 +2,37 @@ import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import ReactDom from 'react-dom';
 import SignUp from '../signup/SignUp';
+import Message from '../message/Message';
 
 import 'react-viewer/dist/index.css';
 import './homeimage.scss';
 import axios from 'axios';
 
+var messages = [
+  {name:'scott',
+  content:'you are fail',
+  time:'18:20'},
+  {name:'junyoung',
+  content:'HYCube is nice',
+  time:'23:20'},
+  {name:'jongmin',
+  content:'chegg is evil',
+  time:'18:20'}
+]
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {id: '',pw:'',signupPopup:false,};
+    this.state = {id: '',pw:'',signupPopup:false,messagePopup:false};
 
     this.handleIDChange = this.handleIDChange.bind(this);
     this.handlePWChange = this.handlePWChange.bind(this);
     this.loginSubmit = this.loginSubmit.bind(this);
     this.handleSignupPopup = this.handleSignupPopup.bind(this);
+    this.handleMessagePopup = this.handleMessagePopup.bind(this);
+  }
+  handleMessagePopup(){
+    this.setState({messagePopup:false})
   }
 
   handleSignupPopup(){
@@ -45,7 +62,7 @@ class Home extends React.Component {
       alert("login fail")
     }
   }
-
+  
     render() {
       return (
         <div className="home">
@@ -72,7 +89,23 @@ class Home extends React.Component {
          <div className="logined">
            <div onClick={this.props.logoutHandler}
            className="logoutButton">logout</div>
-              <p>welcome {this.props.id}</p>
+              <p>Logined by {this.props.id}</p>
+              <div className="Mail" onClick={()=>this.setState({messagePopup:true})}>
+                <img src={require('./mail_icon.png')} alt="mail"/>
+                </div>
+
+              {this.state.messagePopup && <Message handleMessagePopup={this.handleMessagePopup}/>}
+
+              <div className="messages">
+                <div className="recent">Recent Messages</div>
+                {messages.map((index,name,time,content)=>
+                <div key={index}>
+                    <span className="name">{index.name}</span>
+                    
+                   <div className="message">
+                   {index.content} <span className="time">{index.time}</span></div>
+                </div>)}
+              </div>
           </div>}
           
 

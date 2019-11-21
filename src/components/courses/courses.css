@@ -41,7 +41,7 @@ li:hover:before {
 {
     display:inline-block;
     border-left: 3px solid white;
-    
+    padding:30px;
 }
 
 .Course
@@ -63,7 +63,6 @@ h2
     padding:5px;
     font-size:15px;
     text-align: center;
-    font-family: ;
 }
 
 .Course img

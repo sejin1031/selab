@@ -19,7 +19,7 @@ class Research extends React.Component {
               <div className = 'plot1'>
                 <h1>Web & Web security</h1>
                 <ul>
-                  <li>Semantic web</li>
+                  <li className = "font">Semantic web</li>
                   <li>Effective Access Control for Web Data</li>
                   <li>Vulnerability Analysis and Detection for HTML5</li>
                   <li>JavaScript and Hybrid Application</li>

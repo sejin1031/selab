@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const router_login = require('./router/serv_rout_login')
+const router_notice = require('./router/serv_rout_notice')
 
 const sequelize = require('./models').sequelize;
 const bodyParser = require('body-parser')
@@ -10,14 +12,19 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+/*
 const {
     Usersinfo,
     Noticeinfo,
     Sequelize: { Op }
   } = require('./models');
 sequelize.query('SET NAMES utf8;');
+*/
 
+app.use('/login', router_login);
+app.use('/notice', router_notice);
 
+/*
 app.get('/notice', (req, res) => {
     Noticeinfo.findAll().then (result => {
         res.send(result)
@@ -63,7 +70,7 @@ app.post('/login/signup', (req, res) => {
         create_userinfo(req, res,(result != null))
     })
 });
-
+*/
 
 const PORT = process.env.PORT || 4000;
 
@@ -71,7 +78,7 @@ app.listen(PORT, () => {
     console.log(`Server On : http://localhost:${PORT}/`);
 });
 
-
+/*
 function create_userinfo(req, res, exist) {
     console.log(exist)
     if (exist == false) {
@@ -111,3 +118,4 @@ function checkUser(req, res, result) {
     }
 
 }
+*/
