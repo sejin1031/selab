@@ -8,17 +8,23 @@ import 'react-viewer/dist/index.css';
 import './homeimage.scss';
 import axios from 'axios';
 
-var messages = [
-  {name:'scott',
-  content:'you are fail',
-  time:'18:20'},
-  {name:'junyoung',
-  content:'HYCube is nice',
-  time:'23:20'},
-  {name:'jongmin',
-  content:'chegg is evil',
-  time:'18:20'}
-]
+var chat = [{
+  receive:'scott',
+  send:'sejin',
+  text:'Hello',
+  date:'19/11/21',
+  },{
+      receive:'sejin',
+      send:'scott',
+      text:'Hi',
+      date:'19/11/21',
+      },
+      {
+          receive:'scott',
+          send:'jongmin',
+          text:'Hey scott give me A',
+          date:'19/11/21',
+          },]
 
 class Home extends React.Component {
   constructor(props) {
@@ -98,13 +104,13 @@ class Home extends React.Component {
 
               <div className="messages">
                 <div className="recent">Recent Messages</div>
-                {messages.map((index,name,time,content)=>
+                {chat.filter(ch => ch.receive === this.props.id).map((index,receive,send,text)=>
                 <div key={index}>
-                    <span className="name">{index.name}</span>
+                    <span className="name">{index.send}</span>
                     
                    <div className="message">
-                   {index.content} <span className="time">{index.time}</span></div>
-                </div>)}
+                   {index.text} <span className="time">{index.date}</span></div>
+                </div>).slice(0,3)}
               </div>
           </div>}
           
