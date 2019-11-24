@@ -2,9 +2,24 @@
     color:white;
     font-size: 60px;
 }
+.popoutme{
+	vertical-align: middle;
+	padding-left: 15px;	
+
+}
+.membersdiv{
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
 .members {
 	padding: 15px;
 	color:white;
+	transition-duration: 0.5s;
+}
+
+.members:hover{
+	transition-duration: 0.5s;
+	margin-left:100px; 
 }
 .position{
 	color:white;
@@ -55,16 +70,7 @@ ul{
 	margin-bottom: auto; 
 	overflow: hidden;
 }
-.popoutme{
-	vertical-align: middle;
-	margin-left:30px; 
-	transition-duration: 0.5s;
-}
-.popoutme:hover{
-	transition-duration: 0.5s;
-	margin-left:100px; 
-	vertical-align: middle;
-}
+
 
 
 @keyframes pop {
