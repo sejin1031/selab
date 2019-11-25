@@ -5,25 +5,30 @@
     
 }
 .menuItem{
+    color : #85B8CB;
     text-decoration: none;
-    padding-right: 15px;
     .bigMenuItem{
         font-weight: bold;
         font-size: 12pt;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         margin-left: 0;
         writing-mode: tb-rl;
-        transition: .3s ease;
+        transition: .5s ease;
     }
     &:hover .bigMenuItem{
-        background-color: rgba($color: #423a3a, $alpha: 0.8);
+        background-color: rgba($color: #D1DDDB, $alpha: 0.5);
         border-radius: 5px;
         width: 100%;
-        font-size: 50pt;
-        writing-mode: horizontal-tb;
-        transition: .3s ease;
-        transition-delay: 0.1s ease;
+        font-size: 35pt;
+        transform-origin: 45% 45%;
+        transform: rotate(-90deg) translateY(25%) translateX(40px);
+        
+        transition: .5s ease;
     }
+    &:hover .long{
+        transform: translateX(20px);
+    }
+   
 }
 .bonobono{
     width: 50px;

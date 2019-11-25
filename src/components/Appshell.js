@@ -36,7 +36,7 @@ class AppShell extends React.Component {
     return (
         <div>
             <div className={classes.root}>
-                <Container style={{paddingLeft: '5px', marginTop: '50px', marginLeft: '0px'}}>
+                <Container style={{paddingLeft: '5px', marginTop: '30px', marginLeft: '10px'}}>
                         <Link component={RouterLink} to="/" style={{textDecoration:'none',color:'white'}}>
                             <div className="menuItem">
                                 <div className="bigMenuItem">HOME</div>
@@ -55,12 +55,16 @@ class AppShell extends React.Component {
                         </Link>
                         <Link component={RouterLink} to="/research" style={{textDecoration:'none',color:'white'}}>
                             <div className="menuItem">
-                                <div className="bigMenuItem">RESEARCH</div>
+                                <div className="long">
+                                    <div className="bigMenuItem">RESEARCH</div>
+                                </div>
                             </div>                        
                         </Link>
                         <Link component={RouterLink} to="/publication" style={{textDecoration:'none',color:'white'}}>
                             <div className="menuItem">
-                                <div className="bigMenuItem">PUBLICATION</div>
+                                <div className="long">
+                                    <div className="bigMenuItem">PUBLICATION</div>
+                                </div>
                             </div>                        
                         </Link>
                         <Link component={RouterLink} to="/course" style={{textDecoration:'none',color:'white'}} >
