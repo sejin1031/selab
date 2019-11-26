@@ -19,10 +19,12 @@ button:after
 {
   color:black;
   font-family:Tahoma,Verdana, sans-serif;
-  li
-  {
+}
+
+li 
+{
     font-size:10pt;
-  }
+    color:black !important;
 }
 
 li:hover
