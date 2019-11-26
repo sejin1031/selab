@@ -1,11 +1,12 @@
 .box{
-    background-color: white;
+    background-color: rgb(211, 237, 245);
     border: 1px black solid;
-    width: 80%;
+    width: 70%;
     font-family: Verdana, Tahoma, sans-serif;
     .boxContent{
         border-collapse: collapse;
         border: 1px black solid;
-        background-color: rgb(150, 91, 91);
+        background-color:wheat;
+        font-family: Tahoma,Arial,sans-serif;
     }
 }

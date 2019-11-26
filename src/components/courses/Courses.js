@@ -14,11 +14,11 @@ class Course extends React.Component {
                   <img src= {require("./hanyang_university.png")}/>
                    <h2> Undergraduate Courses</h2>
                    <ul id = "under_list">
-                       <li>CSE107:Logical Fundamentals of Programming</li>
-                       <li>CSE117:Programming Fundamentals</li>
-                       <li>CSE322:Web Programming</li>
-                       <li><Link to="/course/cse326">CSE326:Web Application Development</Link></li>
-                       <li>CSE406:Software Engineering</li>
+                     <li><Link to="/course/cse326">CSE326:Web Application Development</Link></li>
+                     <li>CSE107:Logical Fundamentals of Programming</li>
+                     <li>CSE117:Programming Fundamentals</li>
+                     <li>CSE322:Web Programming</li>
+                     <li>CSE406:Software Engineering</li>
                    </ul>
                 </div>
                <div class="line">
