@@ -1,0 +1,40 @@
+button
+{
+  background-color: rgb(248,155,108);
+  color: white;
+  padding: 15px 30px;
+  margin-right:2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+button:after
+{
+  background-color:blue;
+}
+
+.Home
+{
+  color:black;
+  font-family:Tahoma,Verdana, sans-serif;
+  li
+  {
+    font-size:10pt;
+  }
+}
+
+li:hover
+{
+  text-decoration: none;
+}
+
+a
+{
+  text-decoration: none;
+  color:black;
+}
+
+
+  
