@@ -85,8 +85,10 @@ export default class Message extends Component {
             text : '',
             userList : ["sejin","hyunsoo","jongmin","HYCUBE회장","JARAM","hyunsoo","jongmin","HYCUBE회장","JARAM"],
             chatList:[],
+            newid:'',
         }
         this.handleTextChange = this.handleTextChange.bind(this);
+        this.handleNewID = this.handleNewID.bind(this);
         
     }
 
@@ -96,6 +98,9 @@ export default class Message extends Component {
     }
     handleTextChange(event) {
         this.setState({text: event.target.value});
+    }
+    handleNewID(event){
+        this.setState({newid: event.target.value})
     }
 
     messageTest= async() => {
@@ -117,6 +122,18 @@ export default class Message extends Component {
       }
 
       sendMessage= async()=>{
+          if(this.state.selectedId === "newMessage"){
+            var flag = await axios('message/send',{
+                method: 'POST',
+                data : {
+                    send : this.props.id,
+                    recieve : this.state.newid,
+                    text : this.state.text,
+                    date : new Date(),
+                }
+            })
+          }
+          else{
           var flag = await axios('message/send',{
               method: 'POST',
               data : {
@@ -126,6 +143,7 @@ export default class Message extends Component {
                   date : new Date(),
               }
           })
+        }
       }
 
       scrollToBottom() {
@@ -145,6 +163,7 @@ export default class Message extends Component {
                     <div className="list">
                         <div className="title">RECEIVED LIST</div>
                         <div className="names">
+                            <div className="users" onClick={()=>this.setState({selectedId:"newMessage"})}>new Messages</div>
                         {this.state.userList.map((name,index)=>
                         <div key={index} className={name===this.state.selectedId? "selectedusers":"users"}
                         onClick={()=>this.setState({selectedId:name})}>{name}</div>)}
@@ -152,6 +171,9 @@ export default class Message extends Component {
                     </div>
                     <div className="chat">
                         <div id="chatcontent" >
+                            {this.state.selectedId === "newMessage" &&
+                            <input id="newid" type="text" value={this.state.newid} onChange={this.handleNewID}></input>
+                                                    }
                             {
                             chat.filter(message => message.receive===this.state.selectedId 
                                 && message.send === this.props.id 

@@ -38,6 +38,11 @@
                 grid-row: 1/23;
                 overflow: scroll;
                 width: 650px;
+                #newid{
+                    margin-top: 150px;
+                    margin-left: 250px;
+                    width: 200px;
+                }
                 .receiveContent{
                     padding: 5px;
                     border-radius: 5px;
@@ -115,4 +120,9 @@
         }
     }
     
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
 }

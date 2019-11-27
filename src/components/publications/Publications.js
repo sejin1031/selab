@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './publications.scss';
+
 var publications = [{type :'International Conference', title:'Zhiqiang Wu, Xin Chen and Scott Uk-Jin Lee, "Identifying Latent Android Malware from Application'+'s Description using LSTM," In Proc. International Conference on Information, System and Convergence Applications, 2019, pp.40-42',
                     link:'./publications/[IP]_Zhiqiang1.pdf'},
                     {type :'International Conference', title:'Mohsin Javaid Siddiqui, Xintao Li, Isma Farah Siddiqui, Asad Abbas and Scott Uk-Jin Lee, "Comparative Analysis of GUI Development for Android Application by utilizing MDA Approach," In Proc. International workshop on convergence information technology 2017, 2017, pp.151-154.',
@@ -117,7 +119,10 @@ class Publication extends React.Component {
         return (
             <div className="publicationContent">
                 <div className="publications">
-
+                    {publications.map((index)=>
+                    <div className="publication" key={index}>
+                        <a href={index.link} download={index.link}>{index.link}</a>
+                        </div>)}
                 </div>
             </div>
         );
