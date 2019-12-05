@@ -14,11 +14,11 @@ class Course extends React.Component {
                   <img src= {require("./hanyang_university.png")}/>
                    <h2> Undergraduate Courses</h2>
                    <ul id = "under_list">
-                     <li><Link to="/course/cse326">CSE326:Web Application Development</Link></li>
-                     <li>CSE107:Logical Fundamentals of Programming</li>
-                     <li>CSE117:Programming Fundamentals</li>
-                     <li>CSE322:Web Programming</li>
-                     <li>CSE406:Software Engineering</li>
+                     <li className = "list"><Link to="/course/cse326">CSE326:Web Application Development</Link></li>
+                     <li className = "list">CSE107:Logical Fundamentals of Programming</li>
+                     <li className = "list">CSE117:Programming Fundamentals</li>
+                     <li className = "list">CSE322:Web Programming</li>
+                     <li className = "list">CSE406:Software Engineering</li>
                    </ul>
                 </div>
                <div class="line">
@@ -27,10 +27,10 @@ class Course extends React.Component {
                   <img src= {require("./hanyang_university.png")}/>
                   <h2> Postgraduate Courses</h2>
                   <ul id="post_list">
-                    <li>CIN870:Formal Methods</li>
-                    <li>CSE603:Management of Semistructured Data</li>
-                    <li>CSE609:Model Checking</li>
-                    <li>CSE639:Special Topics in Software Engineering</li>
+                    <li className = "list">CIN870:Formal Methods</li>
+                    <li className = "list">CSE603:Management of Semistructured Data</li>
+                    <li className = "list">CSE609:Model Checking</li>
+                    <li className = "list">CSE639:Special Topics in Software Engineering</li>
                   </ul>
                </div>
             </div>

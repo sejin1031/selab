@@ -29,8 +29,8 @@ class Cse326 extends Component {
 		return (
             <div className="main">
                 <div className = "buttondiv">
-                    <button id = "Home" onClick = {this.homeHandler}>Home</button>
-                    <button id = "Slides" onClick = {this.slideHandler}>Slides</button>
+                    <button id = "button_Home" onClick = {this.homeHandler}>Home</button>
+                    <button id = "button_Slides" onClick = {this.slideHandler}>Slides</button>
                 </div>
                 {
                     this.state.home === true? 
@@ -83,7 +83,8 @@ class Cse326 extends Component {
                                     <li>Class 1(23497)</li>
                                         <ul>
                                             <li>Lecture : Thu (09:00 - 10:30) & Fri (13:00 - 14:30) @ Engineering Building #1 Room 402</li>
-                                            <li>Tel: 031-400-4754Lab : Fri (09:00 - 11:00) @ Engineering Building #4 PC Room 1 & 2Email: fantasyopy@gmail.com</li>
+                                            <li>Tel: 031-400-4754</li>
+                                            <li>Lab : Fri (09:00 - 11:00) @ Engineering Building #4 PC Room 1 & 2Email: fantasyopy@gmail.com</li>
                                         </ul>
                                     <br />
                                     <li>Class 2(24465)</li>
