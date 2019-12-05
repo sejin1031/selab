@@ -1,4 +1,15 @@
-button
+#button_Home
+{
+  background-color: rgb(248,155,108);
+  color: white;
+  padding: 15px 30px;
+  margin-right:2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+#button_Slides
 {
   background-color: rgb(248,155,108);
   color: white;
@@ -10,26 +21,13 @@ button
   font-size: 14px;
 }
 
-button:after
+.content
 {
-  background-color:blue;
-}
-
-.Home
-{
-  color:black;
-  font-family:Tahoma,Verdana, sans-serif;
-}
-
-li 
-{
-    font-size:10pt;
-    color:black !important;
-}
-
-li:hover
-{
-  text-decoration: none;
+  li
+  {
+    font-size:12pt;
+    color:black;
+  }
 }
 
 a
