@@ -1,5 +1,6 @@
 import React from 'react';
 import SimpleImageSlider from "react-simple-image-slider";
+import './gallery.css'
 
 class Gallery extends React.Component{
     render(){
@@ -86,10 +87,10 @@ class Gallery extends React.Component{
             { url: require("./images/2015-12-20 17.39.26.jpg") },
         ];
         return (
-            <div>
-                <h1 id = "galley_id">Gallery</h1>
+            <div
+                <h1 className = "gid">Gallery</h1>
                 <SimpleImageSlider
-                    width={1000}
+                    width={1100}
                     height={600}
                     images={images}
                 />
