@@ -38,7 +38,7 @@ function create_userinfo(req, res, exist) {
             user_id : req.body.id,
             user_pw : req.body.pw,
             name : req.body.name,
-            grade : "D"
+            grade : "S"
             })
         res.send({isLoggedin : true})
         console.log("create user success")
@@ -56,6 +56,7 @@ function checkUser(req, res, result) {
             res.send({
                 id : result.user_id,
                 grade : result.grade,
+                name : result.name,
                 isLoggedin : true
             })
             console.log("login success")
