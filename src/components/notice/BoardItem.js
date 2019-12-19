@@ -1,25 +1,30 @@
 import React, { Component } from 'react';
+import "./noticestyle.css"
 
 class BoardRow extends Component {
-    handleRemove = () => {
-        const { row, onRemove } = this.props;
-        onRemove(row.brdno);
-    }    
-    
-    handleSelectRow = () => {
-        const { row, onSelectRow } = this.props;
-        onSelectRow(row);
-    }    
-    
+    constructor(props) {
+        super(props);
+        this.state = {
+          data : this.props.popup
+        };
+        console.log(this.props.popup)
+        console.log(this.state.data.date)
+      }
+
     render() {
         return(
-            <tr>
-                <td>{this.props.row.brdno}</td>
-                <td><a onClick={this.handleSelectRow}>{this.props.row.brdtitle}</a></td>
-                <td>{this.props.row.brdwriter}</td>
-                <td>{this.props.row.brdcontent}</td>
-                <td>{this.props.row.brddate.toLocaleDateString('ko-KR')}</td>
-            </tr>
+            <React.Fragment>
+                <div className="Modal-overlay" />
+                <div className="Modal">
+                <button className="cbutton" > X </button>
+                    <div>
+                      <div><span className = "ntable">Title : </span>{this.state.data.title} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className = "ntable">Writer : </span>{this.state.data.writer}</div><hr/>
+                      <div><span className = "ntable">Content : </span><br/>{this.state.data.content}</div><hr/>
+                      <div><span className = "ntable">Date : </span>{this.state.data.date}</div>
+                    </div>
+
+                </div>
+            </React.Fragment>
         );
     }
 }
