@@ -71,7 +71,8 @@ ul{
 }
 .popinme{
 	width: 30%;
-  border: 3px solid #3571B5;
+  border: 2px solid #3571B5;
+  border-radius: 25px;
 	float: right;
 }
 
