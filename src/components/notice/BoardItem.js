@@ -17,10 +17,10 @@ class BoardRow extends Component {
                 <div className="Modal-overlay" />
                 <div className="Modal">
                 <button className="closebutton" > X </button>
-                    <div className="content">
+                    <div>
                       <div><span className = "ntable">Title : </span>{this.state.data.title} <span className = "ntable">Writer : </span>{this.state.data.writer}</div><hr/>
-                      <div><span className = "ntable">Content : </span><br/>{this.state.data.content}</div>
-                      <div><span className = "ntable">Date : </span>{this.state.data.date}</div><hr/>
+                      <div><span className = "ntable">Content : </span><br/>{this.state.data.content}</div><hr/>
+                      <div><span className = "ntable">Date : </span>{this.state.data.date}</div>
                     </div>
 
                 </div>
