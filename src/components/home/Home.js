@@ -89,7 +89,7 @@ class Home extends React.Component {
       return (
         <div className="home">
             <img src={require("./selab_logo.png")} alt="logo" />
-          {!this.props.isLoggedin && <div className="login">
+          {this.props.id === '' && <div className="login">
             <label>
               <span className="loginFont">ID</span><br/>
               <input type="text" name="id" value={this.state.id} onChange={this.handleIDChange} />
@@ -107,7 +107,7 @@ class Home extends React.Component {
          </div>}
 
           {this.state.signupPopup &&<SignUp handlesignupPopup={this.handleSignupPopup}/>}
-         {this.props.isLoggedin &&
+         {this.props.id != '' &&
          <div className="logined">
            <div onClick={this.props.logoutHandler}
            className="logoutButton">logout</div>
