@@ -42,7 +42,7 @@ class WritePopup extends React.Component {
     render() {
         const { boards, selectedBoard } = this.state;
         return (
-        <div className='popup'>
+        <div className='npopup'>
             <div className='popup_inner'>
                 <h1>WRITE</h1>
                 <BoardForm selectedBoard={selectedBoard} onSaveData={this.handleSaveData}/>
