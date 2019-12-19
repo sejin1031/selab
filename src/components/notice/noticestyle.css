@@ -11,10 +11,7 @@
     text-align: center;
     color : aliceblue;
 }
-.Modal{
-  word-wrap: break-word;
-  padding: 10px;
-}
+
 
 
 .table {
@@ -131,3 +128,14 @@ input[type = "text"]{
     width:100%;
     transition:800ms ease all;
   }
+
+.ntable{
+      font-family: 'Economica', sans-serif;
+      font-size: 20pt;
+}
+
+.Modal{
+  word-wrap: break-word;
+  padding: 10px;
+  background-color: aliceblue;
+}
