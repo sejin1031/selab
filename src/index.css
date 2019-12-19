@@ -1,5 +1,6 @@
 body {
   background-color: rgb(43, 49, 55);
+  background-image: url('./style/bg2.png');
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -7,11 +8,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-y: hidden;
-}
-
-body:after{
-  background-image: url('./style/bg.jpg');
-  
 }
 
 code {
