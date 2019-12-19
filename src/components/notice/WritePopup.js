@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import BoardForm from './BoardFoam';
 import BoardItem from './BoardItem';
+import './noticestyle.css'
 
 
 class WritePopup extends React.Component {

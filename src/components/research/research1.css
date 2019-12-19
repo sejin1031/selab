@@ -1,8 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Economica:400,700);
 img{
   width: 7%;
 }
 h1{
    color: #85B8CB;
+
 }
 ul li{
   color:#D1DDDB;
@@ -71,12 +73,13 @@ ul li{
 
 
 .plot1{
+  font-family: 'Economica', sans-serif;
   padding : 1vw;
   border-radius:25%;
-  font-size: 0.9vw;
+  font-size: 1.2vw;
   position: absolute;
-  left: 38vw;
-  top: 19vw;
+  left: 39vw;
+  top: 18vw;
   background-color: #353C42;
   -webkit-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
 
@@ -94,12 +97,13 @@ ul li{
 
 
 .plot2{
+  font-family: 'Economica', sans-serif;
   padding : 1vw;
   border-radius:25%;
-  font-size: 0.9vw;
+  font-size: 1.2vw;
   position: absolute;
-  left: 36vw;
-  top: 19vw;
+  left: 37vw;
+  top: 18vw;
   background-color: #353C42;
   -webkit-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
 }
@@ -117,12 +121,13 @@ ul li{
 
 
 .plot3{
+  font-family: 'Economica', sans-serif;
   padding : 1vw;
   border-radius:25%;
-  font-size: 0.9vw;
+  font-size: 1.2vw;
   position: absolute;
-  left: 37vw;
-  top: 19vw;
+  left: 38vw;
+  top: 17vw;
   background-color: #353C42;
   -webkit-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
 }
@@ -138,12 +143,13 @@ ul li{
 }
 
 .plot4{
+  font-family: 'Economica', sans-serif;
   padding : 1vw;
   border-radius:25%;
-  font-size: 0.9vw;
+  font-size: 1.2vw;
   position: absolute;
-  left: 35vw;
-  top: 20vw;
+  left: 36vw;
+  top: 18vw;
   background-color: #353C42;
   -webkit-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
 }
@@ -159,12 +165,13 @@ ul li{
 }
 
 .plot5{
+  font-family: 'Economica', sans-serif;
   padding : 1vw;
   border-radius:25%;
-  font-size: 0.9vw;
+  font-size: 1.2vw;
   position: absolute;
-  left: 36vw;
-  top: 18vw;
+  left: 37vw;
+  top: 16vw;
   background-color: #353C42;
   -webkit-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
 }
@@ -248,6 +255,6 @@ ul li{
 }
 .research{
   margin-top: 7vw;
-  font-family: "Arial";
   font-size: 1vw;
+  font-family: 'Economica', sans-serif;
 }
