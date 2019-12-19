@@ -23,16 +23,17 @@
         color:#fff;
         border:none;
         position:relative;
-        height:60px;
-        font-size:1.6em;
+        height:5vh;
+        width:19vw;
+        font-size:14pt;
         padding:0 2em;
         cursor:pointer;
         transition:800ms ease all;
         outline:none;
       }
       .button_slide:hover{
-        background:#fff;
-        color:#1AAB8A;
+        background:#353C42;
+        color:#85B8CB;
       }
       .button_slide:before,.button_slide:after{
         content:'';
@@ -41,7 +42,7 @@
         right:0;
         height:2px;
         width:0;
-        background: #1AAB8A;
+        background: #85B8CB;
         transition:400ms ease all;
       }
       .button_slide:after{
