@@ -112,14 +112,15 @@ export default class Message extends Component {
         this.setState({chatList:flag.data})
     }
     getUsers = async()=>{
-        var flag = await axios('/message/data',{
+        var flag = await axios('/message/user',{
             method : 'POST',
             data:{
                 id:this.props.id,
             },
             headers : new Headers()
         })
-        this.setState({userList:flag.data})
+        console.log(flag.data)
+        //this.setState({userList:flag.data})
     }
     // messageTest= async() => {
     //     var flag = await axios('/message',{
