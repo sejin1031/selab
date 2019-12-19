@@ -42,6 +42,7 @@ class Home extends React.Component {
     this.loginSubmit = this.loginSubmit.bind(this);
     this.handleSignupPopup = this.handleSignupPopup.bind(this);
     this.handleMessagePopup = this.handleMessagePopup.bind(this);
+    this.getMessages();
   }
   handleMessagePopup(){
     this.setState({messagePopup:false})
@@ -82,9 +83,8 @@ class Home extends React.Component {
       },
       headers : new Headers()
     })
-    // this.setState({recentMessages:flag.data.})
+    this.setState({recentMessages:flag.data})
   }
-  
     render() {
       return (
         <div className="home">
@@ -120,7 +120,7 @@ class Home extends React.Component {
 
               <div className="messages">
                 <div className="recent">Recent Messages</div>
-                {chat.filter(ch => ch.receive === this.props.id).map((index,receive,send,text)=>
+                {this.state.recentMessages.map(index=>
                 <div key={index}>
                     <span className="name">{index.send}</span>
                     
