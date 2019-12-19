@@ -10,7 +10,7 @@ import axios from 'axios';
 class Notice extends React.Component {
     constructor() {
       super();
-      
+
       this.state = {
         showPopup: false,
         maxNo: 4,
@@ -41,7 +41,7 @@ class Notice extends React.Component {
     noPopHandler(data){
       this.setState({popup: data})
     }
-   
+
 
   render() {
     const { selectedBoard } = this.state;
@@ -53,23 +53,22 @@ class Notice extends React.Component {
           noPopHandler={this.noPopHandler}
         />
         }
-        <img className="bell" src= {require("./notice.png")} id = 'nimg'/>
+        
 
         <h1 id ="h1">Notice</h1>
-        
+
           <table className='table'>
             <thead>
               <tr align="center">
-                  <th width="25">No.</th>
-                  <th width="200">Title</th>
-                  <th width="50">Name</th>
-                  <th width="700">Content</th>
-                  <th width="150">Date</th>
+                  <th width="50">No.</th>
+                  <th width="500">Title</th>
+                  <th width="300">Name</th>
+                  <th width="200">Date</th>
               </tr>
             </thead>
             <tbody>
-              
-              {this.state.test.map(data => 
+
+              {this.state.test.map(data =>
               <tr onClick={()=>this.noPopHandler(data)}>
                 <td>{data.id}</td>
                 <td>{data.title}</td>
@@ -83,7 +82,7 @@ class Notice extends React.Component {
               {<button className = "nbutton" onClick={this.togglePopup.bind(this)}>글쓰기</button>}
               {/*:""*/
         }
-        {this.state.showPopup ? 
+        {this.state.showPopup ?
             <WritePopup text='Close Me' closePopup={this.togglePopup.bind(this)}/>
             : null
         }

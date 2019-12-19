@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./noticestyle.css"
 
 class BoardRow extends Component {
     constructor(props) {
@@ -9,35 +10,17 @@ class BoardRow extends Component {
         console.log(this.props.popup)
         console.log(this.state.data.date)
       }
-    
+
     render() {
         return(
             <React.Fragment>
                 <div className="Modal-overlay" />
                 <div className="Modal">
-                <button className="closebutton" > X </button>
-                <p className="title">{this.state.data.date}SignUp</p>
-                    <div className="content">
-                    <form>
-                        <label>
-                        <span className="loginFont">ID</span><br/>
-                        <input type="text" name="id"/>
-                        </label> 
-                        <br/>
-                        <label>
-                        <span className="loginFont">Password</span><br/>
-                        <input type="password" name="pw"/>
-                        </label>
-                        <br/>
-                        <label>
-                            <span className="loginFont">name</span><br/>
-                            <input type = "text" name="name"/>
-                        </label>
-                        <br/>
-                        <div className="button-wrap">
-                         <input type="submit" value="SignUp" />
-                        </div>
-                    </form>
+                <button className="cbutton" > X </button>
+                    <div>
+                      <div><span className = "ntable">Title : </span>{this.state.data.title} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className = "ntable">Writer : </span>{this.state.data.writer}</div><hr/>
+                      <div><span className = "ntable">Content : </span><br/>{this.state.data.content}</div><hr/>
+                      <div><span className = "ntable">Date : </span>{this.state.data.date}</div>
                     </div>
 
                 </div>
