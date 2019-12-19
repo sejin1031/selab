@@ -175,10 +175,10 @@ class Publication extends React.Component {
 
 
             <div className = "buttondiv">
-                <button id = "button_slide1" onClick = {this.slide1Handler}>Domestic Journal</button>
-                <button id = "button_slide2" onClick = {this.slide2Handler}>International Conference</button>
-                <button id = "button_slide3" onClick = {this.slide3Handler}>International Journal</button>
-                <button id = "button_slide4" onClick = {this.slide4Handler}>Domestic Conference</button>
+                <button className = "button_slide" onClick = {this.slide1Handler}>Domestic Journal</button>
+                <button className = "button_slide" onClick = {this.slide2Handler}>International Conference</button>
+                <button className = "button_slide" onClick = {this.slide3Handler}>International Journal</button>
+                <button className = "button_slide" onClick = {this.slide4Handler}>Domestic Conference</button>
             </div>
 
             {
