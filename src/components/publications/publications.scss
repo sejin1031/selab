@@ -2,9 +2,12 @@
   
 .publicationContent{
     font-family: 'Economica', sans-serif;  
+
+
     #h1{
         font-family: 'Economica', sans-serif; 
         color: aliceblue;
+        font-size: 32pt;
     }
     .publications{
         .publication{
@@ -13,11 +16,20 @@
             background-color: #353C42;
             .alink{
                 color: aliceblue;
-                font-size: 20px;
+                font-size: 15pt;
+            }
+            &:hover .alink{
+                background-color: rgba($color: #D1DDDB, $alpha: 0.5);
+                transition: .5s ease;
             }
         }
+        
     }
+
+    
+
     .buttondiv{
+        text-align: center;
       .button_slide{
         background:#353C42;
         color:#fff;
@@ -25,7 +37,7 @@
         position:relative;
         height:5vh;
         width:19vw;
-        font-size:14pt;
+        font-size:1.2vw;
         padding:0 2em;
         cursor:pointer;
         transition:800ms ease all;
