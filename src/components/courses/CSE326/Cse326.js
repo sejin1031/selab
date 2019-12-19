@@ -29,15 +29,16 @@ class Cse326 extends Component {
 		return (
             <div className="main">
                 <div className = "buttondiv">
-                    <button id = "button_Home" onClick = {this.homeHandler}>Home</button>
-                    <button id = "button_Slides" onClick = {this.slideHandler}>Slides</button>
+                    <button className = "button_slide" onClick = {this.homeHandler}>Home</button>
+                    <button className = "button_slide" onClick = {this.slideHandler}>Slides</button>
                 </div>
                 {
                     this.state.home === true? 
                     <div className = "Home">
                         <ToggleBox title ="Course Objective">
-                        <p>In this course, the followings will be covered to adequately enable web programming and web application development:</p>
+                        
                             <div className="content">
+                            <p>In this course, the followings will be covered to adequately enable web programming and web application development:</p>
                                 <ol>
                                     <li>Understand the protocols, language and systems used on the Web (HTML, CSS, HTTP, URLs, XML)</li>
                                     <li>Understand the functions of clients and servers on the Web & learn how to implement client-side scripts (JavaScript) and server-side scripts (PHP)</li>
@@ -107,7 +108,7 @@ class Cse326 extends Component {
                         <ToggleBox title="Textbooks">
                             <div className="content">
                                 <ul>
-                                    <li>Marty Stepp, Jessica Miller, Victoria Kirst, Web Programming Step by Step: Second Edition, Step by Step Publishing, 2012</li>
+                                    <li>Marty Stepp, Jessica Miller, Victoria Kirst, <strong>Web Programming Step by Step: Second Edition</strong>, Step by Step Publishing, 2012</li>
                                 </ul>   
                             </div>
                         </ToggleBox>
