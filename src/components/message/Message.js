@@ -169,7 +169,6 @@ export default class Message extends Component {
           })
         }
         if(flag.data.receive){
-            setInterval(()=>{this.getMessages()},100)
             this.getMessages();
         }
         else{
