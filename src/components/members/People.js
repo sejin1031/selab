@@ -7,7 +7,7 @@ class People extends React.Component{
       super(props);
       this.state={
         information:[
-        {  
+        {
           name:'Scott',
           position: 'Professor',
           address: 'scottlee@hanyang.ac.kr',
@@ -23,7 +23,7 @@ class People extends React.Component{
           web: 'http://www.linkedin.com/in/ismafarah',
           position2: 'PhD scholar From Pakistan on HEC Scholarship',
           photo: require('./photo/Isma Farah.jpg'),
-          research_interests: 'Software Engineering\nWeb Applications\nSemantic Web\nDatabase Management\nFormal Methods'         
+          research_interests: 'Software Engineering\nWeb Applications\nSemantic Web\nDatabase Management\nFormal Methods'
         },
         {
           name: 'Abdul Rahim',
@@ -77,7 +77,7 @@ class People extends React.Component{
           web: 'http://www.linkedin.com/in/ismafarah',
           position2: 'Hi',
           photo: require('./photo/Gayeon Kim.jpg'),
-          research_interests: 'Software Engineering\nWeb Application\nBigdata analysis'         
+          research_interests: 'Software Engineering\nWeb Application\nBigdata analysis'
         },
         {
           name: 'Seonwoong Kim',
@@ -233,11 +233,11 @@ class People extends React.Component{
             if(this.state.information[i].position==="Professor"){
               career=this.state.information[i].career.split('\n');
               careerlist = career.map((career)=>(<li>{career}</li>))
-              return (  
+              return (
                 <div className='popup'>
-                  <CancelIcon className="closebt" onClick={this.props.closePopup}>close me</CancelIcon>
-                  <div className="in">
-                    <img className="popinme" src={photo} alt='No photo'/>
+                  <img className="popinme" src={photo} alt='No photo'/>
+
+
                     <h1>{position} </h1>
                     <ul>
                       <li className="display"><p>Name: {name}  </p></li>
@@ -248,7 +248,7 @@ class People extends React.Component{
                       <ul>{careerlist}</ul>
                     </li>
                     </ul>
-                  </div>
+
                 </div>
         );
             }
@@ -257,9 +257,8 @@ class People extends React.Component{
               research_interestslist = research_interests.map((research_interests)=>(<li>{research_interests}</li>))
               return (
                 <div className='popup'>
-                  <CancelIcon className="closebt" onClick={this.props.closePopup}>close me</CancelIcon>
-                  <div className="in">
                   <img className="popinme" src={photo} alt='No photo'/>
+
                     <h1>{position} </h1>
                     <ul>
                     <li className="display"><p>Name: {name}</p></li>
@@ -270,18 +269,18 @@ class People extends React.Component{
                       <ul>{research_interestslist}</ul>
                     </li>
                   </ul>
-                  </div>
+
                 </div>
           );
             }
             else{
               research_interests=this.state.information[i].research_interests.split('\n');
               research_interestslist = research_interests.map((research_interests)=>(<li>{research_interests}</li>))
-              return (  
+              return (
                 <div className='popup'>
-                  <CancelIcon className="closebt" onClick={this.props.closePopup}>close me</CancelIcon>
-                  <div className="in">
                   <img className="popinme" src={photo} alt='No photo'/>
+
+
                   <h1>{position} </h1>
                   <ul>
                     <li className="display"><p >Name: {name} </p></li>
@@ -293,13 +292,13 @@ class People extends React.Component{
                     </li>
                   </ul>
                   </div>
-                </div>
+                
         );
             }
           }
           i++
         }
-        
+
       }
 }
 

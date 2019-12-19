@@ -5,6 +5,7 @@ const router = express.Router();
 const sequelize = require('../models').sequelize;
 
 const {
+  Usersinfo,
   Messageinfo,
   Sequelize: { Op }
   } = require('../models');
@@ -59,8 +60,9 @@ router.post('/mainpage', (req, res) => {
 })
 
 router.post('/send', (req, res) => {
-  Messageinfo.findOne({
-    where : {user_id : req.body.recive}
+  console.log(req.body)
+  Usersinfo.findOne({
+    where : {user_id : req.body.recieve}
   }).then (result => {
     console.log(result)
     create_massage(req, res,(result == null))
@@ -71,17 +73,17 @@ function create_massage(req, res, exist) {
   if (exist == false) {
     Messageinfo.create({
       send : req.body.send,
-      recive : req.body.recive,
+      receive : req.body.recieve,
       text : req.body.text,
       date : req.body.date
     })
-    res.send({recive : true})
-    console.log("reciver is exist")
+    res.send({receive : true})
+    console.log("reciever is exist")
   }
   else
   {
-    res.send({recive : false})
-    console.log("reciver is not exist")
+    res.send({receive : false})
+    console.log("reciever is not exist")
   }
 }
 
