@@ -16,6 +16,7 @@ import Footer from '../components/footer/Footer';
 import styled from 'styled-components';
 
 import '../style/app.css';
+import { nullLiteralTypeAnnotation } from "@babel/types";
 
 const SubContent = styled.div`
     margin-left : 130px;
@@ -36,12 +37,29 @@ class Router extends Component {
      }
      this.loginHandler = this.loginHandler.bind(this);
      this.logoutHandler = this.logoutHandler.bind(this);
+
    }
+
+   componentDidMount(){
+    console.log(localStorage.getItem("ID"));
+    if(localStorage.getItem("ID") != null){
+      console.log("do")
+      this.setState({id: localStorage.getItem("ID"), auth: localStorage.getItem("Auth")})
+    }
+    else{
+      console.log("don't")
+    }
+   }
+
    loginHandler(id,auth){
      this.setState({id:id,auth:auth})
+     localStorage.setItem("ID", id);
+     localStorage.setItem("Auth", auth);
    };
    logoutHandler(){
     this.setState({id:'',auth:''})
+    localStorage.removeItem("ID");
+    localStorage.removeItem("Auth");
    }
 
    
