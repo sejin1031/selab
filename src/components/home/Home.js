@@ -59,7 +59,7 @@ class Home extends React.Component {
     this.setState({pw: event.target.value});
   }
   loginSubmit= async() => {
-    var flag = await axios('/signin',{
+    var flag = await axios('/login/signin',{
       method : 'POST',
       data : {id : this.state.id,
               pw : this.state.pw
@@ -70,10 +70,12 @@ class Home extends React.Component {
     if(flag.data.isLoggedin == true){
       this.props.loginHandler(this.state.id,flag.data.grade)
       alert("login success")
+      setInterval(()=>{this.getMessages()},100)
     }
     else {
       alert("login fail")
     }
+    
   }
   getMessages=async()=>{
     var flag = await axios('/message/mainpage',{
