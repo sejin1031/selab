@@ -56,7 +56,7 @@ class BoardForm extends Component {
                 headers : new Headers()
         })
         alert("save")
-        
+        this.props.noticeLoad();
     }
     
     render() {

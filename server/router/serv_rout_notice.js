@@ -37,3 +37,16 @@ router.post('/save', (req, res) => {
 })
 
 module.exports = router;
+
+router.post('/delete', (req, res) => {
+    Noticeinfo.destroy({
+        where : {id : req.body.id}
+    })
+    .then( result => {
+        console.log(result)
+    })
+    .catch( err => {
+        console.log(err)
+        throw err;
+    })
+})

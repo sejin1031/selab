@@ -14,6 +14,7 @@ class Notice extends React.Component {
       this.state = {
         showPopup: false,
         maxNo: 4,
+        delNo: -1,
         popup: [],
         test : [],
          selectedBoard:{}
@@ -42,6 +43,20 @@ class Notice extends React.Component {
       this.setState({popup: data})
     }
 
+    deleteNotice(date){
+      this.setState({delNo: date.id})
+      setTimeout(()=>this.deldatabase(),100);
+      setTimeout(()=>this.noticeLoad(),200);
+    }
+
+    deldatabase = async() => {
+      var flag = await axios('/notice/delete',{
+        method : 'POST',
+        data : {id : this.state.delNo},
+        headers : new Headers()
+      });
+    }
+
 
   render() {
     const { selectedBoard } = this.state;
@@ -64,16 +79,18 @@ class Notice extends React.Component {
                   <th width="500">Title</th>
                   <th width="300">Name</th>
                   <th width="200">Date</th>
+                  {this.props.auth === "T" ?<th width="30">Delete</th>:""}
               </tr>
             </thead>
             <tbody>
 
               {this.state.test.map(data =>
-              <tr onClick={()=>this.noPopHandler(data)}>
-                <td>{data.id}</td>
-                <td>{data.title}</td>
-                <td>{data.writer}</td>
-                <td>{data.date}</td>
+              <tr>
+                <td onClick={()=>this.noPopHandler(data)}>{data.id}</td>
+                <td onClick={()=>this.noPopHandler(data)}>{data.title}</td>
+                <td onClick={()=>this.noPopHandler(data)}>{data.writer}</td>
+                <td onClick={()=>this.noPopHandler(data)}>{data.date}</td>
+                {this.props.auth === "T" ?<td onClick={()=>this.deleteNotice(data)}>X</td>:""}
               </tr>)}
             </tbody>
           </table>
@@ -83,7 +100,7 @@ class Notice extends React.Component {
               :""
         }
         {this.state.showPopup ?
-            <WritePopup text='Close Me' closePopup={this.togglePopup.bind(this)}/>
+            <WritePopup text='Close Me' closePopup={this.togglePopup.bind(this)} noticeLoad={this.noticeLoad}/>
             : null
         }
       </div>
