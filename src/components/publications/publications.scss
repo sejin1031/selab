@@ -1,15 +1,20 @@
+@import url(https://fonts.googleapis.com/css?family=Economica:400,700);
+  
 .publicationContent{
-    @import url(https://fonts.googleapis.com/css?family=Economica:400,700);
-	font-family: 'Economica', sans-serif;
+    font-family: 'Economica', sans-serif;  
     #h1{
+        font-family: 'Economica', sans-serif; 
         color: aliceblue;
     }
     .publications{
         .publication{
-            background-color: #D1DDDB;
             border-bottom: black 1px solid;
             padding: 5px;
             background-color: #353C42;
+            .alink{
+                color: aliceblue;
+                font-size: 20px;
+            }
         }
     }
 }

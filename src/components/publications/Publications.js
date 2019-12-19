@@ -171,7 +171,7 @@ class Publication extends React.Component {
         return (
             <div className="publicationContent">
 
-            <h1 id = "h1">Publication</h1>
+            <h1 id = "h1">PUBLICATION</h1>
 
 
             <div className = "buttondiv">
@@ -186,7 +186,7 @@ class Publication extends React.Component {
                 <div className="publications">
                     {publications.filter(pub => pub.type == 'Domestic Journal').map((index)=>
                     <div className="publication" key={index}>
-                        <a href={index.link} download={index.link}>{index.title}</a>
+                        <a className = "alink" href={index.link} download={index.link}>{index.title}</a>
                         </div>)}
                 </div>
                  :null
@@ -197,7 +197,7 @@ class Publication extends React.Component {
                  <div className="publications">
                     {publications.filter(pub => pub.type == 'International Conference').map((index)=>
                     <div className="publication" key={index}>
-                        <a href={index.link} download={index.link}>{index.title}</a>
+                        <a className = "alink" href={index.link} download={index.link}>{index.title}</a>
                         </div>)}
                 </div>
                  :null
@@ -208,7 +208,7 @@ class Publication extends React.Component {
                  <div className="publications">
                     {publications.filter(pub => pub.type == 'International Journal').map((index)=>
                     <div className="publication" key={index}>
-                        <a href={index.link} download={index.link}>{index.title}</a>
+                        <a className = "alink"  href={index.link} download={index.link}>{index.title}</a>
                         </div>)}
                 </div>
                  :null
@@ -219,7 +219,7 @@ class Publication extends React.Component {
                  <div className="publications">
                     {publications.filter(pub => pub.type == 'Domestic Conference').map((index)=>
                     <div className="publication" key={index}>
-                        <a href={index.link} download={index.link}>{index.title}</a>
+                        <a className = "alink"  href={index.link} download={index.link}>{index.title}</a>
                         </div>)}
                 </div>
                  :null
