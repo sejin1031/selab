@@ -29,7 +29,13 @@ var chat = [{
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {id: '',pw:'',signupPopup:false,messagePopup:false};
+    this.state = {
+      id: '',
+      pw:'',
+      recentMessages:[],
+      signupPopup:false,
+      messagePopup:false
+    };
 
     this.handleIDChange = this.handleIDChange.bind(this);
     this.handlePWChange = this.handlePWChange.bind(this);
@@ -52,7 +58,7 @@ class Home extends React.Component {
     this.setState({pw: event.target.value});
   }
   loginSubmit= async() => {
-    var flag = await axios('/login/signin',{
+    var flag = await axios('/signin',{
       method : 'POST',
       data : {id : this.state.id,
               pw : this.state.pw
@@ -61,12 +67,22 @@ class Home extends React.Component {
             headers : new Headers()
     })
     if(flag.data.isLoggedin == true){
-      this.props.loginHandler(this.state.id,flag.data.auth)
+      this.props.loginHandler(this.state.id,flag.data.grade)
       alert("login success")
     }
     else {
       alert("login fail")
     }
+  }
+  getMessages=async()=>{
+    var flag = await axios('/message/mainpage',{
+      method:'POST',
+      data : {
+          id : this.state.id,
+      },
+      headers : new Headers()
+    })
+    // this.setState({recentMessages:flag.data.})
   }
   
     render() {
