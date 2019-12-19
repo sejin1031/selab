@@ -170,6 +170,7 @@ export default class Message extends Component {
         }
         if(flag.data.receive){
             this.getMessages();
+            this.getUsers();
         }
         else{
             alert("존재하지 않는 사용자입니다")
