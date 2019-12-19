@@ -11,17 +11,6 @@ const {
   } = require('../models');
 sequelize.query('SET NAMES utf8;');
 
-// router.post('/', (req, res) => {
-//   Messageinfo.findAll({
-//       where : { [Op.or] : [{send : req.body.id}, {receive: req.body.id}] }
-//   }).then (result => {
-//       res.send(result)
-//       console.log("notice is ")
-//       console.log(result)
-//       console.log("END")
-//   })
-// })
-
 router.post('/data', (req, res) => {
   const query = "SELECT * FROM messageinfos where receive = :id UNION SELECT * FROM messageinfos where send = :id ORDER BY date DESC"
   sequelize.query(query, {replacements: {id : req.body.id}})
