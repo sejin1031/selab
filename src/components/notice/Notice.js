@@ -5,9 +5,7 @@ import WritePopup from './WritePopup';
 import './noticestyle.css'
 
 import axios from 'axios';
-/*
-    component files.
-*/
+
 
 class Notice extends React.Component {
     constructor() {

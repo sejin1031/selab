@@ -8,23 +8,6 @@ import 'react-viewer/dist/index.css';
 import './homeimage.scss';
 import axios from 'axios';
 
-var chat = [{
-  receive:'scott',
-  send:'sejin',
-  text:'Hello',
-  date:'19/11/21',
-  },{
-      receive:'sejin',
-      send:'scott',
-      text:'Hi',
-      date:'19/11/21',
-      },
-      {
-          receive:'scott',
-          send:'jongmin',
-          text:'Hey scott give me A',
-          date:'19/11/21',
-          },]
 
 class Home extends React.Component {
   constructor(props) {
@@ -42,6 +25,7 @@ class Home extends React.Component {
     this.loginSubmit = this.loginSubmit.bind(this);
     this.handleSignupPopup = this.handleSignupPopup.bind(this);
     this.handleMessagePopup = this.handleMessagePopup.bind(this);
+
     this.getMessages();
   }
   handleMessagePopup(){

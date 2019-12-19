@@ -31,7 +31,7 @@ class Router extends Component {
      super(props);
      
      this.state = {
-       id : 'scott',
+       id : '',
        auth : '',
      }
      this.loginHandler = this.loginHandler.bind(this);
