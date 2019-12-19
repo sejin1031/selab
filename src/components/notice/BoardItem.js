@@ -1,25 +1,47 @@
 import React, { Component } from 'react';
 
 class BoardRow extends Component {
-    handleRemove = () => {
-        const { row, onRemove } = this.props;
-        onRemove(row.brdno);
-    }    
-    
-    handleSelectRow = () => {
-        const { row, onSelectRow } = this.props;
-        onSelectRow(row);
-    }    
+    constructor(props) {
+        super(props);
+        this.state = {
+          data : this.props.popup
+        };
+        console.log(this.props.popup)
+        console.log(this.state.data.date)
+      }
     
     render() {
         return(
-            <tr>
-                <td>{this.props.row.brdno}</td>
-                <td><a onClick={this.handleSelectRow}>{this.props.row.brdtitle}</a></td>
-                <td>{this.props.row.brdwriter}</td>
-                <td>{this.props.row.brdcontent}</td>
-                <td>{this.props.row.brddate.toLocaleDateString('ko-KR')}</td>
-            </tr>
+            <React.Fragment>
+                <div className="Modal-overlay" />
+                <div className="Modal">
+                <button className="closebutton" > X </button>
+                <p className="title">{this.state.data.date}SignUp</p>
+                    <div className="content">
+                    <form>
+                        <label>
+                        <span className="loginFont">ID</span><br/>
+                        <input type="text" name="id"/>
+                        </label> 
+                        <br/>
+                        <label>
+                        <span className="loginFont">Password</span><br/>
+                        <input type="password" name="pw"/>
+                        </label>
+                        <br/>
+                        <label>
+                            <span className="loginFont">name</span><br/>
+                            <input type = "text" name="name"/>
+                        </label>
+                        <br/>
+                        <div className="button-wrap">
+                         <input type="submit" value="SignUp" />
+                        </div>
+                    </form>
+                    </div>
+
+                </div>
+            </React.Fragment>
         );
     }
 }

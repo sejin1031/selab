@@ -14,9 +14,11 @@ class Notice extends React.Component {
       this.state = {
         showPopup: false,
         maxNo: 4,
+        popup: [],
         test : [],
          selectedBoard:{}
       };
+      this.noPopHandler = this.noPopHandler.bind(this);
       this.noticeLoad();
     }
     noticeLoad = async() => {
@@ -35,13 +37,22 @@ class Notice extends React.Component {
       });
       this.noticeLoad();
     }
+
+    noPopHandler(data){
+      this.setState({popup: data})
+    }
    
 
   render() {
     const { selectedBoard } = this.state;
     return (
       <div className='app'>
-        {/*<div>test code id={this.props.id}</div>*/}
+        {this.state.popup.length == 0 ?""
+        :<BoardItem
+          popup={this.state.popup}
+          noPopHandler={this.noPopHandler}
+        />
+        }
         <img className="bell" src= {require("./notice.png")} id = 'nimg'/>
 
         <h1 id ="h1">Notice</h1>
@@ -58,11 +69,11 @@ class Notice extends React.Component {
             </thead>
             <tbody>
               
-              {this.state.test.map(data => <tr>
+              {this.state.test.map(data => 
+              <tr onClick={()=>this.noPopHandler(data)}>
                 <td>{data.id}</td>
                 <td>{data.title}</td>
                 <td>{data.writer}</td>
-                <td>{data.content}</td>
                 <td>{data.date}</td>
               </tr>)}
             </tbody>
