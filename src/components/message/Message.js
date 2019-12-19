@@ -102,7 +102,7 @@ export default class Message extends Component {
     }
 
     getMessages = async()=>{
-        var flag = await axios('/messsage/data',{
+        var flag = await axios('/message/data',{
             method : 'POST',
             data:{
                 id:this.props.id,
@@ -112,7 +112,7 @@ export default class Message extends Component {
         this.setState({chatList:flag.data})
     }
     getUsers = async()=>{
-        var flag = await axios('/messsage/data',{
+        var flag = await axios('/message/data',{
             method : 'POST',
             data:{
                 id:this.props.id,
