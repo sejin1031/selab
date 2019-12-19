@@ -62,7 +62,7 @@ class Research extends React.Component {
                 </ul>
               </div>
               <label className = 'style'>
-                <h3 className = "research" aria-hidden="true">research</h3>
+                <h3 className = "research" aria-hidden="true">Research</h3>
               </label>
             </div>
 

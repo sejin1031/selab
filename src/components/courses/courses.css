@@ -6,23 +6,30 @@ ul{
     list-style-type: none;
 }
 
-.list
+#course_list
 {
     position: relative;
     font-size: 22px;
     text-decoration: none;
-    color: black;
+    color: white;
     transition: all 0.2s;
     text-align: left;
     font-family: 'Ubuntu' , serif;
+    text-decoration: none;
+}
+
+#course_title
+{
+    color:white;
+    font-size: 30pt;
 }
 
 
-.list:hover {
- color: #01c9ca;  
+#course_list:hover {
+ color: red;  
  }
   
-.list:before {
+ #course_list:before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -35,10 +42,7 @@ ul{
     transition: all 0.2s;
 }
   
-.list:hover:before {
-    background: #01c9ca;
-    transform: scale(1);
-}
+
 
 .line
 {
@@ -52,7 +56,7 @@ ul{
     display: flex;
 }
 
-h2
+#course_content_title
 {
     font-family: 'Ubuntu' , sans-serif;
     color:rgb(133,184,203);
