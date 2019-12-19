@@ -4,79 +4,7 @@ import './Message.scss';
 import axios from 'axios';
 
 var moment = require("moment");
-
-var chat = [,{
-            receive:'scott',
-            send:'sejin',
-            text:'Hello',
-            date:'19/11/21',
-            },{
-                receive:'sejin',
-                send:'scott',
-                text:'Hi',
-                date:'19/11/21',
-                },
-                ,{
-                    receive:'scott',
-                    send:'sejin',
-                    text:'Hello',
-                    date:'19/11/21',
-                    },{
-                        receive:'sejin',
-                        send:'scott',
-                        text:'Hi',
-                        date:'19/11/21',
-                        },
-                        ,{
-                            receive:'scott',
-                            send:'sejin',
-                            text:'Hello',
-                            date:'19/11/21',
-                            },{
-                                receive:'sejin',
-                                send:'scott',
-                                text:'Hi',
-                                date:'19/11/21',
-                                },,{
-                                    receive:'scott',
-                                    send:'sejin',
-                                    text:'Hello',
-                                    date:'19/11/21',
-                                    },{
-                                        receive:'sejin',
-                                        send:'scott',
-                                        text:'Hi',
-                                        date:'19/11/21',
-                                        }
-                                        ,,{
-                                            receive:'scott',
-                                            send:'sejin',
-                                            text:'Hello',
-                                            date:'19/11/21',
-                                            },{
-                                                receive:'sejin',
-                                                send:'scott',
-                                                text:'Hi',
-                                                date:'19/11/21',
-                                                },
-                                                {
-                                                    receive:'scott',
-                                                    send:'sejin',
-                                                    text:'Hello',
-                                                    date:'19/11/21',
-                                                    },{
-                                                        receive:'sejin',
-                                                        send:'scott',
-                                                        text:'Hi',
-                                                        date:'19/11/22',
-                                                        },
-                {
-                    receive:'jongmin',
-                    send:'scott',
-                    text:'Hey scott give me A',
-                    date:'19/11/21',
-                    },]
-            
+           
 
 export default class Message extends Component {
     constructor(props){
@@ -127,23 +55,6 @@ export default class Message extends Component {
         })
         this.setState({userList:users})
     }
-    // messageTest= async() => {
-    //     var flag = await axios('/message',{
-    //       method : 'POST',
-    //       data : {id : "test",  
-    //             },
-    //             headers : new Headers()
-    //     })
-
-    //     var flag2 = await axios('/message/user',{
-    //         method : 'POST',
-    //         data:{id: this.props.id,},
-    //         headers : new Headers()
-    //     })
-    //     this.setState({chatList:flag.data, userList:flag2.data})
-        
-    //     alert("message")
-    //   }
 
       sendMessage= async()=>{
           if(this.state.selectedId === "newMessage"){
