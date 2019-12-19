@@ -87,7 +87,7 @@ class Gallery extends React.Component{
             { url: require("./images/2015-12-20 17.39.26.jpg") },
         ];
         return (
-            <div
+            <div>
                 <h1 className = "gid">Gallery</h1>
                 <SimpleImageSlider
                     width={1100}
