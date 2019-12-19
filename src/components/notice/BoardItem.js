@@ -16,7 +16,7 @@ class BoardRow extends Component {
             <React.Fragment>
                 <div className="Modal-overlay" />
                 <div className="Modal">
-                <button className="cbutton" > X </button>
+                <button className="cbutton" onClick={()=>this.props.noPopHandler([])}> X </button>
                     <div>
                       <div><span className = "ntable">Title : </span>{this.state.data.title} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className = "ntable">Writer : </span>{this.state.data.writer}</div><hr/>
                       <div><span className = "ntable">Content : </span><br/>{this.state.data.content}</div><hr/>
