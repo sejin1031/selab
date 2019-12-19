@@ -1,24 +1,42 @@
-#button_Home
-{
-  background-color: rgb(248,155,108);
-  color: white;
-  padding: 15px 30px;
-  margin-right:2px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
+.buttondiv{
+  
+.button_slide{
+  background:#353C42;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:5vh;
+  width:19vw;
+  font-size:1.2vw;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
 }
-#button_Slides
-{
-  background-color: rgb(248,155,108);
-  color: white;
-  padding: 15px 30px;
-  margin-right:2px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
+.button_slide:hover{
+  background:#353C42;
+  color:#85B8CB;
+}
+.button_slide:before,.button_slide:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #85B8CB;
+  transition:400ms ease all;
+}
+.button_slide:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.button_slide:hover:before,.button_slide:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
 }
 
 .content
@@ -34,7 +52,6 @@
       }
   }
 }
-
 
 
 

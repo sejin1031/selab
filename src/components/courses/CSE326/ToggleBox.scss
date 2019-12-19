@@ -1,12 +1,16 @@
 .box{
-    background-color: rgb(211, 237, 245);
-    border: 1px black solid;
+    background-color: #353C42;
+    border-radius: 10px;
+    padding: 7px;
+    color: aliceblue;
     width: 70%;
     font-family: Verdana, Tahoma, sans-serif;
     .boxContent{
+        color: black;
         border-collapse: collapse;
-        border: 1px black solid;
-        background-color:wheat;
+        border: 1px #353C42 solid;
+        background-color: aliceblue;
         font-family: Tahoma,Arial,sans-serif;
+        border-radius: 10px;
     }
 }
