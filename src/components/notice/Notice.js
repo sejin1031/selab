@@ -60,11 +60,10 @@ class Notice extends React.Component {
           <table className='table'>
             <thead>
               <tr align="center">
-                  <th width="25">No.</th>
-                  <th width="200">Title</th>
-                  <th width="50">Name</th>
-                  <th width="700">Content</th>
-                  <th width="150">Date</th>
+                  <th width="50">No.</th>
+                  <th width="500">Title</th>
+                  <th width="300">Name</th>
+                  <th width="200">Date</th>
               </tr>
             </thead>
             <tbody>
