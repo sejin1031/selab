@@ -63,10 +63,10 @@ class BoardForm extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <div>
-                    <input placeholder="Title" size = '40' ref={node => this.brdtitle = node} /><br />
-                    <input placeholder="Name" ref={node => this.brdwriter = node} /><br />
-                    <textarea placeholder="글을 입력하세요." rows = '20' cols = '40' ref={node => this.brdcontent = node}></textarea><br />
-                    <button onClick = {this.noticeSave}>Save</button>
+                    <input type = "text" placeholder="Title" size = '40' ref={node => this.brdtitle = node} /><br />
+                    <input type = "text" placeholder="Name" ref={node => this.brdwriter = node} /><br />
+                    <textarea className= "ntext" placeholder="글을 입력하세요." rows = '10' cols = '40' ref={node => this.brdcontent = node}></textarea><br />
+                    <button className = "nbutton" onClick = {this.noticeSave}>Save</button><br/>
                 </div>
             </form>
         );

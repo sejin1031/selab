@@ -46,7 +46,7 @@ class WritePopup extends React.Component {
             <div className='popup_inner'>
                 <h1>WRITE</h1>
                 <BoardForm selectedBoard={selectedBoard} onSaveData={this.handleSaveData}/>
-                <button onClick={this.props.closePopup}>close me</button>
+                <button className = "nbutton" onClick={this.props.closePopup}>close me</button>
             </div>
         </div>
         );

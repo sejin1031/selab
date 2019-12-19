@@ -62,13 +62,68 @@
 }
 
 .npopup{
+  font-family: 'Economica', sans-serif; 
+  background-color: #353C42;
   position: relative;
   width: 30vw;
-  margin-right: 40%;
-  margin-left: 40%;
+  margin-right: 0;
+  margin-left: 20%;
+  
+}
+
+input[type = "text"]{
+  background-color: aliceblue;
+  font-size:2vh;
+  height: 3vh;
+}
+
+.ntext{
+  background-color: aliceblue;
+  width: 94%;
+  border-radius: 5px;
+  margin: 10px;
 }
 
 .npopup .popup_inner {
   text-align: center;
 }
 
+
+
+  .nbutton{
+    background:#353C42;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:5vh;
+    width:19vw;
+    font-size:1.2vw;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+  }
+  .nbutton:hover{
+    background:#353C42;
+    color:#85B8CB;
+  }
+  .nbutton:before,.nbutton:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #85B8CB;
+    transition:400ms ease all;
+  }
+  .nbutton:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .nbutton:hover:before,.nbutton:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }

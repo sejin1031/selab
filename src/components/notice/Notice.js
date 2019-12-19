@@ -49,10 +49,10 @@ class Notice extends React.Component {
           <table className='table'>
             <thead>
               <tr align="center">
-                  <th width="50">No.</th>
-                  <th width="300">Title</th>
-                  <th width="100">Name</th>
-                  <th width="300">Content</th>
+                  <th width="25">No.</th>
+                  <th width="200">Title</th>
+                  <th width="50">Name</th>
+                  <th width="700">Content</th>
                   <th width="150">Date</th>
               </tr>
             </thead>
@@ -68,8 +68,10 @@ class Notice extends React.Component {
             </tbody>
           </table>
         <br/>
-        {/* {this.props.auth} */}
-        {<button onClick={this.togglePopup.bind(this)}>글쓰기</button>}
+        {/*this.props.auth === "T" ?*/}
+              {<button className = "nbutton" onClick={this.togglePopup.bind(this)}>글쓰기</button>}
+              {/*:""*/
+        }
         {this.state.showPopup ? 
             <WritePopup text='Close Me' closePopup={this.togglePopup.bind(this)}/>
             : null
