@@ -31,18 +31,17 @@ class Router extends Component {
      super(props);
      
      this.state = {
-       isLoggedin : true,
        id : 'scott',
-       auth : true,
+       auth : '',
      }
      this.loginHandler = this.loginHandler.bind(this);
      this.logoutHandler = this.logoutHandler.bind(this);
    }
    loginHandler(id,auth){
-     this.setState({isLoggedin : true,id:id,auth:auth})
+     this.setState({id:id,auth:auth})
    };
    logoutHandler(){
-    this.setState({isLoggedin : false,id:'',auth:false})
+    this.setState({id:'',auth:''})
    }
 
    
@@ -55,7 +54,6 @@ class Router extends Component {
           <SubContent>
           <Switch>
             <Route exact path="/" component={() => <Home 
-            isLoggedin={this.state.isLoggedin}
             loginHandler={this.loginHandler}
             logoutHandler={this.logoutHandler}
             id = {this.state.id}

@@ -59,7 +59,7 @@ class Home extends React.Component {
     this.setState({pw: event.target.value});
   }
   loginSubmit= async() => {
-    var flag = await axios('/signin',{
+    var flag = await axios('/login/signin',{
       method : 'POST',
       data : {id : this.state.id,
               pw : this.state.pw
@@ -70,10 +70,12 @@ class Home extends React.Component {
     if(flag.data.isLoggedin == true){
       this.props.loginHandler(this.state.id,flag.data.grade)
       alert("login success")
+      setInterval(()=>{this.getMessages()},100)
     }
     else {
       alert("login fail")
     }
+    
   }
   getMessages=async()=>{
     var flag = await axios('/message/mainpage',{
@@ -89,7 +91,7 @@ class Home extends React.Component {
       return (
         <div className="home">
             <img src={require("./selab_logo.png")} alt="logo" />
-          {!this.props.isLoggedin && <div className="login">
+          {this.props.id === '' && <div className="login">
             <label>
               <span className="loginFont">ID</span><br/>
               <input type="text" name="id" value={this.state.id} onChange={this.handleIDChange} />
@@ -107,7 +109,7 @@ class Home extends React.Component {
          </div>}
 
           {this.state.signupPopup &&<SignUp handlesignupPopup={this.handleSignupPopup}/>}
-         {this.props.isLoggedin &&
+         {this.props.id != '' &&
          <div className="logined">
            <div onClick={this.props.logoutHandler}
            className="logoutButton">logout</div>
