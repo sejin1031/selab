@@ -48,7 +48,7 @@ class Home extends React.Component {
       data : {id : this.state.id,
               pw : this.state.pw
             },
-      
+
             headers : new Headers()
     })
     if(flag.data.isLoggedin == true){
@@ -59,7 +59,7 @@ class Home extends React.Component {
     else {
       alert("login fail")
     }
-    
+
   }
   getMessages=async()=>{
     var flag = await axios('/message/mainpage',{
@@ -79,7 +79,7 @@ class Home extends React.Component {
             <label>
               <span className="loginFont">ID</span><br/>
               <input type="text" name="id" value={this.state.id} onChange={this.handleIDChange} />
-            </label> 
+            </label>
             <br/>
             <label>
               <span className="loginFont">Password</span><br/>
@@ -87,8 +87,8 @@ class Home extends React.Component {
             </label>
             <br/>
             <div className="buttons">
-              <div onClick={this.loginSubmit} className="loginButton">Login</div>
-              <div className = "signup" onClick={()=>this.setState({signupPopup:!this.state.signupPopup})}>signup</div>
+              <div onClick={this.loginSubmit} className="loginbutton">Login</div>
+              <div className = "loginbutton" onClick={()=>this.setState({signupPopup:!this.state.signupPopup})}>signup</div>
             </div>
          </div>}
 
@@ -109,17 +109,17 @@ class Home extends React.Component {
                 {this.state.recentMessages.map(index=>
                 <div key={index}>
                     <span className="name">{index.send}</span>
-                    
+
                    <div className="message">
                    {index.text} <span className="time">{index.date}</span></div>
                 </div>).slice(0,3)}
               </div>
           </div>}
-          
+
 
         </div>
-        
-        
+
+
       );
     }
   }

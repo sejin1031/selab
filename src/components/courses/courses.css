@@ -13,22 +13,21 @@ ul{
     color: white;
     transition: all 0.2s;
     text-align: left;
-    font-family: 'Economica', sans-serif; 
+    font-family: 'Economica', sans-serif;
     text-decoration: none;
 }
 
 #course_title
 {
-    font-family: 'Economica', sans-serif; 
+    font-family: 'Economica', sans-serif;
     color:white;
     font-size: 35pt;
 }
 
-
 #course_list:hover {
- color: red;  
+ color: red;
  }
-  
+
  #course_list:before {
     content: '';
     position: absolute;
@@ -41,7 +40,7 @@ ul{
     transform: scale(0);
     transition: all 0.2s;
 }
-  
+
 
 
 .line
@@ -58,7 +57,7 @@ ul{
 
 #course_content_title
 {
-    font-family: 'Economica', sans-serif; 
+    font-family: 'Economica', sans-serif;
     font-size: 28pt;
     color:rgb(133,184,203);
 }
@@ -85,5 +84,3 @@ ul{
 {
     margin-bottom:20px;
 }
-
-

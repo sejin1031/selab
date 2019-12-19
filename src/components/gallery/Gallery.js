@@ -87,7 +87,7 @@ class Gallery extends React.Component{
         ];
         return (
             <div>
-                <h1 id='course_title'>Gallery</h1>
+                <h1 id = "galley_id">Gallery</h1>
                 <SimpleImageSlider
                     width={1000}
                     height={600}
