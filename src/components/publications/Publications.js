@@ -123,9 +123,31 @@ class Publication extends React.Component {
     render() {
         return (
             <div className="publicationContent">
+                <h1 id = "h1">Publication</h1>
+
                 <div className="publications">
-                    <a href = "https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Zhiqiang1.pdf" download = "https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Zhiqiang1.pdf">Link</a>
                     {publications.filter(pub => pub.type == 'Domestic Journal').map((index)=>
+                    <div className="publication" key={index}>
+                        <a href={index.link} download={index.link}>{index.title}</a>
+                        </div>)}
+                </div>
+                <br />
+                <div className="publications">
+                    {publications.filter(pub => pub.type == 'International Conference').map((index)=>
+                    <div className="publication" key={index}>
+                        <a href={index.link} download={index.link}>{index.title}</a>
+                        </div>)}
+                </div>
+                <br />
+                <div className="publications">
+                    {publications.filter(pub => pub.type == 'International Journal').map((index)=>
+                    <div className="publication" key={index}>
+                        <a href={index.link} download={index.link}>{index.title}</a>
+                        </div>)}
+                </div>
+                <br />
+                <div className="publications">
+                    {publications.filter(pub => pub.type == 'Domestic Conference').map((index)=>
                     <div className="publication" key={index}>
                         <a href={index.link} download={index.link}>{index.title}</a>
                         </div>)}

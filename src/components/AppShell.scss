@@ -7,9 +7,11 @@
 .menuItem{
     color : #85B8CB;
     text-decoration: none;
+    @import url(https://fonts.googleapis.com/css?family=Economica:400,700);
+	font-family: 'Economica', sans-serif;
     .bigMenuItem{
         font-weight: bold;
-        font-size: 12pt;
+        font-size: 18pt;
         margin-bottom: 15px;
         margin-left: 0;
         writing-mode: tb-rl;
