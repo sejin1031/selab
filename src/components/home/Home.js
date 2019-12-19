@@ -29,13 +29,20 @@ var chat = [{
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {id: '',pw:'',signupPopup:false,messagePopup:false};
+    this.state = {
+      id: '',
+      pw:'',
+      recentMessages:[],
+      signupPopup:false,
+      messagePopup:false
+    };
 
     this.handleIDChange = this.handleIDChange.bind(this);
     this.handlePWChange = this.handlePWChange.bind(this);
     this.loginSubmit = this.loginSubmit.bind(this);
     this.handleSignupPopup = this.handleSignupPopup.bind(this);
     this.handleMessagePopup = this.handleMessagePopup.bind(this);
+    this.getMessages();
   }
   handleMessagePopup(){
     this.setState({messagePopup:false})
@@ -52,7 +59,7 @@ class Home extends React.Component {
     this.setState({pw: event.target.value});
   }
   loginSubmit= async() => {
-    var flag = await axios('/login/signin',{
+    var flag = await axios('/signin',{
       method : 'POST',
       data : {id : this.state.id,
               pw : this.state.pw
@@ -61,14 +68,23 @@ class Home extends React.Component {
             headers : new Headers()
     })
     if(flag.data.isLoggedin == true){
-      this.props.loginHandler(this.state.id,flag.data.auth)
+      this.props.loginHandler(this.state.id,flag.data.grade)
       alert("login success")
     }
     else {
       alert("login fail")
     }
   }
-  
+  getMessages=async()=>{
+    var flag = await axios('/message/mainpage',{
+      method:'POST',
+      data : {
+          id : this.state.id,
+      },
+      headers : new Headers()
+    })
+    this.setState({recentMessages:flag.data})
+  }
     render() {
       return (
         <div className="home">
@@ -104,7 +120,7 @@ class Home extends React.Component {
 
               <div className="messages">
                 <div className="recent">Recent Messages</div>
-                {chat.filter(ch => ch.receive === this.props.id).map((index,receive,send,text)=>
+                {this.state.recentMessages.map(index=>
                 <div key={index}>
                     <span className="name">{index.send}</span>
                     

@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import './Message.scss';
 import axios from 'axios';
 
+var moment = require("moment");
 
 var chat = [,{
             receive:'scott',
@@ -83,19 +84,16 @@ export default class Message extends Component {
         this.state={
             selectedId : '',
             text : '',
-            userList : ["sejin","hyunsoo","jongmin","HYCUBE회장","JARAM","hyunsoo","jongmin","HYCUBE회장","JARAM"],
+            userList : [],
             chatList:[],
             newid:'',
         }
         this.handleTextChange = this.handleTextChange.bind(this);
         this.handleNewID = this.handleNewID.bind(this);
-        
+        this.getMessages();
+        this.getUsers();
     }
 
-    componentDidMount(){
-        this.messageTest();
-
-    }
     handleTextChange(event) {
         this.setState({text: event.target.value});
     }
@@ -103,46 +101,73 @@ export default class Message extends Component {
         this.setState({newid: event.target.value})
     }
 
-    messageTest= async() => {
-        var flag = await axios('/message',{
-          method : 'POST',
-          data : {id : "test",  
-                },
-                headers : new Headers()
-        })
-
-        var flag2 = await axios('/message/user',{
+    getMessages = async()=>{
+        var flag = await axios('/messsage/data',{
             method : 'POST',
-            data:{id: this.props.id,},
+            data:{
+                id:this.props.id,
+            },
             headers : new Headers()
         })
-        this.setState({chatList:flag.data, userList:flag2.data})
+        this.setState({chatList:flag.data})
+    }
+    getUsers = async()=>{
+        var flag = await axios('/messsage/data',{
+            method : 'POST',
+            data:{
+                id:this.props.id,
+            },
+            headers : new Headers()
+        })
+        this.setState({userList:flag.data})
+    }
+    // messageTest= async() => {
+    //     var flag = await axios('/message',{
+    //       method : 'POST',
+    //       data : {id : "test",  
+    //             },
+    //             headers : new Headers()
+    //     })
+
+    //     var flag2 = await axios('/message/user',{
+    //         method : 'POST',
+    //         data:{id: this.props.id,},
+    //         headers : new Headers()
+    //     })
+    //     this.setState({chatList:flag.data, userList:flag2.data})
         
-        alert("message")
-      }
+    //     alert("message")
+    //   }
 
       sendMessage= async()=>{
           if(this.state.selectedId === "newMessage"){
-            var flag = await axios('message/send',{
+            var flag = await axios('/message/send',{
                 method: 'POST',
                 data : {
                     send : this.props.id,
                     recieve : this.state.newid,
                     text : this.state.text,
-                    date : new Date(),
+                    date : moment(new Date()).format("YYYY.MM.DD hh:mm")
                 }
             })
           }
           else{
-          var flag = await axios('message/send',{
+          var flag = await axios('/message/send',{
               method: 'POST',
               data : {
                   send : this.props.id,
                   recieve : this.state.selectedId,
                   text : this.state.text,
-                  date : new Date(),
+                  date : moment(new Date()).format("YYYY.MM.DD hh:mm")
               }
           })
+        }
+        if(flag.data.receive){
+            setInterval(()=>{this.getMessages()},100)
+            this.getMessages();
+        }
+        else{
+            alert("존재하지 않는 사용자입니다")
         }
       }
 
@@ -172,13 +197,17 @@ export default class Message extends Component {
                     <div className="chat">
                         <div id="chatcontent" >
                             {this.state.selectedId === "newMessage" &&
-                            <input id="newid" type="text" value={this.state.newid} onChange={this.handleNewID}></input>
+                            <input id="newid" 
+                            placeholder="ID"
+                             type="text" 
+                             value={this.state.newid} 
+                             onChange={this.handleNewID}></input>
                                                     }
                             {
-                            chat.filter(message => message.receive===this.state.selectedId 
+                            this.state.chatList.filter(message => message.receive===this.state.selectedId 
                                 && message.send === this.props.id 
                                 || message.receive === this.props.id && message.send=== this.state.selectedId)
-                                 .map((index,send,receive,text,date)=>
+                                 .map(index=>
                             (<div key={index} className={index.receive == this.state.selectedId && index.send == this.props.id?"sendContent":"receiveContent"}>
                                 {index.date} {index.text}
                             </div>

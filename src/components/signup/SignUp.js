@@ -35,6 +35,12 @@ export default class SignUp extends Component {
           
                 headers : new Headers()
         })
+        if(flag.data.isLoggedin){
+            alert("회원가입 성공!")
+        }
+        else{
+            alert("중복된 아이디 입니다.")
+        }
       }
 
     render() {

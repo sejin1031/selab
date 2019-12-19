@@ -59,3 +59,14 @@
   }
 }
 
+.popup{
+  position: relative;
+  width: 30vw;
+  margin-right: 40%;
+  margin-left: 40%;
+}
+
+.popup .popup_inner {
+  text-align: center;
+}
+

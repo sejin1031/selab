@@ -63,9 +63,9 @@ class BoardForm extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <div>
-                    <input placeholder="Title" ref={node => this.brdtitle = node} /><br />
+                    <input placeholder="Title" size = '40' ref={node => this.brdtitle = node} /><br />
                     <input placeholder="Name" ref={node => this.brdwriter = node} /><br />
-                    <input placeholder="Content" ref={node => this.brdcontent = node}/><br />
+                    <textarea placeholder="글을 입력하세요." rows = '20' cols = '40' ref={node => this.brdcontent = node}></textarea><br />
                     <button onClick = {this.noticeSave}>Save</button>
                 </div>
             </form>
