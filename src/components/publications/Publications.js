@@ -36,8 +36,8 @@ var publications = [{type :'International Conference', title:'Zhiqiang Wu, Xin C
                     link:'https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Jaeho0.pdf'},
                     {type :'International Conference', title:'Isma Farah Siddiqui, Nawab Muhammad Faseeh, Scott Uk-Jin Lee and Mukhtiar Ali Unar, "An Advanced Hyper-Efficient Design to Detect Random Peer-to-Peer Botnets," In Proc. 3rd International Multi-Topic Conference 2013, 2013, pp.251-258.',
                     link:'https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IP]_Isma0.pdf'},
-                   
-                   
+
+
                     {type :'International Journal', title:'Isma Farah Siddiqui, Nawab Muhammad Faseeh Qureshi, Muhammad Akram Shaikh, Bhawani Shankar Chowdhry, Asad Abbas, Ali Kashif Bashir and Scott Uk-Jin Lee, "Stuck-at Fault Analytics of IoT Devices Using Knowledge-based Data Processing Strategy in Smart Grid," J. Wireless Personal Communications, vol. 2018, pp. 1-15, Apr. 2018.',
                     link:'https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IJ]_Isma4.pdf'},
                     {type :'International Journal', title:'Asad Abbas, Isma Farah Siddqui, Scott Uk-Jin Lee, Ali Kashif Bashir, Waleed Ejaz and Nawab Muhammad Faseeh Qureshi, "Multi-Objective Optimum Solutions for IoT-Based Feature Models of Software Product Line," J. IEEE Access, vol. 6, pp. 12228-12239, Mar. 2018.',
@@ -64,8 +64,8 @@ var publications = [{type :'International Conference', title:'Zhiqiang Wu, Xin C
                     link:'https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IJ]_Abdul0.pdf'},
                     {type :'International Journal', title:'Asad Abbas, Zhiqiang Wu, Isma Farah Siddiqui and Scott Uk-Jin Lee, "An Approach for Optimized Feature Selecton in Software Product Lines using Union-Find and Genetic Algorithms," J. Indian Journal of Science and Technology, vol. 9, pp. 1-9, May 2016.',
                     link:'https://selab.hanyang.ac.kr/publications/papers/International_Conference/[IJ]_Asad0.pdf'},
-                   
-                    
+
+
                     {type :'Domestic Conference', title:'Zhiqiang Wu, Xin Chen and Scott Uk-Jin Lee, "Permissions based Automatic Android Malware Repair using Long Short Term Memory," In Proc. 한국컴퓨터정보학회 동계학술대회, 2019, pp.387-388.',
                     link:'https://selab.hanyang.ac.kr/publications/papers/Domestic_Conference/[DP]_Zhiqiang2.pdf'},
                     {type :'Domestic Conference', title:'YongTaek Oh and Scott Uk-Jin Lee, "XACML 정책 작성시 요청에 따른 효과적인 정책 평가 요인 수집 방법," In Proc. Korea Software Congress 2017, 2017, pp.443-445.',
@@ -110,7 +110,7 @@ var publications = [{type :'International Conference', title:'Zhiqiang Wu, Xin C
                     link:'https://selab.hanyang.ac.kr/publications/papers/Domestic_Conference/[DP]_Jaejin1.pdf'},
                     {type :'Domestic Conference', title:'Jaejin Kim, Scott Uk-Jin Lee and Amna Al Dhaheri, "Integrated Access Control Model Propose In Cloud Computing Environment," In Proc. 15th Korea Conference on Software Engineering, 2013, pp.266-269.',
                     link:'https://selab.hanyang.ac.kr/publications/papers/Domestic_Conference/[DP]_Jaejin0.pdf'},
-                   
+
                     {type :'Domestic Journal', title:'Youn-geun Ahn, Gichan Lee and Scott Uk-Jin Lee, "Effective Methodology for Collecting Contextual Factors and Information that Affects The XACML Policy Evaluation," J. KIISE Transactions on Computing Practices, vol. 24, no. 2, pp. 82-87, Feb. 2018.',
                     link:'https://selab.hanyang.ac.kr/publications/papers/Domestic_Journal/[DJ]_Youn-geun0.pdf'},
                     {type :'Domestic Journal', title:'Isma Farah Siddiqui and Scott Uk-Jin Lee, "Access Control as a Service for Information Protection in Semantic Web based Smart Environment," J. Journal of Korean Society for Internet Information, vol. 17, no. 5, pp. 9-16, Oct. 2016.',
@@ -120,38 +120,111 @@ var publications = [{type :'International Conference', title:'Zhiqiang Wu, Xin C
 ];
 
 class Publication extends React.Component {
+    constructor(props)
+    {
+        super(props);
+        this.state = {
+            slide1:true,
+            slide2:false,
+            slide3:false,
+            slide3:false
+        }
+        this.slide1Handler = this.slide1Handler.bind(this);
+        this.slide2Handler = this.slide2Handler.bind(this);
+        this.slide3Handler = this.slide3Handler.bind(this);
+        this.slide4Handler = this.slide4Handler.bind(this);
+    }
+
+    slide1Handler(){
+        this.setState({
+          slide1:true,
+          slide2:false,
+          slide3:false,
+          slide4:false});
+    }
+
+    slide2Handler(){
+        this.setState({
+          slide1:false,
+          slide2:true,
+          slide3:false,
+          slide4:false});
+    }
+
+    slide3Handler(){
+        this.setState({
+          slide1:false,
+          slide2:false,
+          slide3:true,
+          slide4:false});
+    }
+
+    slide4Handler(){
+        this.setState({
+          slide1:false,
+          slide2:false,
+          slide3:false,
+          slide4:true});
+    }
+
     render() {
         return (
             <div className="publicationContent">
-                <h1 id = "h1">Publication</h1>
 
+            <h1 id = "h1">Publication</h1>
+
+
+            <div className = "buttondiv">
+                <button id = "button_slide1" onClick = {this.slide1Handler}>Domestic Journal</button>
+                <button id = "button_slide2" onClick = {this.slide2Handler}>International Conference</button>
+                <button id = "button_slide3" onClick = {this.slide3Handler}>International Journal</button>
+                <button id = "button_slide4" onClick = {this.slide4Handler}>Domestic Conference</button>
+            </div>
+
+            {
+                this.state.slide1 === true?
                 <div className="publications">
                     {publications.filter(pub => pub.type == 'Domestic Journal').map((index)=>
                     <div className="publication" key={index}>
                         <a href={index.link} download={index.link}>{index.title}</a>
                         </div>)}
                 </div>
-                <br />
-                <div className="publications">
+                 :null
+            }
+
+            {
+                 this.state.slide2 === true?
+                 <div className="publications">
                     {publications.filter(pub => pub.type == 'International Conference').map((index)=>
                     <div className="publication" key={index}>
                         <a href={index.link} download={index.link}>{index.title}</a>
                         </div>)}
                 </div>
-                <br />
-                <div className="publications">
+                 :null
+            }
+
+            {
+                 this.state.slide3 === true?
+                 <div className="publications">
                     {publications.filter(pub => pub.type == 'International Journal').map((index)=>
                     <div className="publication" key={index}>
                         <a href={index.link} download={index.link}>{index.title}</a>
                         </div>)}
                 </div>
-                <br />
-                <div className="publications">
+                 :null
+            }
+
+            {
+                 this.state.slide4 === true?
+                 <div className="publications">
                     {publications.filter(pub => pub.type == 'Domestic Conference').map((index)=>
                     <div className="publication" key={index}>
                         <a href={index.link} download={index.link}>{index.title}</a>
                         </div>)}
                 </div>
+                 :null
+            }
+
             </div>
         );
     }

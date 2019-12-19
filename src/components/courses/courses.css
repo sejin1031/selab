@@ -6,23 +6,29 @@ ul{
     list-style-type: none;
 }
 
-.list
+#course_list
 {
     position: relative;
     font-size: 22px;
     text-decoration: none;
-    color: black;
+    color: white;
     transition: all 0.2s;
     text-align: left;
     font-family: 'Ubuntu' , serif;
 }
 
+#course_title
+{
+    color:white;
+    font-size: 30pt;
+}
 
-.list:hover {
+
+#course_list:hover {
  color: #01c9ca;  
  }
   
-.list:before {
+ #course_list:before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -35,7 +41,7 @@ ul{
     transition: all 0.2s;
 }
   
-.list:hover:before {
+#course_list:hover:before {
     background: #01c9ca;
     transform: scale(1);
 }
