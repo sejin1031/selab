@@ -70,7 +70,7 @@ class Home extends React.Component {
     if(flag.data.isLoggedin == true){
       this.props.loginHandler(this.state.id,flag.data.grade)
       alert("login success")
-      setInterval(()=>{this.getMessages()},100)
+      this.getMessages();
     }
     else {
       alert("login fail")
@@ -81,7 +81,7 @@ class Home extends React.Component {
     var flag = await axios('/message/mainpage',{
       method:'POST',
       data : {
-          id : this.state.id,
+          id : this.props.id,
       },
       headers : new Headers()
     })
