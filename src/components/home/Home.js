@@ -81,7 +81,7 @@ class Home extends React.Component {
     var flag = await axios('/message/mainpage',{
       method:'POST',
       data : {
-          id : this.state.id,
+          id : this.props.id,
       },
       headers : new Headers()
     })
