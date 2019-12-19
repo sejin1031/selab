@@ -28,15 +28,30 @@ export default class Egg extends React.Component{
   return (
     <div className="MyModal">
       <div className="content">
-        <div> <div>점심 뭐먹을까??</div><button className="button" onClick={()=>this.setState({menu : !this.state.menu})} > 클릭</button></div>
+        <div className="page" onClick={()=>this.setState({menu : !this.state.menu})} ><button class="fun-btn">점심 뭐먹을까?? 클릭!</button></div>
         {
           this.state.menu && <Menu/>
         }
         <div>
-          <button className="closebtn" onClick={this.props.onClose}>닫기</button>
+          <div className="clsbutton" onClick={this.props.onClose}>닫기</div>
         </div>
       </div>
     </div>
   );
   }
 }
+
+
+// $('.fun-btn').on('click', function(event) {
+//   $(this).toggleClass('start-fun');
+//   var $page = $('.page');
+//   $page.toggleClass('color-bg-start')
+//     .toggleClass('bg-animate-color');
+
+//   //change text when when button is clicked
+
+//   $(this).hasClass('start-fun') ?
+//     $(this).text('stop the fun') :
+//     $(this).text('start the fun');
+
+// });
