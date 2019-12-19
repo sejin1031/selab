@@ -41,15 +41,28 @@
 
 .content
 {
+  font-size:14pt;
   li
   {
-    font-size:12pt;
+    font-size:14pt;
     color:black;
     a
       {
         text-decoration: none;
         color:black;
       }
+  }
+}
+
+.slide_content
+{
+  li
+  {
+    
+    &:hover{
+      text-decoration:underline;
+      text-decoration-color:#1d6a96;
+    }
   }
 }
 
