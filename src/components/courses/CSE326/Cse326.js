@@ -211,7 +211,7 @@ class Cse326 extends Component {
                     this.state.slides === true?
                     <div className = "Slides">
                         <ToggleBox title="Lecture Slides">
-                            <div className="content">
+                            <div className="content slide_content">
                                 <ul>
                                     <li>No.0 : <a href = "https://selab.hanyang.ac.kr/courses/cse326/2019/lecture/00-introduction.html">Introduction</a></li>
                                     <li>No.1 : <a href = "https://selab.hanyang.ac.kr/courses/cse326/2019/lecture/01-www.html">The Internet & World Wide Web</a></li>
@@ -233,7 +233,7 @@ class Cse326 extends Component {
                         </ToggleBox>
                         <br />
                         <ToggleBox title = "Labs">
-                            <div className = "content">
+                            <div className = "content slide_content">
                                 <ul>
                                     <li><a href = "https://selab.hanyang.ac.kr/courses/cse326/2019/labs/lab0-introduction.html">Introduction - Week 3</a></li>
                                     <li><a href = "https://selab.hanyang.ac.kr/courses/cse326/2019/labs/lab1-aboutme(HTML).html">About Me (HTML) - Week 4</a></li>
