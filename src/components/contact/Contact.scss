@@ -24,7 +24,7 @@
     }
     .contactContent{
         border-radius: 10px;
-       color: black;
+       
         background: black;
         padding: 1rem;
         width: 90%;
@@ -32,6 +32,7 @@
         animation-name: modalFade;
         animation-duration: .1ms;
         .content{
+            
             display: grid;
             .map{
                 grid-column: 1/5;
@@ -39,20 +40,23 @@
                     width: 800px;
                     &:hover{
                         width: 1000px;
+                        transition: 0.5s, ease;
                     }
                 }
             }
             .describe{
+                @import url(https://fonts.googleapis.com/css?family=Economica:400,700);
+	            font-family: 'Economica', sans-serif;
                 grid-column: 6/8;
                 span{
-                    color: black;
+                    color: aliceblue;
                     font-size: 30pt;
                     font-weight: bold;
                     padding: 5px;
                 }
                 ul{
                     li{
-                        color: black;
+                        color: aliceblue;
 
                         padding: 30px;
                         font-size: 15pt;
