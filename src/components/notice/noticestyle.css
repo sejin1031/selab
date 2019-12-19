@@ -142,3 +142,14 @@ input[type = "text"]{
   background-color: #353C42;
   color:aliceblue;
 }
+.cbutton{
+  font-size:15pt;
+  width:30px;
+  height:30px;
+  font-weight:bold;
+  color:red;
+  margin-bottom: 5vw;
+  float: right;
+  background-color: gray;
+  border-radius: 10px;
+}

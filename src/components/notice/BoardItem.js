@@ -16,9 +16,9 @@ class BoardRow extends Component {
             <React.Fragment>
                 <div className="Modal-overlay" />
                 <div className="Modal">
-                <button className="closebutton" > X </button>
+                <button className="cbutton" > X </button>
                     <div>
-                      <div><span className = "ntable">Title : </span>{this.state.data.title} <span className = "ntable">Writer : </span>{this.state.data.writer}</div><hr/>
+                      <div><span className = "ntable">Title : </span>{this.state.data.title} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className = "ntable">Writer : </span>{this.state.data.writer}</div><hr/>
                       <div><span className = "ntable">Content : </span><br/>{this.state.data.content}</div><hr/>
                       <div><span className = "ntable">Date : </span>{this.state.data.date}</div>
                     </div>
