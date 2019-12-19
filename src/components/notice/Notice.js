@@ -10,7 +10,7 @@ import axios from 'axios';
 class Notice extends React.Component {
     constructor() {
       super();
-      
+
       this.state = {
         showPopup: false,
         maxNo: 4,
@@ -41,7 +41,7 @@ class Notice extends React.Component {
     noPopHandler(data){
       this.setState({popup: data})
     }
-   
+
 
   render() {
     const { selectedBoard } = this.state;
@@ -53,10 +53,10 @@ class Notice extends React.Component {
           noPopHandler={this.noPopHandler}
         />
         }
-        <img className="bell" src= {require("./notice.png")} id = 'nimg'/>
+        
 
         <h1 id ="h1">Notice</h1>
-        
+
           <table className='table'>
             <thead>
               <tr align="center">
@@ -67,8 +67,8 @@ class Notice extends React.Component {
               </tr>
             </thead>
             <tbody>
-              
-              {this.state.test.map(data => 
+
+              {this.state.test.map(data =>
               <tr onClick={()=>this.noPopHandler(data)}>
                 <td>{data.id}</td>
                 <td>{data.title}</td>
@@ -82,7 +82,7 @@ class Notice extends React.Component {
               {<button className = "nbutton" onClick={this.togglePopup.bind(this)}>글쓰기</button>}
               {/*:""*/
         }
-        {this.state.showPopup ? 
+        {this.state.showPopup ?
             <WritePopup text='Close Me' closePopup={this.togglePopup.bind(this)}/>
             : null
         }
