@@ -119,7 +119,13 @@ export default class Message extends Component {
             },
             headers : new Headers()
         })
-        this.setState({userList:flag.data})
+        let users = [];
+        flag.data.map((index)=>{
+            if(!users.includes(index.send)){
+                users.push(index.send)
+            }
+        })
+        this.setState({userList:users})
     }
     // messageTest= async() => {
     //     var flag = await axios('/message',{
@@ -189,8 +195,8 @@ export default class Message extends Component {
                         <div className="title">RECEIVED LIST</div>
                         <div className="names">
                             <div className="users" onClick={()=>this.setState({selectedId:"newMessage"})}>new Messages</div>
-                        {this.state.userList.map((name,index)=>
-                        <div key={index} className={name===this.state.selectedId? "selectedusers":"users"}
+                        {this.state.userList.map(name=>
+                        <div key={name} className={name===this.state.selectedId? "selectedusers":"users"}
                         onClick={()=>this.setState({selectedId:name})}>{name}</div>)}
                         </div>
                     </div>
