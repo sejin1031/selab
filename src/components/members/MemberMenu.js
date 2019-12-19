@@ -19,7 +19,7 @@ class MemberMenu extends Component {
         return (
         	<div className="mem">
 	            <div className="people_popup">
-	            	{this.state.showPopup ? 
+	            	{this.state.showPopup ?
 	                	<People className="people"  name={this.state.name}
 	                	closePopup={this.togglePopup.bind(this)} />
 	                	: null
@@ -28,7 +28,7 @@ class MemberMenu extends Component {
 			    <div className="people_left">
 	                <h1 className="position">Professor</h1>
 	                <div className="membersdiv">
-	                	<span className="members" 
+	                	<span className="members"
 			                onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -39,13 +39,13 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Scott
+							}.bind(this)}>Scott<br/>
 							<img className="popoutme" src={require('./photo/Scott.jpg')} alt='No photo'/>
 						</span>
 					</div>
 					<h1 className="position">PhD</h1>
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -57,12 +57,12 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Isma Farah
+							}.bind(this)}>Isma Farah<br/>
 							<img className="popoutme" src={require('./photo/Isma Farah.jpg')} alt='No photo'/>
 						</span>
 					</div>
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -74,12 +74,12 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Abdul Rahim
+							}.bind(this)}>Abdul Rahim<br/>
 							<img className="popoutme" src={require('./photo/Abdul Rahim.jpg')} alt='No photo'/>
 						</span>
 					</div>
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -91,12 +91,12 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Asad Abbas
+							}.bind(this)}>Asad Abbas<br/>
 							<img className="popoutme" src={require('./photo/Asad Abbas.jpg')} alt='No photo'/>
 						</span>
 					</div>
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -108,12 +108,12 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Gichan Lee
+							}.bind(this)}>Gichan Lee<br/>
 							<img className="popoutme" src={require('./photo/Gichan Lee.jpg')} alt='No photo'/>
 						</span>
 					</div>
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -125,12 +125,12 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Mohsin Javaid
+							}.bind(this)}>Mohsin Javaid<br/>
 							<img className="popoutme" src={require('./photo/no.png')} alt='No photo'/>
 						</span>
 					</div>
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -142,7 +142,7 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Muhammad Umair Khan
+							}.bind(this)}>Muhammad Umair Khan<br/>
 							<img className="popoutme" src={require('./photo/Muhammad Umair Khan.jpg')} alt='No photo'/>
 						</span>
 					</div>
@@ -152,7 +152,7 @@ class MemberMenu extends Component {
 
 
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -164,12 +164,12 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Gayeon Kim
+							}.bind(this)}>Gayeon Kim<br/>
 							<img className="popoutme" src={require('./photo/Gayeon Kim.jpg')} alt='No photo'/>
 						</span>
 					</div>
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -181,12 +181,12 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Seonwoong Kim
+							}.bind(this)}>Seonwoong Kim<br/>
 							<img className="popoutme" src={require('./photo/no.png')} alt='No photo'/>
 						</span>
 					</div>
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -198,12 +198,12 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Wu Zhiqiang
+							}.bind(this)}>Wu Zhiqiang<br/>
 							<img className="popoutme" src={require('./photo/Wu Zhiqiang.jpg')} alt='No photo'/>
 						</span>
 					</div>
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -215,12 +215,12 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Gwanggyu Choi
+							}.bind(this)}>Gwanggyu Choi<br/>
 							<img className="popoutme" src={require('./photo/Gwanggyu Choi.gif')} alt='No photo'/>
 						</span>
 					</div>
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -232,12 +232,12 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Hyunglak Kim
+							}.bind(this)}>Hyunglak Kim<br/>
 							<img className="popoutme" src={require('./photo/Hyunglak Kim.jpg')} alt='No photo'/>
 						</span>
 					</div>
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -249,12 +249,12 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Youn Guen Ahn
+							}.bind(this)}>Youn Guen Ahn<br/>
 							<img className="popoutme" src={require('./photo/no.png')} alt='No photo'/>
 						</span>
 					</div>
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -266,12 +266,12 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Kyojune Hwang
+							}.bind(this)}>Kyojune Hwang<br/>
 							<img className="popoutme" src={require('./photo/no.png')} alt='No photo'/>
 						</span>
 					</div>
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -283,7 +283,7 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Hakjin Lee
+							}.bind(this)}>Hakjin Lee<br/>
 							<img className="popoutme" src={require('./photo/no.png')} alt='No photo'/>
 						</span>
 					</div>
@@ -291,7 +291,7 @@ class MemberMenu extends Component {
 					<h1 className="position">Intern</h1>
 
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -303,12 +303,12 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Dahae Sung
+							}.bind(this)}>Dahae Sung<br/>
 							<img className="popoutme" src={require('./photo/Dahae Sung.jpg')} alt='No photo'/>
 						</span>
 					</div>
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -320,12 +320,12 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Yongtaek Oh
+							}.bind(this)}>Yongtaek Oh<br/>
 							<img className="popoutme" src={require('./photo/no.png')} alt='No photo'/>
 						</span>
 					</div>
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -337,15 +337,15 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Namju Park
+							}.bind(this)}>Namju Park<br/>
 							<img className="popoutme" src={require('./photo/no.png')} alt='No photo'/>
 						</span>
 					</div>
 
 					<h1 className="position">Alumni</h1>
-					
+
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -357,12 +357,12 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Jaejin Kim
+							}.bind(this)}>Jaejin Kim<br/>
 							<img className="popoutme" src={require('./photo/no.png')} alt='No photo'/>
 						</span>
 					</div>
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -374,12 +374,12 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Jiang Hua
+							}.bind(this)}>Jiang Hua<br/>
 							<img className="popoutme" src={require('./photo/Jiang Hua.jpg')} alt='No photo'/>
 						</span>
 					</div>
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -391,12 +391,12 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Jaeho Choi
+							}.bind(this)}>Jaeho Choi<br/>
 							<img className="popoutme" src={require('./photo/Jaeho Choi.JPG')} alt='No photo'/>
 						</span>
 					</div>
 					<div className="membersdiv">
-						<span className="members" 
+						<span className="members"
 							onMouseOver={function(){
 								this.setState({
 									showPopup:true,
@@ -408,7 +408,7 @@ class MemberMenu extends Component {
 								this.setState({
 									showPopup:false
 								})
-							}.bind(this)}>Geunhwan Park
+							}.bind(this)}>Geunhwan Park<br/>
 							<img className="popoutme" src={require('./photo/Geunhwan Park.jpg')} alt='No photo'/>
 						</span>
 					</div>
