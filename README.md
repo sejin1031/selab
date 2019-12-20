@@ -1,5 +1,22 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+https://nodejs.org/ko/
+Node.js가 필요합니다.
+xampp가 필요합니다.
+
+프로젝트 작동 순서
+1. xampp에서 mysql서버를 켜서 admin을 누릅니다.
+2. selab이라는 새로운 데이터베이스를 만듭니다.
+3. cmd창 2개를 켭니다.
+4. 첫번째 cmd에서 selab이동후 npm install
+5. npm install node-sass
+6. npm install react-simple-image-slider --save
+7. 두번째 cmd창에서 selab/server 폴더 이동 
+8. node server로 실행
+9. 첫번째 cmd창에서 selab 폴더 이동
+10. npm start
+11. 즐겁게 감상
+
 ## Available Scripts
 
 In the project directory, you can run:
