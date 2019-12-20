@@ -7,16 +7,15 @@ xampp가 필요합니다.
 프로젝트 작동 순서
 
 서버
-
-o. server폴더내 config폴더내 db.json 파일을 자신의 데이터베이스에 맞게 수정합니다.
-1. xampp에서 mysql서버를 켜서 admin을 누릅니다.
-2. selab이라는 새로운 데이터베이스를 만듭니다.
-3. cmd창 2개를 켭니다.
-4. 첫번째 cmd에서 selab이동후 npm install
-5. npm install node-sass
-6. npm install react-simple-image-slider --save
-7. 두번째 cmd창에서 selab/server 폴더 이동 
-8. node server로 실행
+1. server폴더내 config폴더내 db.json 파일을 자신의 데이터베이스에 맞게 수정합니다.
+2. xampp에서 mysql서버를 켜서 admin을 누릅니다.
+3. selab이라는 새로운 데이터베이스를 만듭니다.
+4. cmd창 2개를 켭니다.
+5. 첫번째 cmd에서 selab이동후 npm install
+6. npm install node-sass
+7. npm install react-simple-image-slider --save
+8. 두번째 cmd창에서 selab/server 폴더 이동 
+9. node server로 실행
 클라이언트
 1.. 프로젝트 최상위폴더로 이동
 2. npm start
