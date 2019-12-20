@@ -7,6 +7,7 @@ xampp가 필요합니다.
 프로젝트 작동 순서
 
 서버
+
 o. server폴더내 config폴더내 db.json 파일을 자신의 데이터베이스에 맞게 수정합니다.
 1. xampp에서 mysql서버를 켜서 admin을 누릅니다.
 2. selab이라는 새로운 데이터베이스를 만듭니다.
