@@ -4,7 +4,7 @@ https://nodejs.org/ko/
 Node.js가 필요합니다.
 xampp가 필요합니다.
 
-프로젝트 작동 순서
+## 프로젝트 작동 순서
 
 서버
 1. server폴더내 config폴더내 db.json 파일을 자신의 데이터베이스에 맞게 수정합니다.
