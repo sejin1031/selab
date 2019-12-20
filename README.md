@@ -18,9 +18,9 @@ xampp가 필요합니다.
   9. node server로 실행
   
 클라이언트
-  1.. 프로젝트 최상위폴더로 이동
-  2. npm start
-  3. 이런 저런 기능 사용해보기
+    1.. 프로젝트 최상위폴더로 이동
+    2. npm start
+    3. 이런 저런 기능 사용해보기
 
 ## Available Scripts
 
