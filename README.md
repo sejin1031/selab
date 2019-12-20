@@ -5,7 +5,8 @@ Node.js가 필요합니다.
 xampp가 필요합니다.
 
 프로젝트 작동 순서
-[서버]
+
+서버
 1. xampp에서 mysql서버를 켜서 admin을 누릅니다.
 2. selab이라는 새로운 데이터베이스를 만듭니다.
 3. cmd창 2개를 켭니다.
@@ -14,7 +15,7 @@ xampp가 필요합니다.
 6. npm install react-simple-image-slider --save
 7. 두번째 cmd창에서 selab/server 폴더 이동 
 8. node server로 실행
-[클라이언트]
+클라이언트
 1.. 프로젝트 최상위폴더로 이동
 2. npm start
 3. 이런 저런 기능 사용해보기
