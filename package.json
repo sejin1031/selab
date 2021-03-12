@@ -58,7 +58,7 @@
     "react": "^16.10.1",
     "react-animation": "^1.2.0",
     "react-app-polyfill": "^1.0.3",
-    "react-dev-utils": "^9.0.4",
+    "react-dev-utils": "^11.0.4",
     "react-dom": "^16.10.1",
     "react-grid-gallery": "^0.5.5",
     "react-image-lightbox": "^5.1.0",
